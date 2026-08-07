@@ -23,9 +23,9 @@ This repository currently contains 25 static HTML prototype screens styled with 
 
 ## Integration order
 
-1. Initialize Git and create a clean baseline commit of the current static prototype state.
-2. Scaffold the Laravel application and create a simple route/view shell.
-3. Create the database schema and migrations.
+1. Initialize Git and create a clean baseline commit of the current static prototype state. [Completed]
+2. Scaffold the Laravel application and create a simple route/view shell. [Completed]
+3. Create the database schema and migrations. [In progress]
 4. Implement authentication and role-based access.
 5. Build the core booking flow: browse artisans -> select service -> schedule -> review/pay -> confirm.
 6. Add admin approval and CRUD workflows.
@@ -35,13 +35,16 @@ This repository currently contains 25 static HTML prototype screens styled with 
 
 ## Screen-to-phase mapping
 
+The 25 screens will be assigned to implementation phases as follows. This mapping covers every HTML screen in the repository.
+
 ### Phase 1: Foundation and app shell
 
-These screens will be the base entry points and route shells for the app:
+These screens will form the base route shells and navigation entry points:
 
 - handylink_home_1/code.html
 - handylink_home_2/code.html
 - find_artisans/code.html
+- shader/code.html
 
 ### Phase 2: Authentication and account setup
 

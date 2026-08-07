@@ -235,19 +235,19 @@
 <h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Find the best local professionals.</h2>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-lg">Book trusted artisans for any job.</p>
 <!-- Search Bar (Glassmorphism) -->
-<div class="bg-surface/60 backdrop-blur-md rounded-xl p-sm shadow-sm border border-outline-variant/30 flex flex-col gap-sm relative z-10">
+<form action="/artisans/search" method="get" class="bg-surface/60 backdrop-blur-md rounded-xl p-sm shadow-sm border border-outline-variant/30 flex flex-col gap-sm relative z-10">
 <div class="relative flex items-center bg-surface-bright rounded-lg px-md py-3 focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50 transition-all duration-200 shadow-sm border border-surface-container-high">
 <span class="material-symbols-outlined text-outline mr-sm">search</span>
-<input class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="What do you need help with?" type="text"/>
+<input name="service" class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="What do you need help with?" type="text"/>
 </div>
 <div class="relative flex items-center bg-surface-bright rounded-lg px-md py-3 focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50 transition-all duration-200 shadow-sm border border-surface-container-high">
 <span class="material-symbols-outlined text-outline mr-sm">location_on</span>
-<input class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="Current Location" type="text"/>
+<input name="location" class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="Current Location" type="text"/>
 </div>
-<button class="bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all w-full flex justify-center items-center">
+<button type="submit" class="bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all w-full flex justify-center items-center">
                     Search Artisans
                 </button>
-</div>
+</form>
 <!-- Decorative background element -->
 <div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-[80px] opacity-30 -z-10 translate-x-1/2 -translate-y-1/4 pointer-events-none"></div>
 </section>

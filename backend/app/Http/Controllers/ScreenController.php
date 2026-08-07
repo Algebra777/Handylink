@@ -7,7 +7,7 @@ use Illuminate\View\View;
 
 class ScreenController extends Controller
 {
-    public function show(Request $request, string $screen = 'home'): View
+    public function show(Request $request, string $screen = 'home')
     {
         $screenPath = match ($screen) {
             'home' => base_path('../handylink_home_1/code.html'),

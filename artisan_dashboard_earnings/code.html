@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Earnings &amp; Analytics - HandyLink Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#424656",
+                      "surface-container": "#e5eeff",
+                      "on-tertiary-fixed": "#390c00",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#cbdbf5",
+                      "surface-variant": "#d3e4fe",
+                      "secondary": "#006c49",
+                      "on-secondary-fixed": "#002113",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-secondary-fixed-variant": "#005236",
+                      "tertiary-fixed": "#ffdbd0",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#c84000",
+                      "surface": "#f8f9ff",
+                      "on-secondary-container": "#00714d",
+                      "tertiary": "#9e3100",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "on-tertiary-container": "#fff1ed",
+                      "primary-container": "#0f62fe",
+                      "on-primary-fixed": "#00174c",
+                      "inverse-surface": "#213145",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-primary": "#b4c5ff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#0052dd",
+                      "on-secondary": "#ffffff",
+                      "outline": "#737687",
+                      "primary": "#004ccd",
+                      "on-primary-container": "#f3f3ff",
+                      "surface-bright": "#f8f9ff",
+                      "error": "#ba1a1a",
+                      "on-background": "#0b1c30",
+                      "background": "#f8f9ff",
+                      "primary-fixed": "#dbe1ff",
+                      "on-primary-fixed-variant": "#003da9",
+                      "outline-variant": "#c3c6d8",
+                      "on-surface": "#0b1c30",
+                      "surface-container-highest": "#d3e4fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "xl": "32px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .chart-bar {
+            transition: height 0.5s ease-out;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-24 md:pb-0 pt-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter w-full h-16">
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-primary/5 transition-colors active:scale-95 duration-200 rounded-full md:hidden">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">HandyLink</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant dark:text-outline font-label-md text-label-md hover:bg-primary/5 transition-colors px-4 py-2 rounded-lg" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline font-label-md text-label-md hover:bg-primary/5 transition-colors px-4 py-2 rounded-lg" href="#">Bookings</a>
+<a class="text-on-surface-variant dark:text-outline font-label-md text-label-md hover:bg-primary/5 transition-colors px-4 py-2 rounded-lg" href="#">Messages</a>
+<a class="text-primary dark:text-primary-fixed-dim font-label-md text-label-md hover:bg-primary/5 transition-colors px-4 py-2 rounded-lg bg-secondary-container text-on-secondary-container" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-md">
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover shadow-sm border border-outline-variant/30 active:scale-95 duration-200 cursor-pointer" data-alt="A small, circular avatar portrait of a professional tradesperson looking confidently at the camera. Professional studio lighting with a clean white background. High resolution, clear details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVQGZZt-d-70TRmPRahNb8QbcezOzCVQKmGruXF-V94pfBG4-zsI_Oj9itfMmK3tUVBmau6VWeRDUOxCiI_YRpj2C__ic85ZexTbaaMSXrkMfnweFESLmGg4Iy7T3wpW3at4mvyC1AK4bAbrlatAmYDUhu5uZ7P-uLTVJquCPevGLyZtXQu1MOy_1b0K04pcwGd1-iYgMbiR8MV_YdApNzIFbTO0nRjZldaawObeDp0gKtPKo4INGx"/>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-20 py-lg">
+<div class="mb-lg">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Earnings &amp; Analytics</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Track your performance and manage your funds.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Main Content Area -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Revenue Chart Section -->
+<section class="glass-panel rounded-xl border border-outline-variant/30 shadow-sm p-lg">
+<div class="flex justify-between items-center mb-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Revenue Overview</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Weekly performance</p>
+</div>
+<select class="bg-surface-container rounded-lg border-none text-on-surface font-label-sm text-label-sm focus:ring-2 focus:ring-primary py-2 pl-3 pr-8 cursor-pointer">
+<option>This Week</option>
+<option>Last Week</option>
+<option>This Month</option>
+</select>
+</div>
+<!-- Simulated Bar Chart -->
+<div class="h-64 flex items-end justify-between gap-2 mt-4 pt-4 border-t border-outline-variant/30 relative">
+<!-- Y Axis Labels -->
+<div class="absolute left-0 top-4 h-full flex flex-col justify-between text-on-surface-variant font-label-sm text-label-sm -ml-2 pb-8">
+<span>$800</span>
+<span>$400</span>
+<span>$0</span>
+</div>
+<!-- Bars -->
+<div class="flex flex-col items-center flex-1 ml-8 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[120px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[80%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Mon</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[180px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[60%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Tue</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[240px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[90%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 font-bold text-primary">Wed</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[150px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[50%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Thu</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[210px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[75%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Fri</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[100px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[40%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Sat</span>
+</div>
+<div class="flex flex-col items-center flex-1 group">
+<div class="w-full max-w-[40px] bg-surface-container-highest rounded-t-sm relative overflow-hidden h-[60px] chart-bar group-hover:bg-primary-fixed transition-colors">
+<div class="absolute bottom-0 w-full bg-primary h-[30%] rounded-t-sm"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Sun</span>
+</div>
+</div>
+</section>
+<!-- Recent Transactions -->
+<section class="glass-panel rounded-xl border border-outline-variant/30 shadow-sm p-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-lg">Recent Transactions</h2>
+<div class="flex flex-col gap-4">
+<!-- Transaction Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant/20 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="plumbing">plumbing</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Pipe Repair - Sarah Jenkins</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 24, 2023 • Completed</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-secondary block">+$185.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">After 10% commission</span>
+</div>
+</div>
+<!-- Transaction Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant/20 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="electrical_services">electrical_services</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Fixture Install - Marcus Cole</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 22, 2023 • Completed</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md text-secondary block">+$90.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">After 10% commission</span>
+</div>
+</div>
+<button class="w-full py-3 mt-2 text-primary font-label-md text-label-md hover:bg-primary/5 rounded-lg transition-colors border border-transparent hover:border-primary/20">
+                            View All Transactions
+                        </button>
+</div>
+</section>
+</div>
+<!-- Sidebar Area -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- Wallet Card -->
+<div class="bg-gradient-to-br from-primary to-surface-tint rounded-xl p-lg text-on-primary shadow-lg relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-black/10 rounded-full blur-2xl"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<p class="font-label-sm text-label-sm text-primary-fixed opacity-90 mb-1">Current Balance</p>
+<h3 class="font-display-lg text-display-lg tracking-tight">$1,245.50</h3>
+</div>
+<span class="material-symbols-outlined text-3xl opacity-80" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-surface text-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:bg-surface-container transition-colors active:scale-95 duration-200">
+                                Withdraw Funds
+                            </button>
+</div>
+</div>
+</div>
+<!-- Performance Stats -->
+<section class="glass-panel rounded-xl border border-outline-variant/30 shadow-sm p-lg">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-lg">Performance</h2>
+<div class="flex flex-col gap-6">
+<!-- Stat: Response Time -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="timer">timer</span>
+                                    Avg Response Time
+                                </span>
+<span class="font-label-md text-label-md text-secondary">Under 15 mins</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full w-[90%]"></div>
+</div>
+</div>
+<!-- Stat: Customer Reviews -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="star_rate">star_rate</span>
+                                    Average Rating
+                                </span>
+<span class="font-label-md text-label-md text-on-surface">4.9 / 5.0</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star_half" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">(128 reviews)</span>
+</div>
+</div>
+<!-- Badge Progress -->
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/20 mt-2">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Top Rated Badge</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maintain 4.8+ rating for 30 days</p>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full w-[80%]"></div>
+</div>
+<p class="font-label-sm text-label-sm text-right text-primary mt-2">24 / 30 Days</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md border-t border-outline-variant/30 shadow-lg flex justify-around items-center w-full py-3 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple entry animation for chart bars
+        document.addEventListener("DOMContentLoaded", () => {
+            const bars = document.querySelectorAll('.chart-bar > div');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height || bar.className.match(/h-\[([^\]]+)\]/)[1];
+                bar.style.height = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'height 1s cubic-bezier(0.4, 0, 0.2, 1)';
+                    bar.style.height = targetHeight;
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

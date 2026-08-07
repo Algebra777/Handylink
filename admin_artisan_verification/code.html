@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Artisan Verification Queue</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#737687",
+                        "on-surface": "#0b1c30",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "outline-variant": "#c3c6d8",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-tertiary-container": "#fff1ed",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c49",
+                        "on-background": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#003da9",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface-variant": "#424656",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-container": "#00714d",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#6cf8bb",
+                        "on-secondary-fixed": "#002113",
+                        "surface-tint": "#0052dd",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#004ccd",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary": "#9e3100",
+                        "primary-container": "#0f62fe",
+                        "tertiary-fixed": "#ffdbd0",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-container": "#f3f3ff",
+                        "on-primary-fixed": "#00174c",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-container": "#c84000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "3xl": "64px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f8f9ff; color: #0b1c30; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .table-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopAppBar (Web) / Suppressed on this specific back-office view in favor of a SideNav layout, but included as per instructions if it were a top-level view. Since this is a specialized task view, we'll implement a clean admin header. -->
+<!-- Navigation Drawer (SideNav) -->
+<nav class="hidden md:flex flex-col h-full w-80 rounded-r-xl shadow-xl bg-surface py-lg fixed left-0 top-0 z-40">
+<div class="px-lg mb-xl">
+<div class="flex items-center gap-md">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A professional headshot of a verified member named Alex Morgan, against a clean studio background, well-lit, premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmCOdYno3Pc-QPAOI19SzoLcAXIL2c1fPSwST7LP23VuYtLX_sheEGtlx2m-9rkRtnmS6OEsvgL08WgtbimePlczdumoFz0yndXWf1ZyyDxXY5i0tLMEFK4Ra9lHmPo6zGzDQ9UdOs8D3KEHqa2p1pSNtXaiHpEkcgyCT-PDeHbARoowF4ohPAhg9mi3Y4rs6deWgFU_bHZk_e0pkDXB9UMm6e3mFfQ0GrYf3OEG8hJbpJX_OfH1s"/>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Alex Morgan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verified Member</p>
+<p class="font-label-sm text-label-sm text-outline">Member since 2023</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-md">
+<ul class="space-y-sm">
+<!-- Highlight 'Settings' as proxy for admin view -->
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">person</span>My Profile</a></li>
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">bookmark</span>Saved Artisans</a></li>
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">history</span>Booking History</a></li>
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">payments</span>Payment Methods</a></li>
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">help</span>Help Center</a></li>
+<li><a class="flex items-center gap-md px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-bold transition-colors duration-200 font-body-md text-body-md" href="#"><span class="material-symbols-outlined">settings</span>Settings</a></li>
+</ul>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-80 p-4 md:p-xl lg:p-3xl max-w-container-max mx-auto w-full">
+<!-- Header -->
+<header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">Verification Queue</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Review and approve new artisan applications.</p>
+</div>
+</header>
+<!-- Filters & Actions Bar -->
+<div class="glass-panel rounded-xl p-md mb-lg flex flex-col md:flex-row gap-md items-center justify-between table-shadow">
+<div class="flex flex-col sm:flex-row gap-md w-full md:w-auto">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full sm:w-64 pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search name or ID..." type="text"/>
+</div>
+<select class="w-full sm:w-48 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option value="">All Categories</option>
+<option value="plumbing">Plumbing</option>
+<option value="electrical">Electrical</option>
+<option value="carpentry">Carpentry</option>
+</select>
+<select class="w-full sm:w-48 px-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option value="">Status: Pending</option>
+<option value="needs_info">Needs Info</option>
+</select>
+</div>
+<button class="w-full md:w-auto px-6 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span> Export
+            </button>
+</div>
+<!-- Data Table -->
+<div class="bg-surface rounded-xl border border-surface-container-highest overflow-hidden table-shadow">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-container-highest">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Artisan</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Category</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Date Joined</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A friendly male plumber in a blue uniform, smiling subtly in a bright, modern setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoHAhQQWmFSn4xE44-AQrfmn7jARIJUQdi8FbNTEghLaK2TxFWQ33IAgJDxhyo042lKGfrKa_u994gkU1jHduy3rKFbKFzXKMF4wsi_0XXjEcMn0Tr3MDawJpPszrtfrd4qhk0yGD7NrtD8i9wN91piq76IIhZG84pb-SUwJavkq8VaEnLQt5l8ovcefMXUyVH0aJhQLdUB6ZwJDs5g_86ACROVDsnv4B53ZHmoR3Z0BY8JFJ5uZU5"/>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Marcus Chen</p>
+<p class="font-body-sm text-body-sm text-outline">ID: #84920</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Plumbing</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Pending
+                                </span>
+</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="px-3 py-1.5 border border-outline-variant text-on-surface-variant rounded-lg hover:bg-surface-container-low transition-colors font-label-sm text-label-sm">Review Docs</button>
+<button class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-lg hover:opacity-90 transition-opacity font-label-sm text-label-sm">Approve</button>
+<button class="px-3 py-1.5 bg-error-container text-on-error-container rounded-lg hover:opacity-90 transition-opacity font-label-sm text-label-sm">Reject</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm">SJ</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Sarah Jenkins</p>
+<p class="font-body-sm text-body-sm text-outline">ID: #84921</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Electrical</td>
+<td class="px-6 py-4 font-body-md text-body-md text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Pending
+                                </span>
+</td>
+<td class="px-6 py-4 text-right space-x-2">
+<button class="px-3 py-1.5 border border-outline-variant text-on-surface-variant rounded-lg hover:bg-surface-container-low transition-colors font-label-sm text-label-sm">Review Docs</button>
+<button class="px-3 py-1.5 bg-secondary-container text-on-secondary-container rounded-lg hover:opacity-90 transition-opacity font-label-sm text-label-sm">Approve</button>
+<button class="px-3 py-1.5 bg-error-container text-on-error-container rounded-lg hover:opacity-90 transition-opacity font-label-sm text-label-sm">Reject</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-surface-container-highest flex items-center justify-between">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 2 of 45 entries</p>
+<div class="flex gap-sm">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-outline disabled:opacity-50" disabled=""><span class="material-symbols-outlined" style="font-size: 20px;">chevron_left</span></button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-container text-on-primary-container font-label-sm text-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-sm text-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span></button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

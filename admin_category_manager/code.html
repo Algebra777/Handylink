@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Category Manager - HandyLink Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#d3e4fe",
+                      "on-secondary-container": "#00714d",
+                      "on-primary-fixed-variant": "#003da9",
+                      "secondary-fixed-dim": "#4edea3",
+                      "outline": "#737687",
+                      "on-primary": "#ffffff",
+                      "surface-variant": "#d3e4fe",
+                      "background": "#f8f9ff",
+                      "on-tertiary-container": "#fff1ed",
+                      "outline-variant": "#c3c6d8",
+                      "tertiary": "#9e3100",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-container": "#e5eeff",
+                      "surface-tint": "#0052dd",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-container-low": "#eff4ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-bright": "#f8f9ff",
+                      "on-primary-fixed": "#00174c",
+                      "surface-dim": "#cbdbf5",
+                      "tertiary-container": "#c84000",
+                      "on-surface": "#0b1c30",
+                      "secondary": "#006c49",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "secondary-container": "#6cf8bb",
+                      "surface": "#f8f9ff",
+                      "on-primary-container": "#f3f3ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffdbd0",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "on-secondary-fixed": "#002113",
+                      "on-error": "#ffffff",
+                      "primary-container": "#0f62fe",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#213145",
+                      "primary": "#004ccd",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#424656"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "lg": "24px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "container-max": "1280px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "3xl": "64px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl bg-surface-container-low dark:bg-surface-dim shadow-sm flex items-center justify-between px-md py-sm w-full">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-container-highest/20 transition-all duration-200 active:scale-95 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">HandyLink Admin</h1>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-container-highest/20 transition-all duration-200 active:scale-95 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-lg w-80 rounded-r-xl bg-surface dark:bg-surface-dim bg-surface-container dark:bg-inverse-surface shadow-xl fixed left-0 top-0 z-40">
+<div class="px-lg pb-md flex items-center space-x-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small, professional headshot of an administrator in a well-lit office setting. The image should be clear, bright, and suitable for a profile avatar in a modern UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd4RrK4aVXw9bLk1b3E7Jhiq5EP7sq-EjnmQtvFg32RvQYDlaS9suczb8sUQwpA8EgVC5W-R28qYSY0tJXKAnoq6osKbUcwqu4lXAgnmyxrHdI_AzhHWGioZ79ggkIHjP5C4ag2dZKeao1RwpSiz0IPMxCI6qs2ai66CWIX48hTEA5HXA0oFR0XUCghgc6J5HBlmgJ0yC2T0PdKuJipLSWExN5jjB_n-u_4aXfrBinFPQiCpg-ngcO"/>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-black text-primary">HandyLink Admin</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">System Administrator</p>
+</div>
+</div>
+<div class="flex-1 px-sm overflow-y-auto mt-md space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant m-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="monetization_on">monetization_on</span>
+<span class="font-body-md text-body-md">Platform Fees</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-bold rounded-lg m-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-body-md text-body-md">Category Manager</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant m-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="notification_important">notification_important</span>
+<span class="font-body-md text-body-md">Global Alerts</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant m-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-body-md text-body-md">Audit Logs</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-on-surface-variant dark:text-on-surface-variant m-2 hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-body-md text-body-md">Support Tickets</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-80 pt-[72px] md:pt-0 pb-[80px] md:pb-0 px-md md:px-lg lg:px-xl py-lg">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-xl mt-md md:mt-0 gap-4">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Category Manager</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Manage service categories and artisan groupings.</p>
+</div>
+<button class="hidden md:flex items-center justify-center space-x-2 bg-primary text-on-primary px-6 py-4 rounded-full shadow-md hover:bg-surface-tint transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="font-label-md text-label-md">Add Category</span>
+</button>
+</div>
+<!-- Bento Grid Layout for Categories -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Category Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[100px]" data-icon="plumbing">plumbing</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="plumbing">plumbing</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Plumbing</h3>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[12px] mr-1" data-icon="check_circle">check_circle</span> Active
+                            </span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-md relative z-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Pipe repair, installation, and maintenance services.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span class="font-label-md text-label-md text-on-surface">1,245 Artisans</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:underline">Edit</button>
+</div>
+</div>
+</div>
+<!-- Category Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[100px]" data-icon="electrical_services">electrical_services</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="electrical_services">electrical_services</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Electrical</h3>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[12px] mr-1" data-icon="check_circle">check_circle</span> Active
+                            </span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-md relative z-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Wiring, fixture installation, and electrical repairs.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span class="font-label-md text-label-md text-on-surface">892 Artisans</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:underline">Edit</button>
+</div>
+</div>
+</div>
+<!-- Category Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-lg shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[100px]" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cleaning</h3>
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[12px] mr-1" data-icon="pause_circle">pause_circle</span> Disabled
+                            </span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-md relative z-10">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Deep cleaning, move-in/out, and regular housekeeping.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<div class="flex items-center space-x-2 opacity-50">
+<span class="material-symbols-outlined text-outline" data-icon="group">group</span>
+<span class="font-label-md text-label-md text-on-surface">2,105 Artisans</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:underline">Edit</button>
+</div>
+</div>
+</div>
+<!-- Add New Card Placeholder -->
+<div class="hidden md:flex bg-surface-container/50 border-2 border-dashed border-outline-variant rounded-xl p-lg items-center justify-center hover:bg-surface-container hover:border-primary cursor-pointer transition-all group min-h-[220px]">
+<div class="flex flex-col items-center text-on-surface-variant group-hover:text-primary">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-4 group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</div>
+<span class="font-headline-sm text-headline-sm">Create New Category</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (Mobile) -->
+<button class="md:hidden fixed bottom-24 right-4 z-40 bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-surface-tint active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl bg-surface-container-low dark:bg-surface-dim shadow-lg flex justify-around items-center h-16 w-full px-sm pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm mt-1">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-fixed text-on-primary-container dark:text-on-primary-fixed-variant rounded-full px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings_suggest" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings_suggest</span>
+<span class="font-label-sm text-label-sm mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

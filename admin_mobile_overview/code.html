@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#6ffbbe",
+                      "surface": "#f8f9ff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-secondary-container": "#00714d",
+                      "primary-container": "#0f62fe",
+                      "on-secondary-fixed": "#002113",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#9e3100",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "primary": "#004ccd",
+                      "surface-bright": "#f8f9ff",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#390c00",
+                      "outline-variant": "#c3c6d8",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#0052dd",
+                      "outline": "#737687",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-container": "#e5eeff",
+                      "on-surface-variant": "#424656",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary-container": "#6cf8bb",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-fixed": "#00174c",
+                      "secondary": "#006c49",
+                      "surface-container-highest": "#d3e4fe",
+                      "tertiary-container": "#c84000",
+                      "on-primary-fixed-variant": "#003da9",
+                      "surface-variant": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "on-background": "#0b1c30",
+                      "on-primary-container": "#f3f3ff",
+                      "surface-container-high": "#dce9ff",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-container": "#fff1ed",
+                      "surface-container-low": "#eff4ff",
+                      "background": "#f8f9ff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#ffdbd0",
+                      "primary-fixed": "#dbe1ff",
+                      "inverse-on-surface": "#eaf1ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "lg": "24px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "gutter": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pt-16 pb-24 md:pb-0 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter w-full h-16">
+<button aria-label="Menu" class="text-on-surface-variant dark:text-outline hover:bg-primary/5 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">HandyLink</h1>
+<button aria-label="User profile photo" class="text-on-surface-variant dark:text-outline hover:bg-primary/5 transition-colors active:scale-95 duration-200 p-2 rounded-full overflow-hidden">
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional avatar photo of an administrator, clean lighting, corporate headshot style, set against a neutral grey background, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ5jLiu6bdO4D4bJJNO8_COec6LgUxHUaonjd_7UAY_7rVoA9ujDpVzoCnk2aPzYD0UkhXACWZo88mPDCzj94lt-RTgWDFnVpHjSk81qKiMwWpB8kQutb4WcIpWLjlWaj_fWIPCFcJi_Xjg__-k985o9tC-XBHb3gl34zqSSCui2Ez9Afb9iFYTzSmqhbl5EKoZTf9l6SU844tM0PkVnHMYxanUFJWJ_urWTP7uxlIyt290hut4JsB"/>
+</button>
+</header>
+<main class="px-md md:px-lg max-w-container-max mx-auto space-y-xl mt-lg">
+<!-- Welcome Section -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Admin Overview</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Here's what's happening today.</p>
+</section>
+<!-- Metrics Grid (Bento style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Metric Card 1: Pending Verifications -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wide">Pending Verifications</p>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mt-xs">24</h3>
+</div>
+<div class="bg-error-container text-on-error-container p-sm rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="pending_actions" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+</div>
+</div>
+<div class="h-12 w-full flex items-end opacity-70">
+<!-- Fake sparkline -->
+<div class="w-1/6 bg-error h-2/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-error h-3/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-error h-2/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-error h-4/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-error h-5/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-error h-6/6 rounded-t-sm mx-[2px]"></div>
+</div>
+<p class="font-label-sm text-label-sm text-error mt-sm flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="trending_up">trending_up</span> +12% since yesterday
+                </p>
+</div>
+<!-- Metric Card 2: Active Bookings -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wide">Active Bookings</p>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mt-xs">156</h3>
+</div>
+<div class="bg-primary-container text-on-primary-container p-sm rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="event_available" style="font-variation-settings: 'FILL' 1;">event_available</span>
+</div>
+</div>
+<div class="h-12 w-full flex items-end opacity-70">
+<!-- Fake sparkline -->
+<div class="w-1/6 bg-primary h-3/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-primary h-4/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-primary h-3/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-primary h-5/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-primary h-4/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-primary h-5/6 rounded-t-sm mx-[2px]"></div>
+</div>
+<p class="font-label-sm text-label-sm text-primary mt-sm flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="trending_flat">trending_flat</span> Steady growth
+                </p>
+</div>
+<!-- Metric Card 3: Platform Revenue -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col justify-between md:col-span-1">
+<div class="flex justify-between items-start mb-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wide">Platform Revenue</p>
+<h3 class="font-display-lg-mobile text-display-lg-mobile text-on-surface mt-xs">$4.2k</h3>
+</div>
+<div class="bg-secondary-container text-on-secondary-container p-sm rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="payments" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+</div>
+<div class="h-12 w-full flex items-end opacity-70">
+<!-- Fake sparkline -->
+<div class="w-1/6 bg-secondary h-2/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-secondary h-3/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-secondary h-5/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-secondary h-4/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-secondary h-6/6 rounded-t-sm mx-[2px]"></div>
+<div class="w-1/6 bg-secondary h-5/6 rounded-t-sm mx-[2px]"></div>
+</div>
+<p class="font-label-sm text-label-sm text-secondary mt-sm flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="trending_up">trending_up</span> +5% this week
+                </p>
+</div>
+</section>
+<!-- Action Required Section -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-error" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+                    Action Required
+                </h3>
+<button class="font-label-md text-label-md text-primary hover:bg-primary/5 px-2 py-1 rounded transition-colors">View All</button>
+</div>
+<div class="space-y-sm">
+<!-- Artisan Approval Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-md">
+<img alt="Artisan Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a male plumber wearing a tool belt and blue shirt, professional and trustworthy look, light mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Gv3YzwgEKUYYj6TVwmwyr650DEd_P3a-1_G0j8hrBUzIrAJdChL5Wo28fgZNC4ljm_GGvpTmv-OCH_eIF2h3jY2OI2ah359pLuweYfc8goujm4rK00671xtFtsahMQEox1ug27ImeLPiNxHHDT-850AvGYOL07DHG_Go4n-70YPIvAskYS8UOZh5tDISueJf-nHCaNxzKQhfwnjO2Rdv0sGl3rriDQmZ-30mCTGev3Mv3fQEwiSK"/>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">John Smith</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Plumber • License Verification</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Decline" class="bg-surface-variant hover:bg-surface-variant/80 text-on-surface-variant p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<button aria-label="Approve" class="bg-primary hover:bg-primary/90 text-on-primary p-2 rounded-full transition-colors shadow-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+</div>
+</div>
+<!-- Artisan Approval Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-md">
+<img alt="Artisan Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of a female electrician holding a multimeter, wearing safety gear, professional and modern aesthetic, light mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNhzFK37TBPUOyqoEH9aXI7tHWMWTI6eg3hN0aO3el_5OwXPVWwDJ7eTyonqnkAtDArM4PiO0uyShxf5lzy_EXueG8PeQvnkkZiy73NfejINoZI0AKS-hlCMBpAMdwJr1GOMDado70vaTrGms4kEKNYbVvXPzrNXHwEWLByuuAxe7SLfPwodAyoh5z_DTZ2J5yUEDQ3iSwx1KNx6ha1tfnvtS5-_sjOpa-ncoj75VEh3cA8W0ruBpm"/>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Sarah Connor</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Electrician • Identity Check</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Decline" class="bg-surface-variant hover:bg-surface-variant/80 text-on-surface-variant p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<button aria-label="Approve" class="bg-primary hover:bg-primary/90 text-on-primary p-2 rounded-full transition-colors shadow-md">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md border-t border-outline-variant/30 shadow-lg flex justify-around items-center w-full py-3 px-4 pb-safe">
+<!-- Tab 1: Explore (Active - assuming Overview maps here or first tab) -->
+<button aria-label="Explore" class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</button>
+<!-- Tab 2: Bookings (Inactive) -->
+<button aria-label="Bookings" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</button>
+<!-- Tab 3: Messages (Inactive) -->
+<button aria-label="Messages" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Messages</span>
+</button>
+<!-- Tab 4: Profile (Inactive) -->
+<button aria-label="Profile" class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

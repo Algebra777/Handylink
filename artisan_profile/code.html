@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink Artisan Profile</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#9e3100",
+                      "secondary": "#006c49",
+                      "primary-container": "#0f62fe",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed-variant": "#003da9",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-container": "#e5eeff",
+                      "surface-variant": "#d3e4fe",
+                      "outline": "#737687",
+                      "surface-dim": "#cbdbf5",
+                      "on-tertiary-fixed": "#390c00",
+                      "secondary-container": "#6cf8bb",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-container": "#c84000",
+                      "on-error": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-container": "#fff1ed",
+                      "on-primary-container": "#f3f3ff",
+                      "primary": "#004ccd",
+                      "on-secondary-fixed": "#002113",
+                      "error": "#ba1a1a",
+                      "on-surface": "#0b1c30",
+                      "outline-variant": "#c3c6d8",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-tint": "#0052dd",
+                      "on-secondary-container": "#00714d",
+                      "inverse-primary": "#b4c5ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "on-primary-fixed": "#00174c",
+                      "background": "#f8f9ff",
+                      "inverse-surface": "#213145",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eff4ff",
+                      "surface": "#f8f9ff",
+                      "on-surface-variant": "#424656",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Ambient shadows and glassmorphism utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .shadow-level-1 { box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+        .shadow-level-2 { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .shadow-level-3 { box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        
+        .artisan-card {
+            border: 1px solid rgba(255,255,255,0.8);
+            border-radius: 16px;
+        }
+
+        /* Material Symbols Outline Base */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-sm antialiased overflow-x-hidden md:hidden pb-32">
+<!-- TopAppBar (Floating/Glass) -->
+<header class="fixed top-0 w-full z-50 glass-panel border-b-0 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-4 py-3 md:px-lg w-full max-w-container-max mx-auto">
+<!-- Back Button for Profile Context -->
+<button class="text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<div class="font-headline-sm text-headline-sm-mobile md:text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">
+                HandyLink
+            </div>
+<button class="text-on-surface-variant dark:text-outline-variant hover:opacity-80 active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="w-full">
+<!-- Hero Header -->
+<section class="relative bg-surface-container-low pb-md">
+<!-- Cover Photo -->
+<div class="h-48 w-full relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A professional and well-lit photo showing high-quality electrical tools neatly arranged on a clean wooden workbench. The lighting is bright and modern, creating a trustworthy, premium service aesthetic in a light mode color palette with soft white and blue tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbiiLBzus3n7ACzJ_7w0VRFHAs92DNxTQcmCChXg-wLrn4wMu2bOKVAY5SxHbpo24MGUMYBc_cOI8vp8rCSNWrIMnKCwSIR5cZO7QzTBYR7-kO_oxuTsPspaue3GHcHJE-qnVdcW022GtI3-bGQ9mgxjY2S5LPRGEoo09niG0V_Aq-DD85tqkf9TBnxPilUO7scNZlr7FgumQ7u1z7VpqMuc_JQOY0akKJ7VEcUv_mtuk8ppFRqUna')"></div>
+</div>
+<!-- Profile Info Container -->
+<div class="px-md -mt-12 relative z-10">
+<div class="flex justify-between items-end mb-sm">
+<!-- Avatar -->
+<div class="w-24 h-24 rounded-full border-4 border-surface bg-surface-container overflow-hidden shadow-level-2">
+<img class="object-cover w-full h-full" data-alt="A professional, friendly headshot of a male electrician in a clean, modern navy blue uniform. The portrait is brightly lit with a soft white background, conveying trust, expertise, and a premium service standard in a clean light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg4EZoEf7v_cwBzt3da3sEFjh0bgHe0XIw2QGXxq5xmH8Wsd2rycafjV6a_jThrLA4uLwh-oo10CsGJBmZ-Grq1q8al3ENXUX3V59Z-_YzqumOeb7URw6WER4NdbKkQeToUqi7WK7Z5jfR210rjjQ5fSIAMsimRG2gLXrQiS-NSOUeNgDAdSTqnrsmErYMhRyWH6BGIOKCHTggOu8k2rx_s8GaUJuf1mkvVFo0UfKfiDEUZ6OG8a0E"/>
+</div>
+<!-- Online Status & Years -->
+<div class="flex flex-col items-end gap-xs pb-sm">
+<div class="flex items-center gap-xs text-secondary font-label-sm text-label-sm">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+                            Online Now
+                        </div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">
+                            8 Years Exp.
+                        </div>
+</div>
+</div>
+<!-- Name & Verification -->
+<div class="flex flex-col gap-xs mb-md">
+<h1 class="font-headline-md text-headline-md text-on-surface">Alex Morgan</h1>
+<div class="flex items-center gap-sm">
+<div class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                            Verified Artisan
+                        </div>
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                            Downtown Metro
+                        </span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-12 gap-sm">
+<button class="col-span-8 bg-gradient-to-r from-primary to-surface-tint text-on-primary font-label-md text-label-md py-md rounded-xl shadow-level-2 hover:opacity-90 active:scale-95 transition-all flex justify-center items-center gap-sm">
+                        Book Now
+                    </button>
+<button class="col-span-2 border border-outline-variant text-primary rounded-xl flex justify-center items-center active:scale-95 transition-transform bg-surface shadow-level-1">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="col-span-2 border border-outline-variant text-primary rounded-xl flex justify-center items-center active:scale-95 transition-transform bg-surface shadow-level-1">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Content Container with standard padding -->
+<div class="px-md py-lg flex flex-col gap-2xl">
+<!-- Stats Grid -->
+<section class="grid grid-cols-3 gap-sm bg-surface shadow-level-1 rounded-xl p-md border border-surface-variant">
+<div class="flex flex-col items-center justify-center text-center gap-xs border-r border-surface-variant pr-sm">
+<span class="font-headline-sm text-headline-sm text-primary">4.9</span>
+<div class="flex text-tertiary-container text-xs">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">128 Reviews</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center gap-xs border-r border-surface-variant px-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">340+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Jobs Done</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center gap-xs pl-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">&lt; 1h</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Response</span>
+</div>
+</section>
+</div>
+</main>
+</body></html>

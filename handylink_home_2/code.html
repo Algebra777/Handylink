@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>HandyLink - Home</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#9e3100",
+                      "secondary": "#006c49",
+                      "primary-container": "#0f62fe",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed-variant": "#003da9",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-container": "#e5eeff",
+                      "surface-variant": "#d3e4fe",
+                      "outline": "#737687",
+                      "surface-dim": "#cbdbf5",
+                      "on-tertiary-fixed": "#390c00",
+                      "secondary-container": "#6cf8bb",
+                      "secondary-fixed": "#6ffbbe",
+                      "tertiary-container": "#c84000",
+                      "on-error": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-container": "#fff1ed",
+                      "on-primary-container": "#f3f3ff",
+                      "primary": "#004ccd",
+                      "on-secondary-fixed": "#002113",
+                      "error": "#ba1a1a",
+                      "on-surface": "#0b1c30",
+                      "outline-variant": "#c3c6d8",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-tint": "#0052dd",
+                      "on-secondary-container": "#00714d",
+                      "inverse-primary": "#b4c5ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "on-primary-fixed": "#00174c",
+                      "background": "#f8f9ff",
+                      "inverse-surface": "#213145",
+                      "secondary-fixed-dim": "#4edea3",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eff4ff",
+                      "surface": "#f8f9ff",
+                      "on-surface-variant": "#424656",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "3xl": "64px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "xl": "32px",
+                      "2xl": "48px",
+                      "gutter": "24px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "safe": "env(safe-area-inset-bottom)"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Safe area padding for bottom nav */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 16px);
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl sticky top-0 w-full z-50 shadow-sm dark:shadow-none transition-all duration-300" id="main-header">
+<div class="flex justify-between items-center px-4 py-3 md:px-lg w-full max-w-container-max mx-auto">
+<!-- Leading Avatar -->
+<button class="flex-shrink-0 rounded-full overflow-hidden w-8 h-8 focus:outline-none hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a professional looking individual smiling warmly, set against a bright, airy light-mode background. The lighting is soft and flattering, highlighting trust and approachability. The style is modern corporate photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0tO1r04ToAduVCUTYp19KUXatiVRFueknKDm387_fk6ES_lCot8hoqMMWcs6L2PGutdI-bU9vilR-G_DzEohUxgFkyaKRDTDkUA1YEdu-NScAmTE3zm-_ecPssbYxYGyZn6ReKrc9S_LWtf4OI_ynjfzqFd4rGLrCBSdgF8G1mJ-tG2DVT6GIm95NSb-HSrltBCUM-LHpMLIdl-UeuhB8I_wOkkdLhSB3JovVtlgoDYpsS032idK3"/>
+</button>
+<!-- Headline / Brand -->
+<h1 class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-primary-fixed-dim absolute left-1/2 transform -translate-x-1/2">
+                HandyLink
+            </h1>
+<!-- Trailing Icon -->
+<button class="flex-shrink-0 text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 focus:outline-none relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="w-full max-w-container-max mx-auto md:px-lg overflow-hidden">
+<!-- Hero Section -->
+<section class="px-md pt-lg pb-2xl relative">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Find the best local professionals.</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-lg">Book trusted artisans for any job.</p>
+<!-- Search Bar (Glassmorphism) -->
+<div class="bg-surface/60 backdrop-blur-md rounded-xl p-sm shadow-sm border border-outline-variant/30 flex flex-col gap-sm relative z-10">
+<div class="relative flex items-center bg-surface-bright rounded-lg px-md py-3 focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50 transition-all duration-200 shadow-sm border border-surface-container-high">
+<span class="material-symbols-outlined text-outline mr-sm">search</span>
+<input class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="What do you need help with?" type="text"/>
+</div>
+<div class="relative flex items-center bg-surface-bright rounded-lg px-md py-3 focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50 transition-all duration-200 shadow-sm border border-surface-container-high">
+<span class="material-symbols-outlined text-outline mr-sm">location_on</span>
+<input class="bg-transparent border-none w-full text-body-md text-on-surface placeholder:text-outline focus:ring-0 p-0 font-body-md" placeholder="Current Location" type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all w-full flex justify-center items-center">
+                    Search Artisans
+                </button>
+</div>
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full blur-[80px] opacity-30 -z-10 translate-x-1/2 -translate-y-1/4 pointer-events-none"></div>
+</section>
+<!-- Popular Services -->
+<section class="py-lg pl-md">
+<div class="flex justify-between items-end pr-md mb-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Popular Services</h3>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">See all</a>
+</div>
+<div class="flex overflow-x-auto gap-md pb-sm hide-scroll pr-md snap-x">
+<!-- Service 1 -->
+<button class="flex flex-col items-center gap-sm min-w-[80px] snap-start group active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-surface-container shadow-sm flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">electrical_services</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Electrician</span>
+</button>
+<!-- Service 2 -->
+<button class="flex flex-col items-center gap-sm min-w-[80px] snap-start group active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-surface-container shadow-sm flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">plumbing</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Plumber</span>
+</button>
+<!-- Service 3 -->
+<button class="flex flex-col items-center gap-sm min-w-[80px] snap-start group active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-surface-container shadow-sm flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">format_paint</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Painter</span>
+</button>
+<!-- Service 4 -->
+<button class="flex flex-col items-center gap-sm min-w-[80px] snap-start group active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-surface-container shadow-sm flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">cleaning_services</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Cleaning</span>
+</button>
+<!-- Service 5 -->
+<button class="flex flex-col items-center gap-sm min-w-[80px] snap-start group active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 rounded-full bg-surface-container-low border border-surface-container shadow-sm flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[32px]">carpenter</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Carpenter</span>
+</button>
+</div>
+</section>
+<!-- Featured Artisans -->
+<section class="py-lg px-md bg-surface-container-low mt-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Featured Professionals</h3>
+<div class="grid grid-cols-1 gap-md sm:grid-cols-2 lg:grid-cols-3">
+<!-- Artisan Card 1 -->
+<article class="bg-surface rounded-xl shadow-sm border border-surface-container-highest overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-md flex items-start gap-md">
+<div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 border border-surface-container">
+<img alt="Artisan Profile" class="w-full h-full object-cover" data-alt="A portrait of a male electrician wearing a neat blue uniform, smiling confidently in a well-lit modern home environment. The aesthetic is clean, professional, and trustworthy, with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuMfUSR2QNL9c1TDfvBfpJ96iQTbinHHC4S3Ci0JXWp_-fbVDr8bgxlAwnAhXwm9Yg-fuEgvikh9Jq4wAt_WEQckPbvO2YbbDdSKNaU6Bm0yuy7GKMxhWKjYl10kCHPB0_b12il2L4hTJdWp3puj_gY6bA_gq-Sr31X-t5zGAaAnc6Kdv4az2O6onuaSo3vugUg6Vz6moGGXqn7ed-MYQ0QOm4djaxb06ULE1fUAuTE3K_bNWETlPP"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-label-md text-label-md text-on-surface">Marcus T.</h4>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1">4.9</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">Master Electrician</p>
+<div class="flex items-center gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md flex items-center font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px] mr-1">verified</span> Verified
+                                </span>
+<span class="font-body-sm text-body-sm text-outline flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">location_on</span> 2.5 mi
+                                </span>
+</div>
+</div>
+</div>
+<div class="px-md py-sm bg-surface-bright border-t border-surface-container flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">$65/hr</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline active:opacity-70 transition-opacity">View Profile</button>
+</div>
+</article>
+<!-- Artisan Card 2 -->
+<article class="bg-surface rounded-xl shadow-sm border border-surface-container-highest overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-md flex items-start gap-md">
+<div class="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 border border-surface-container">
+<img alt="Artisan Profile" class="w-full h-full object-cover" data-alt="A portrait of a female plumber wearing a professional grey polo shirt, looking competent and friendly. The background is a clean, modern kitchen setting. Lighting is bright and even, conveying reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDewG_BSzh9nn0tT99YPVuE4Y7UwLbATCoW3ko1Itx-PG2zj-LpsFxKgb8XZ-rvRDw8Nr4n4o2d3PhCy_bL6U6nBI59_OAH6QJnXVSlP3p0QPt95g9ACYt8aFauk6X0jddlMcIyWk8jW0ZXKIvpJbBcMr8rC7b9R6Jfc2XYxF6GL6s4MlXldcmkmv0AnzIv_4V9aowBT7lgoJ1hbq9AbfK2hTWzMvH2Khmw8I8K36NfwKLy1GlT74os"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-xs">
+<h4 class="font-label-md text-label-md text-on-surface">Sarah J.</h4>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm ml-1">4.8</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">Licensed Plumber</p>
+<div class="flex items-center gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded-md flex items-center font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px] mr-1">verified</span> Verified
+                                </span>
+<span class="font-body-sm text-body-sm text-outline flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1">location_on</span> 3.1 mi
+                                </span>
+</div>
+</div>
+</div>
+<div class="px-md py-sm bg-surface-bright border-t border-surface-container flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">$55/hr</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline active:opacity-70 transition-opacity">View Profile</button>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl shadow-lg dark:shadow-none bg-surface/70 dark:bg-surface-container/70 backdrop-blur-xl md:hidden">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 pb-safe border-t-0"> <!-- explicitly remove top border per style guidance -->
+<!-- Explore (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</a>
+<!-- Bookings (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 active:scale-90 transition-transform px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</a>
+<!-- Post (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 active:scale-90 transition-transform px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-sm text-label-sm mt-1">Post</span>
+</a>
+<!-- Messages (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 active:scale-90 transition-transform px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-sm text-label-sm mt-1">Messages</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 active:scale-90 transition-transform px-2 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Floating Action Button (FAB) - Contextual to Home/Explore for quick action -->
+<button class="fixed bottom-24 right-4 z-40 bg-primary text-on-primary w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:opacity-90 active:scale-95 transition-all duration-200 md:hidden">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+<script>
+        // Simple header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.replace('bg-surface/70', 'bg-surface/90');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('bg-surface/90', 'bg-surface/70');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Alerts - HandyLink Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed-variant": "#003da9",
+                    "secondary-fixed-dim": "#4edea3",
+                    "outline": "#737687",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#fff1ed",
+                    "outline-variant": "#c3c6d8",
+                    "tertiary": "#9e3100",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container": "#e5eeff",
+                    "surface-tint": "#0052dd",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed": "#00174c",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-container": "#c84000",
+                    "on-surface": "#0b1c30",
+                    "secondary": "#006c49",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#6ffbbe",
+                    "secondary-container": "#6cf8bb",
+                    "surface": "#f8f9ff",
+                    "on-primary-container": "#f3f3ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary-fixed": "#dbe1ff",
+                    "on-background": "#0b1c30",
+                    "on-secondary-fixed": "#002113",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0f62fe",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed": "#390c00",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#213145",
+                    "primary": "#004ccd",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#424656"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "container-max": "1280px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "3xl": "64px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Mobile Top App Bar -->
+<header class="md:hidden bg-surface/70 backdrop-blur-xl fixed top-0 w-full z-50 bg-surface-container-low shadow-sm transition-all duration-200 active:scale-95 flex items-center justify-between px-md py-sm w-full">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-variant/50 p-2 rounded-full" data-icon="menu">menu</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">HandyLink Admin</h1>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-variant/50 p-2 rounded-full" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- Desktop Navigation Drawer -->
+<aside class="hidden md:flex bg-surface h-full w-80 rounded-r-xl bg-surface-container shadow-xl flex flex-col h-full py-lg fixed left-0 top-0 z-40 overflow-y-auto">
+<div class="px-lg pb-xl border-b border-surface-variant">
+<h2 class="font-headline-sm text-headline-sm font-black text-primary mb-4">HandyLink Admin</h2>
+<div class="flex items-center gap-md">
+<img alt="Admin Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A professional headshot of a system administrator in a brightly lit modern office setting. The administrator looks confident and approachable. Minimalist light-mode style with soft blue and white background elements. The image conveys trust and seamless utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6rTaSt0gDJNnyvJzJ7bJ1FGlw9ptz4bO6M5Dp0kDYg53FUcegFpA0qwSkU8JtYoNHkHFyDWkhDtkXTCVoTk1ikmPpv8vMPFZtG6AaNTiMVu60mtUpcc8ZY_IGp6Lr1eeZh1ZjwqeUW50D6CRuX2Tkimi_iQozonzvCw9UxmPxL6wwPyi3FhUarsYZEFJkijv4pZo8dvQiSJjotbVslDYR9rD6LRdXLC0w6pSGVs7xoC3pXOqHUK0"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">System Administrator</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">admin@handylink.com</p>
+<p class="font-label-sm text-label-sm text-primary">Super User</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 mt-md font-body-md text-body-md flex flex-col gap-xs">
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant m-2 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="monetization_on">monetization_on</span>
+                Platform Fees
+            </a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant m-2 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Category Manager
+            </a>
+<a class="flex items-center gap-md px-lg py-sm bg-secondary-container text-on-secondary-container font-bold rounded-lg m-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="notification_important" style="font-variation-settings: 'FILL' 1;">notification_important</span>
+                Global Alerts
+            </a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant m-2 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                Audit Logs
+            </a>
+<a class="flex items-center gap-md px-lg py-sm text-on-surface-variant m-2 hover:bg-surface-container-highest transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Support Tickets
+            </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-80 pt-[72px] md:pt-0 pb-24 md:pb-0 min-h-screen flex flex-col p-md md:p-lg xl:p-xl gap-xl max-w-container-max mx-auto w-full">
+<header class="mb-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Global System Alerts</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Broadcast critical information to all users across the platform.</p>
+</header>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-xl items-start">
+<!-- Compose Alert Section (Takes up 2 cols on wide screens) -->
+<section class="xl:col-span-2 flex flex-col gap-lg">
+<div class="glass-panel border border-surface-variant rounded-xl p-lg md:p-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary" data-icon="campaign">campaign</span>
+                        Compose New Alert
+                    </h3>
+<form class="flex flex-col gap-md">
+<!-- Audience Selection -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Target Audience</label>
+<div class="flex flex-wrap gap-md">
+<label class="flex items-center gap-sm cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-primary transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="audience" type="radio" value="all"/>
+<span class="font-body-sm text-body-sm font-medium">All Users</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-primary transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+<input class="text-primary focus:ring-primary h-4 w-4" name="audience" type="radio" value="artisans"/>
+<span class="font-body-sm text-body-sm font-medium">Artisans Only</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-primary transition-colors has-[:checked]:bg-primary-container has-[:checked]:border-primary has-[:checked]:text-on-primary-container">
+<input class="text-primary focus:ring-primary h-4 w-4" name="audience" type="radio" value="customers"/>
+<span class="font-body-sm text-body-sm font-medium">Customers Only</span>
+</label>
+</div>
+</div>
+<!-- Alert Severity -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Severity Level</label>
+<div class="grid grid-cols-3 gap-sm">
+<label class="text-center cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-surface-tint transition-colors has-[:checked]:bg-surface-container has-[:checked]:border-surface-tint">
+<input checked="" class="sr-only" name="severity" type="radio" value="info"/>
+<span class="material-symbols-outlined text-surface-tint block mb-xs" data-icon="info">info</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium block">Information</span>
+</label>
+<label class="text-center cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-tertiary transition-colors has-[:checked]:bg-tertiary-container/20 has-[:checked]:border-tertiary">
+<input class="sr-only" name="severity" type="radio" value="warning"/>
+<span class="material-symbols-outlined text-tertiary block mb-xs" data-icon="warning">warning</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium block">Warning</span>
+</label>
+<label class="text-center cursor-pointer p-sm border border-outline-variant rounded-lg hover:border-error transition-colors has-[:checked]:bg-error-container has-[:checked]:border-error">
+<input class="sr-only" name="severity" type="radio" value="critical"/>
+<span class="material-symbols-outlined text-error block mb-xs" data-icon="emergency">emergency</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium block">Critical</span>
+</label>
+</div>
+</div>
+<!-- Alert Title -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="alertTitle">Alert Title</label>
+<input class="w-full bg-[#F1F5F9] border-transparent focus:border-primary focus:ring-0 rounded-lg p-3 font-body-md text-body-md text-on-surface shadow-sm transition-all focus:shadow-[0_0_0_3px_rgba(0,76,205,0.2)]" id="alertTitle" placeholder="e.g., Scheduled Maintenance" type="text"/>
+</div>
+<!-- Alert Body -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="alertBody">Message Body</label>
+<textarea class="w-full bg-[#F1F5F9] border-transparent focus:border-primary focus:ring-0 rounded-lg p-3 font-body-md text-body-md text-on-surface shadow-sm transition-all focus:shadow-[0_0_0_3px_rgba(0,76,205,0.2)] resize-none" id="alertBody" placeholder="Enter the detailed message here..." rows="4"></textarea>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-end gap-md mt-sm pt-md border-t border-surface-variant">
+<button class="px-6 py-4 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-variant/50 transition-colors" type="button">
+                                Save Draft
+                            </button>
+<button class="px-6 py-4 rounded-lg bg-gradient-to-r from-primary to-[#003da9] text-on-primary font-label-md text-label-md shadow-[0_12px_24px_rgba(0,76,205,0.1)] hover:shadow-[0_12px_24px_rgba(0,76,205,0.2)] hover:scale-[1.02] transition-all flex items-center gap-sm" type="submit">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+                                Publish Alert
+                            </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Alert History Section (Takes up 1 col on wide screens) -->
+<section class="xl:col-span-1 flex flex-col gap-lg h-full">
+<div class="bg-surface-container-low border border-surface-variant rounded-xl p-lg md:p-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] h-full flex flex-col">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="history">history</span>
+                            Recent Alerts
+                        </h3>
+<button class="text-primary hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- History List -->
+<div class="flex-1 overflow-y-auto pr-2 space-y-md">
+<!-- History Item 1 -->
+<div class="p-sm bg-surface rounded-lg border border-surface-variant hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-surface-container text-surface-tint font-label-sm text-[10px] font-bold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[12px]" data-icon="info">info</span> All Users
+                                </span>
+<span class="font-label-sm text-label-sm text-outline-variant">2h ago</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary transition-colors">Holiday Service Hours</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Please note that platform support will be operating on reduced hours during the upcoming national holiday weekend.</p>
+</div>
+<!-- History Item 2 -->
+<div class="p-sm bg-surface rounded-lg border border-surface-variant hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label-sm text-[10px] font-bold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span> Artisans
+                                </span>
+<span class="font-label-sm text-label-sm text-outline-variant">Yesterday</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary transition-colors">Payout Processing Delay</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Due to a bank holiday, scheduled payouts for this week will be delayed by one business day. We apologize for any inconvenience.</p>
+</div>
+<!-- History Item 3 -->
+<div class="p-sm bg-surface rounded-lg border border-surface-variant hover:border-outline-variant transition-colors group">
+<div class="flex justify-between items-start mb-xs">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-surface-container text-surface-tint font-label-sm text-[10px] font-bold tracking-wider uppercase">
+<span class="material-symbols-outlined text-[12px]" data-icon="info">info</span> Customers
+                                </span>
+<span class="font-label-sm text-label-sm text-outline-variant">Oct 12</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary transition-colors">New Category: Smart Home</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">We've just launched our new Smart Home Installation category! Browse verified experts to help set up your devices today.</p>
+</div>
+</div>
+<button class="w-full mt-md py-2 border-t border-surface-variant text-primary font-label-md text-label-md hover:bg-surface-variant/30 transition-colors flex items-center justify-center gap-xs">
+                        View All History <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="md:hidden bg-surface/70 backdrop-blur-xl fixed bottom-0 w-full z-50 bg-surface-container-low shadow-lg flex justify-around items-center h-16 w-full px-sm pb-safe transition-transform duration-300 active:scale-90 border-t-0">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Users</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings_suggest">settings_suggest</span>
+<span class="font-label-sm text-label-sm">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>

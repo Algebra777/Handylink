@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Success</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#6ffbbe",
+                      "surface-tint": "#0052dd",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#fff1ed",
+                      "on-surface": "#0b1c30",
+                      "on-primary-container": "#f3f3ff",
+                      "primary-container": "#0f62fe",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary-container": "#c84000",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "on-secondary-container": "#00714d",
+                      "on-surface-variant": "#424656",
+                      "background": "#f8f9ff",
+                      "secondary": "#006c49",
+                      "tertiary": "#9e3100",
+                      "outline": "#737687",
+                      "secondary-container": "#6cf8bb",
+                      "surface-container": "#e5eeff",
+                      "on-secondary-fixed": "#002113",
+                      "surface-bright": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-primary-fixed": "#00174c",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container-high": "#dce9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-variant": "#d3e4fe",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "inverse-surface": "#213145",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#003da9",
+                      "outline-variant": "#c3c6d8",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-background": "#0b1c30",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#ffdbd0",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface": "#f8f9ff",
+                      "primary": "#004ccd",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "base": "4px",
+                      "container-max": "1280px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "gutter": "24px",
+                      "3xl": "64px",
+                      "2xl": "48px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              },
+              "animation": {
+                  "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+                  "bounce-gentle": "bounceGentle 2s infinite"
+              },
+              "keyframes": {
+                  "fadeInUp": {
+                      "0%": { opacity: 0, transform: "translateY(20px)" },
+                      "100%": { opacity: 1, transform: "translateY(0)" }
+                  },
+                  "bounceGentle": {
+                      "0%, 100%": { transform: "translateY(0)" },
+                      "50%": { transform: "translateY(-10px)" }
+                  }
+              }
+            },
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col justify-center items-center overflow-x-hidden antialiased">
+<main class="w-full max-w-md mx-auto px-md py-2xl flex flex-col items-center">
+<!-- Celebratory Visual Section -->
+<div class="relative w-full aspect-square max-w-[300px] mb-lg flex justify-center items-center">
+<!-- STITCH_SHADER_START:ANIMATION_12 class="absolute inset-0 w-full h-full rounded-full opacity-60" -->
+<div class="absolute inset-0 w-full h-full rounded-full opacity-60" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_12" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_12');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 center = vec2(0.5, 0.5);
+    
+    // Create a rotating "energy" field
+    float dist = distance(uv, center);
+    float angle = atan(uv.y - center.y, uv.x - center.x);
+    
+    // Pulsing core
+    float pulse = 0.5 + 0.5 * sin(u_time * 2.0);
+    float ring = smoothstep(0.3 * pulse, 0.31 * pulse, dist) - smoothstep(0.4 * pulse, 0.41 * pulse, dist);
+    
+    // Swirling colors
+    vec3 color1 = vec3(0.05, 0.38, 1.0); // Primary Blue #0F62FE
+    vec3 color2 = vec3(0.06, 0.72, 0.5); // Secondary Green #10B981
+    
+    float wave = sin(dist * 15.0 - u_time * 3.0 + angle * 3.0);
+    vec3 finalColor = mix(color1, color2, 0.5 + 0.5 * wave);
+    
+    // Glow and vignette
+    float glow = exp(-dist * 4.0) * pulse;
+    finalColor += color1 * glow;
+    
+    // Mask with a circle
+    float alpha = smoothstep(0.5, 0.48, dist);
+    
+    gl_FragColor = vec4(finalColor * (ring + glow * 0.5), alpha * 0.8);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_12 -->
+<div class="relative z-10 animate-bounce-gentle bg-secondary-container text-on-secondary-container rounded-full p-xl shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Headline -->
+<div class="text-center mb-xl animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0;">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-sm">Booking Confirmed!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your service has been successfully scheduled.</p>
+</div>
+<!-- Summary Card -->
+<div class="w-full bg-surface-container-low rounded-xl p-md border border-outline-variant shadow-sm mb-2xl animate-fade-in-up" style="animation-delay: 0.4s; opacity: 0;">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling electrician named Alex Morgan, wearing a clean work uniform, bright lighting, high quality, realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOLclbjPIYZq6fo6h5YFd0wY1d1gtdKV9ZBZlkW1FUShyGi2LZ-KZ1puJ2HZKOj3g3t87AByVmCXTTn38DNcggac2klt_GRRJQW6KknCJKVWKPClJX6uhnTrKf6UsFpC1xU7TIWOydScP82dAY2byAr9kyYq5sdXd7XxWyzFUB-czd5yBcgM7yT5o0pT1t09t4h_zODoW5BOSxbBoi1vGfW-wwIKk--SJtXH3aAdKbCrxs3Ft2-61U"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Electrical Repair</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">with Alex Morgan</p>
+</div>
+<div class="ml-auto bg-secondary-container/50 px-sm py-xs rounded-full">
+<span class="font-label-sm text-label-sm text-on-secondary-container flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                        Verified
+                    </span>
+</div>
+</div>
+<hr class="border-outline-variant/50 my-sm"/>
+<div class="flex items-center gap-sm mt-md">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-size: 18px;">calendar_today</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Oct 24, 2023</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">at 2:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col gap-sm animate-fade-in-up" style="animation-delay: 0.6s; opacity: 0;">
+<button class="w-full py-md bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:shadow-md transition-shadow active:scale-95 duration-200">
+                View My Bookings
+            </button>
+<button class="w-full py-md bg-transparent border border-outline text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-variant/50 transition-colors active:scale-95 duration-200">
+                Back to Home
+            </button>
+</div>
+</main>
+</body></html>

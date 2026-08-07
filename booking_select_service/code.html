@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Service - HandyLink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "primary-container": "#0f62fe",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "on-secondary-fixed": "#002113",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "secondary": "#006c49",
+                    "tertiary-container": "#c84000",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0b1c30",
+                    "surface-variant": "#d3e4fe",
+                    "on-surface-variant": "#424656",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#0052dd",
+                    "on-primary-fixed-variant": "#003da9",
+                    "primary": "#004ccd",
+                    "surface": "#f8f9ff",
+                    "outline-variant": "#c3c6d8",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#390c00",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#f3f3ff",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#737687",
+                    "on-primary-fixed": "#00174c",
+                    "on-background": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "inverse-primary": "#b4c5ff",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "on-secondary-container": "#00714d",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#fff1ed",
+                    "tertiary": "#9e3100",
+                    "surface-container-highest": "#d3e4fe",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-container": "#6cf8bb",
+                    "secondary-fixed": "#6ffbbe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "3xl": "64px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "gutter": "24px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg-mobile": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-16">
+<!-- TopAppBar (Transactional - Hidden Navigation Shell on mobile/desktop intent implies focused journey, but user requested title "Select Service", we will render a simplified header) -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md shadow-sm h-16 flex justify-between items-center px-4 md:px-gutter">
+<button aria-label="Back" class="text-on-surface-variant hover:bg-primary/5 transition-colors p-2 rounded-full flex items-center justify-center active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface tracking-tight">Select Service</h1>
+<div class="w-10"></div> <!-- Placeholder for balance -->
+</header>
+<main class="flex-1 w-full max-w-container-max mx-auto px-4 md:px-gutter py-lg md:py-2xl flex flex-col lg:flex-row gap-lg md:gap-2xl relative">
+<!-- Left Content Column -->
+<div class="w-full lg:w-2/3 flex flex-col gap-xl">
+<!-- Progress Stepper -->
+<div class="w-full">
+<div class="flex items-center justify-between relative">
+<!-- Progress Line Background -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-surface-variant z-0 rounded-full"></div>
+<!-- Active Progress Line -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-[25%] h-1 bg-primary z-0 rounded-full transition-all duration-300"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-sm">1</div>
+<span class="font-label-sm text-label-sm text-primary hidden md:block">Service</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md border-2 border-surface">2</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:block">Schedule</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md border-2 border-surface">3</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:block">Details</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-md text-label-md border-2 border-surface">4</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden md:block">Payment</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-md">
+<h2 class="font-headline-md text-headline-md text-on-surface">What do you need help with?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select a service category to see pricing for Alex Morgan.</p>
+</div>
+<!-- Service Selection Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Service Option 1 (Selected state example) -->
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="service" type="radio" value="electrical_repair"/>
+<div class="h-full p-4 rounded-xl border-2 border-primary bg-primary/5 flex flex-col gap-sm shadow-sm transition-all duration-200 hover:shadow-md">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" data-icon="electrical_services">electrical_services</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-primary bg-primary flex items-center justify-center text-on-primary peer-checked:opacity-100 opacity-0 transition-opacity">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-[16px] leading-[24px] font-semibold text-on-surface">Electrical Repair</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">Troubleshooting and repair of outlets, switches, and fixtures.</p>
+<div class="mt-2 pt-3 border-t border-primary/20 flex justify-between items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Starting from</span>
+<span class="font-headline-sm text-[18px] leading-[24px] font-bold text-primary">$85/hr</span>
+</div>
+</div>
+</label>
+<!-- Service Option 2 -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="service" type="radio" value="wiring_installation"/>
+<div class="h-full p-4 rounded-xl border border-outline-variant bg-surface flex flex-col gap-sm shadow-sm transition-all duration-200 hover:border-primary/50 hover:shadow-md peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-2 peer-checked:bg-primary-container peer-checked:text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="cable">cable</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent peer-checked:border-primary peer-checked:bg-primary peer-checked:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-[16px] leading-[24px] font-semibold text-on-surface">Wiring Installation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">New wiring for appliances, lighting, or home additions.</p>
+<div class="mt-2 pt-3 border-t border-outline-variant/30 flex justify-between items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Fixed Price</span>
+<span class="font-headline-sm text-[18px] leading-[24px] font-bold text-on-surface">$150+</span>
+</div>
+</div>
+</label>
+<!-- Service Option 3 -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="service" type="radio" value="diagnostic"/>
+<div class="h-full p-4 rounded-xl border border-outline-variant bg-surface flex flex-col gap-sm shadow-sm transition-all duration-200 hover:border-primary/50 hover:shadow-md peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" data-icon="troubleshoot">troubleshoot</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-[16px] leading-[24px] font-semibold text-on-surface">Diagnostic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">Thorough inspection to identify electrical faults.</p>
+<div class="mt-2 pt-3 border-t border-outline-variant/30 flex justify-between items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Flat Rate</span>
+<span class="font-headline-sm text-[18px] leading-[24px] font-bold text-on-surface">$60</span>
+</div>
+</div>
+</label>
+<!-- Service Option 4 -->
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="service" type="radio" value="panel_upgrade"/>
+<div class="h-full p-4 rounded-xl border border-outline-variant bg-surface flex flex-col gap-sm shadow-sm transition-all duration-200 hover:border-primary/50 hover:shadow-md peer-checked:border-2 peer-checked:border-primary peer-checked:bg-primary/5">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center mb-2">
+<span class="material-symbols-outlined" data-icon="power">power</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-[16px] leading-[24px] font-semibold text-on-surface">Panel Upgrade</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">Upgrading main electrical panel to handle more load.</p>
+<div class="mt-2 pt-3 border-t border-outline-variant/30 flex justify-between items-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Consultation required</span>
+<span class="font-headline-sm text-[18px] leading-[24px] font-bold text-on-surface">Quote</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Right Side: Artisan Profile / Booking Summary Sticky Card -->
+<div class="w-full lg:w-1/3 mt-lg lg:mt-0">
+<div class="sticky top-[88px] bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/20 overflow-hidden backdrop-blur-xl bg-opacity-70 p-6 flex flex-col gap-md">
+<!-- Artisan Info -->
+<div class="flex items-center gap-4 pb-4 border-b border-outline-variant/20">
+<div class="relative w-16 h-16 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of Alex Morgan, a male electrician in his 40s, wearing a clean work uniform and a friendly smile. Bright, natural lighting, blurred background of a well-kept workshop. Trustworthy, professional, and approachable mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbhwmzAAtVbqFAW5tQlurbw_z8qsr5s5K0-bEkCJT_6ZE8u4ZTFh8Xo84IaYE2l1df3dzgqahDgFIo42RlTrAPZp_vo7ohESftkDCCBn-vimJC-yuYA2Ge0J5Pr0Dpyleh8gbVNPA4v9KFgbUBkuj7wplTm8BF4zaetUQEZbu6rftW2n_jLML7bxFSriKudR_H0WCselQZ6CRu2G4Rc-BCrDjjX-KIMvLeY7LDg9aA3-UwtUF_quJX"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Alex Morgan</h3>
+<div class="flex items-center gap-2 mt-1">
+<div class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span>
+                                Verified Pro
+                            </div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] text-amber-500 mr-1" data-icon="star" data-weight="fill">star</span>
+                                4.9 (120)
+                            </span>
+</div>
+</div>
+</div>
+<!-- Selected Service Summary (Updates via JS ideally) -->
+<div>
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider">Selected Service</h4>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-lg text-body-lg text-on-surface font-medium">Electrical Repair</span>
+<span class="font-headline-sm text-[18px] text-primary font-bold">$85/hr</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Estimated duration: 1-2 hours</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/20">
+<button class="w-full bg-primary text-on-primary py-[16px] rounded-lg font-label-md text-label-md shadow-sm hover:shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-fixed-variant">
+                        Continue
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center font-body-sm text-[12px] text-on-surface-variant mt-3">You won't be charged yet.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Suppressed: Transactional screen -->
+<script>
+        // Simple JS to update the summary card based on selection
+        document.querySelectorAll('input[name="service"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const summaryTitle = document.querySelector('.sticky span.font-body-lg');
+                const summaryPrice = document.querySelector('.sticky span.font-headline-sm.text-primary');
+                
+                const selectedLabel = e.target.closest('label');
+                const title = selectedLabel.querySelector('h3').textContent;
+                const price = selectedLabel.querySelector('.font-headline-sm:not(h3)').textContent;
+
+                summaryTitle.textContent = title;
+                
+                // Keep the primary color styling but update value
+                summaryPrice.textContent = price;
+            });
+        });
+    </script>
+</body></html>

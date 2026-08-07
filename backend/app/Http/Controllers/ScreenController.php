@@ -20,6 +20,17 @@ class ScreenController extends Controller
             abort(404);
         }
 
-        return view('screen', ['screenPath' => $screenPath]);
+        $authBanner = '';
+
+        if ($screen === 'home') {
+            $authBanner = <<<HTML
+<div class="flex justify-end gap-2 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur">
+    <a href="/login" class="rounded-full border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-blue-600 hover:text-blue-600">Sign in</a>
+    <a href="/register" class="rounded-full bg-blue-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-blue-700">Create account</a>
+</div>
+HTML;
+        }
+
+        return view('screen', ['screenPath' => $screenPath, 'authBanner' => $authBanner]);
     }
 }

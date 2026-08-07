@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('business_name');
-            $table->string('category')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
             $table->text('description')->nullable();
             $table->decimal('hourly_rate', 10, 2)->default(0);
             $table->string('city')->nullable();

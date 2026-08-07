@@ -6,6 +6,7 @@
     <title>HandyLink Screen</title>
 </head>
 <body>
+    {!! $authBanner !!}
     {!! file_get_contents($screenPath) !!}
 </body>
 </html>

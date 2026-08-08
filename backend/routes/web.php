@@ -39,8 +39,22 @@ Route::get('/artisans/search', function () {
 })->name('artisans.search');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    $user = auth()->user();
+
+    if (! $user) {
+        return redirect()->route('login');
+    }
+
+    return redirect()->route($user->role === 'artisan' ? 'artisan.dashboard' : 'customer.dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/customer-dashboard', function () {
+    return view('dashboard.customer');
+})->middleware(['auth'])->name('customer.dashboard');
+
+Route::get('/artisan-dashboard', function () {
+    return view('dashboard.artisan');
+})->middleware(['auth'])->name('artisan.dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

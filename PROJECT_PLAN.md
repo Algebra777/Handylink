@@ -4,6 +4,12 @@
 
 This repository currently contains 25 static HTML prototype screens styled with Tailwind via CDN. There is no backend, no database, no package manager, and no Git history yet. The goal is to turn this into a working marketplace app for customers, artisans, admins, bookings, reviews, payments, and messaging while preserving the existing screens as-is.
 
+## Current implementation status
+
+- Phase 4 (authentication and role-based access): completed.
+- Registration, login, and role-based redirect are working end to end and verified by the test suite: 26/26 tests passing.
+- The current dashboard pages are temporary Breeze-style placeholders. They must be replaced in a later phase with the real prototype dashboard screens from the original set of 25 HTML screens, and this should not be treated as finished work.
+
 ## Recommended stack
 
 - Backend: Laravel (PHP)

@@ -10,10 +10,10 @@ class ScreenController extends Controller
     public function show(Request $request, string $screen = 'home')
     {
         $screenPath = match ($screen) {
-            'home' => base_path('../handylink_home_1/code.html'),
-            'find-artisans' => base_path('../find_artisans/code.html'),
-            'booking-select-service' => base_path('../booking_select_service/code.html'),
-            default => base_path('../handylink_home_1/code.html'),
+            'home' => base_path('../handylink_home_1/home.html'),
+            'find-artisans' => base_path('../find_artisans/search-results.html'),
+            'booking-select-service' => base_path('../booking_select_service/booking-select-service.html'),
+            default => base_path('../handylink_home_1/home.html'),
         };
 
         if (! file_exists($screenPath)) {

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Bookings - HandyLink</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#c84000",
+                      "on-background": "#191b24",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#d8d9e6",
+                      "on-surface": "#191b24",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#eff0fd",
+                      "primary": "#004ccd",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-container-low": "#f2f3ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "outline-variant": "#c3c6d8",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174c",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#f3f3ff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "surface-bright": "#faf8ff",
+                      "inverse-surface": "#2e303a",
+                      "secondary": "#006c49",
+                      "secondary-container": "#6cf8bb",
+                      "on-tertiary-container": "#fff1ed",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#6ffbbe",
+                      "outline": "#737687",
+                      "surface-variant": "#e1e1ee",
+                      "inverse-primary": "#b4c5ff",
+                      "tertiary": "#9e3100",
+                      "surface-container": "#ecedfa",
+                      "surface-container-highest": "#e1e1ee",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#424656",
+                      "background": "#faf8ff",
+                      "on-primary-fixed-variant": "#003da9",
+                      "surface-tint": "#0052dd",
+                      "on-secondary-container": "#00714d",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e7e7f4",
+                      "on-secondary": "#ffffff",
+                      "surface": "#faf8ff",
+                      "on-secondary-fixed": "#002113",
+                      "primary-container": "#0f62fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "table-row-height": "48px",
+                      "topbar-height": "64px",
+                      "container-padding": "32px",
+                      "gutter": "24px",
+                      "sidebar-width": "240px"
+              },
+              "fontFamily": {
+                      "title-sm": [
+                              "Poppins"
+                      ],
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Poppins"
+                      ],
+                      "display-lg": [
+                              "Poppins"
+                      ],
+                      "mono-data": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "table-text": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "table-text": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-container-lowest h-topbar-height fixed top-0 right-0 left-sidebar-width z-10 border-b border-outline-variant flex justify-between items-center px-container-padding transition-colors duration-200">
+<div class="flex items-center gap-4">
+<!-- Search Bar on Left -->
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant w-5 h-5">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-lg font-body-base text-body-base text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="px-2 py-1 bg-surface-container border border-outline-variant rounded font-mono-data text-[10px] text-on-surface-variant">⌘K</kbd>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors relative">
+<span class="material-symbols-outlined w-6 h-6">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<div class="h-8 w-px bg-outline-variant"></div>
+<button class="flex items-center gap-3 hover:bg-surface-container-low py-1.5 px-3 rounded-lg transition-colors">
+<img alt="Admin Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, professional headshot of an administrator in a light-filled office setting, crisp focus, soft corporate lighting, perfect for a dashboard profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7J1dbV18iXsPDCot5d0iYO_PZAiu4G2pSl5hxgY4jfYr45Pe9-rCkqaAKHmdSQ0hOpUrtYw_EeV522defrkNE1P_rN4smlFO8rs3oPuVvxeyRiOQdyFVZZHoz2ezSIuJ2UxAouq_ll2WpJcAscRi4o4jEyEBVsZjzKN7dm1QQMDIadPSpBCpgzY0eKPrQjN4QJGSCF3bW4WmCbgNZNflOQwXOfEkoRrPVmJE5yyslEumnD9PT_5eL"/>
+<div class="flex flex-col items-start">
+<span class="font-title-sm text-sm text-on-surface leading-tight">Admin User</span>
+<span class="font-body-base text-xs text-on-surface-variant leading-tight">Super Admin</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<nav class="bg-surface-container-lowest w-sidebar-width h-screen fixed left-0 top-0 border-r border-outline-variant flex flex-col z-20">
+<!-- Logo Area -->
+<div class="h-topbar-height flex items-center px-6 border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl">build</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary leading-tight">HandyLink</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Admin Console</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-1 custom-scrollbar">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">dashboard</span>
+<span class="font-body-base text-body-base">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">group</span>
+<span class="font-body-base text-body-base">Users</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">engineering</span>
+<span class="font-body-base text-body-base">Artisans</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">verified_user</span>
+<span class="font-body-base text-body-base">Verification Queue</span>
+</a>
+<!-- ACTIVE TAB -->
+<a class="flex items-center gap-3 bg-primary-container/10 text-primary border-l-4 border-primary px-4 py-2 rounded-r-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-body-base text-body-base font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">gavel</span>
+<span class="font-body-base text-body-base">Disputes</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">payments</span>
+<span class="font-body-base text-body-base">Payments &amp; Payouts</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">payments</span>
+<span class="font-body-base text-body-base">Revenue</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">category</span>
+<span class="font-body-base text-body-base">Categories</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">confirmation_number</span>
+<span class="font-body-base text-body-base">Promo Codes</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">article</span>
+<span class="font-body-base text-body-base">CMS</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">campaign</span>
+<span class="font-body-base text-body-base">Announcements</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">support_agent</span>
+<span class="font-body-base text-body-base">Support Tickets</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">analytics</span>
+<span class="font-body-base text-body-base">Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">security</span>
+<span class="font-body-base text-body-base">Fraud Detection</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">description</span>
+<span class="font-body-base text-body-base">Reports</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95 group mt-auto border-t border-outline-variant pt-4" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-on-surface transition-colors">settings</span>
+<span class="font-body-base text-body-base">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-sidebar-width mt-topbar-height h-[calc(100vh-64px)] overflow-y-auto p-container-padding bg-background">
+<!-- Page Header & Breadcrumbs -->
+<div class="mb-gutter flex flex-col gap-2">
+<nav class="flex items-center gap-2 text-on-surface-variant font-body-base text-[12px]">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Bookings</span>
+</nav>
+<div class="flex justify-between items-end">
+<h1 class="font-headline-md text-headline-md text-on-background">Manage Bookings</h1>
+<button class="bg-primary text-on-primary font-title-sm text-sm px-4 py-2 rounded-[16px] flex items-center gap-2 hover:bg-primary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Booking
+                </button>
+</div>
+</div>
+<!-- Filter & Action Bar (Bento-style layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-gutter">
+<!-- Status Tabs -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_2px_4px_-2px_rgba(0,0,0,0.1)] p-1 flex overflow-x-auto hide-scrollbar">
+<button class="px-4 py-2 rounded-lg bg-primary-container/10 text-primary font-title-sm text-sm whitespace-nowrap transition-colors">All (1,248)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">Pending (42)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">Confirmed (156)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">In Progress (89)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">Completed (930)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">Cancelled (28)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-title-sm text-sm whitespace-nowrap transition-colors">Disputed (3)</button>
+</div>
+<!-- Search -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0_2px_4px_-2px_rgba(0,0,0,0.1)] p-1 flex">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-full min-h-[40px] pl-10 pr-4 bg-transparent border-none rounded-lg font-body-base text-body-base text-on-surface focus:ring-0 placeholder:text-on-surface-variant/60" placeholder="Search ID, Customer, Artisan..." type="text"/>
+</div>
+</div>
+<!-- Additional Filters -->
+<div class="lg:col-span-12 flex flex-wrap gap-4 items-center">
+<!-- Date Picker -->
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-base text-sm hover:border-outline transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_today</span>
+<span>Oct 1, 2023 - Oct 31, 2023</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant ml-2">arrow_drop_down</span>
+</button>
+<!-- Category Filter -->
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-on-surface font-body-base text-sm hover:border-outline transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">category</span>
+<span>All Categories</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant ml-2">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-2 text-primary font-title-sm text-sm hover:underline ml-auto">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    More Filters
+                </button>
+</div>
+</div>
+<!-- Data Table Container (Glassmorphism-esque clean card) -->
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest/50 backdrop-blur-sm">
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Booking ID</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Customer</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Artisan</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Category</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap">Date / Time</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap text-right">Amount</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap text-center">Status</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap text-center">Payment</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold whitespace-nowrap"></th>
+</tr>
+</thead>
+<tbody class="font-table-text text-table-text text-on-surface divide-y divide-surface-container-high">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors h-table-row-height group cursor-pointer">
+<td class="px-6 py-3 whitespace-nowrap">
+<span class="font-mono-data text-mono-data text-primary font-medium">#BK-9042</span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary font-title-sm text-sm">JD</div>
+<span class="font-medium">John Doe</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img alt="Artisan" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Professional headshot of a plumber in uniform, smiling slightly, good lighting, clear background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsQVi2lplOuWDnzNesaphUaJhTkZJYTL1nsEk9L-p4XfUrLaVnm_bFyoXT3boLPAfJy2Pah15kyuMNwhOYBNe-V8A5XtcGNatDJqOnNJRqPTUEX7q72P40VKokGvJqSi3sUGGAJpeIaEPcWjKVr5_Nyk55H_v4qCD6HQlmYBGRGn8a0WaKixGIsDQFcaAu2BWjCg3AM5ysjdC8ilwNIkR_D3v94KQmTNV6WMReCMjLcwBfgVI26BBW"/>
+<span>Mike Smith</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">Plumbing</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">
+<div>Oct 24, 2023</div>
+<div class="text-[11px]">10:00 AM - 12:00 PM</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right font-mono-data text-mono-data font-medium">$150.00</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-caps text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1.5"></span>
+                                    In Progress
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface-variant border border-outline-variant">
+                                    Paid
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right">
+<button class="text-on-surface-variant hover:text-primary p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors h-table-row-height group cursor-pointer">
+<td class="px-6 py-3 whitespace-nowrap">
+<span class="font-mono-data text-mono-data text-primary font-medium">#BK-9041</span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-title-sm text-sm">SA</div>
+<span class="font-medium">Sarah Adams</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-title-sm text-sm">LJ</div>
+<span>Lisa Johnson</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">House Cleaning</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">
+<div>Oct 24, 2023</div>
+<div class="text-[11px]">02:00 PM - 04:00 PM</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right font-mono-data text-mono-data font-medium">$85.00</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-[11px] font-semibold border border-outline-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-outline mr-1.5"></span>
+                                    Pending
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-low text-on-surface-variant border border-outline-variant">
+                                    Pending
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right">
+<button class="text-on-surface-variant hover:text-primary p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors h-table-row-height group cursor-pointer">
+<td class="px-6 py-3 whitespace-nowrap">
+<span class="font-mono-data text-mono-data text-primary font-medium">#BK-9040</span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img alt="Customer" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Portrait of an older gentleman customer, smiling, casual attire, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm5ICY9SYvgmV4wO7YQ_vnMjq28vya5Yqo25eyk0H_NemeRPP0yiD_BYdFSJO-PcO-OBGP1Nz3BqDCHZ6H-8BjdBBDRkGcLHwZvmZSFexpc8Rd1_uGqz_UJ_4uTt9GhecsRj4zaDBbQWzZwPjJztlbl81alPH6kU7UmSc-viK8OClhcDZkFWNmQIRLmv3Zwln1qDt7Sw10BMlBJudBnFqsZZhQKd7HqEaazmTHuoofl4NcT3biLCsi"/>
+<span class="font-medium">Robert Wilson</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-title-sm text-sm">DT</div>
+<span>David Taylor</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">Electrical</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">
+<div>Oct 23, 2023</div>
+<div class="text-[11px]">09:00 AM - 11:30 AM</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right font-mono-data text-mono-data font-medium">$210.50</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-full bg-primary-container/10 text-primary font-label-caps text-[11px] font-semibold border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mr-1.5"></span>
+                                    Confirmed
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container text-on-surface-variant border border-outline-variant">
+                                    Paid
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right">
+<button class="text-on-surface-variant hover:text-primary p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors h-table-row-height group cursor-pointer bg-error-container/10">
+<td class="px-6 py-3 whitespace-nowrap">
+<span class="font-mono-data text-mono-data text-primary font-medium">#BK-9039</span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-title-sm text-sm">EM</div>
+<span class="font-medium">Emily Martinez</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-title-sm text-sm">CW</div>
+<span>Chris White</span>
+</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">Carpentry</td>
+<td class="px-6 py-3 whitespace-nowrap text-on-surface-variant">
+<div>Oct 23, 2023</div>
+<div class="text-[11px]">01:00 PM - 05:00 PM</div>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right font-mono-data text-mono-data font-medium">$450.00</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center justify-center px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-caps text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error mr-1.5"></span>
+                                    Disputed
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-low text-on-surface-variant border border-outline-variant">
+                                    Held
+                                </span>
+</td>
+<td class="px-6 py-3 whitespace-nowrap text-right">
+<button class="text-on-surface-variant hover:text-primary p-1 rounded transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<div class="text-sm text-on-surface-variant font-body-base">
+                    Showing <span class="font-medium text-on-surface">1</span> to <span class="font-medium text-on-surface">10</span> of <span class="font-medium text-on-surface">1,248</span> results
+                </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-low text-on-surface-variant transition-colors disabled:opacity-50" disabled="">Previous</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-medium text-sm">1</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-low text-on-surface-variant flex items-center justify-center font-medium text-sm transition-colors">2</button>
+<button class="w-8 h-8 rounded hover:bg-surface-container-low text-on-surface-variant flex items-center justify-center font-medium text-sm transition-colors">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 rounded hover:bg-surface-container-low text-on-surface-variant flex items-center justify-center font-medium text-sm transition-colors">125</button>
+</div>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-surface-container-low text-on-surface-variant transition-colors">Next</button>
+</div>
+</div>
+</div>
+</main>
+<style>
+        /* Custom Scrollbar for navigation and main content */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: theme('colors.outline-variant');
+            border-radius: 20px;
+        }
+        .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+            background-color: theme('colors.outline');
+        }
+        
+        /* Hide scrollbar for horizontal tabs */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

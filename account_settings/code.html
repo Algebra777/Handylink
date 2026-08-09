@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Settings - HandyLink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-error": "#ffffff",
+                "surface-dim": "#ccdbf3",
+                "surface-container-high": "#dce9ff",
+                "error-container": "#ffdad6",
+                "surface-tint": "#316763",
+                "on-tertiary-container": "#b1b4b6",
+                "on-background": "#0d1c2e",
+                "on-primary-container": "#87beb8",
+                "on-secondary-container": "#684000",
+                "secondary-fixed": "#ffddb8",
+                "secondary-fixed-dim": "#ffb95f",
+                "primary": "#003633",
+                "surface-container": "#e6eeff",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#9ad1cb",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed-variant": "#144f4b",
+                "error": "#ba1a1a",
+                "on-secondary": "#ffffff",
+                "surface-bright": "#f8f9ff",
+                "tertiary-fixed-dim": "#c4c7c9",
+                "surface-container-highest": "#d5e3fc",
+                "surface": "#f8f9ff",
+                "on-secondary-fixed": "#2a1700",
+                "primary-fixed": "#b5ede7",
+                "on-primary-fixed": "#00201e",
+                "outline-variant": "#bfc8c6",
+                "on-tertiary-fixed": "#191c1e",
+                "on-error-container": "#93000a",
+                "secondary-container": "#fea619",
+                "surface-variant": "#d5e3fc",
+                "surface-container-low": "#eff4ff",
+                "secondary": "#855300",
+                "tertiary": "#2c3032",
+                "on-surface": "#0d1c2e",
+                "inverse-on-surface": "#eaf1ff",
+                "primary-container": "#134e4a",
+                "on-primary": "#ffffff",
+                "outline": "#707977",
+                "tertiary-container": "#434648",
+                "primary-fixed-dim": "#9ad1cb",
+                "on-tertiary-fixed-variant": "#444749",
+                "on-secondary-fixed-variant": "#653e00",
+                "background": "#f8f9ff",
+                "inverse-surface": "#233144",
+                "on-surface-variant": "#404847",
+                "tertiary-fixed": "#e0e3e5"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xs": "4px",
+                "lg": "40px",
+                "base": "8px",
+                "gutter": "16px",
+                "margin-mobile": "20px",
+                "max-width": "1200px",
+                "md": "24px",
+                "sm": "12px",
+                "margin-desktop": "auto",
+                "xl": "64px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Public Sans"
+                ],
+                "label-sm": [
+                        "Public Sans"
+                ],
+                "headline-lg": [
+                        "Public Sans"
+                ],
+                "body-md": [
+                        "Public Sans"
+                ],
+                "headline-md": [
+                        "Public Sans"
+                ],
+                "body-lg": [
+                        "Public Sans"
+                ],
+                "label-md": [
+                        "Public Sans"
+                ],
+                "headline-lg-mobile": [
+                        "Public Sans"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "34px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    body { font-family: 'Public Sans', sans-serif; }
+    .shadow-level-1 { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .shadow-level-2 { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface-lowest dark:bg-surface-container-lowest w-full top-0 sticky border-b border-outline-variant dark:border-outline z-40 hidden md:block">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-max-width mx-desktop">
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed font-bold tracking-tight">HandyLink</h1>
+</div>
+<!-- Desktop Nav Cluster -->
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span> Explore
+                </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span> Bookings
+                </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span> Messages
+                </a>
+<a class="text-primary dark:text-primary-fixed font-label-md text-label-md flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span> Profile
+                </a>
+</nav>
+</div>
+</header>
+<!-- Mobile Header -->
+<header class="md:hidden bg-surface-lowest w-full top-0 sticky z-40 px-margin-mobile h-16 flex items-center gap-4">
+<button class="text-primary p-2 -ml-2 rounded-full hover:bg-surface-variant/50 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background font-bold tracking-tight">Profile</h1>
+</header>
+<main class="max-w-3xl mx-desktop px-margin-mobile md:px-0 py-lg flex flex-col gap-xl">
+<!-- Profile Header -->
+<section class="flex flex-col items-center text-center gap-sm">
+<div class="relative w-32 h-32 rounded-full overflow-hidden shadow-level-1 mb-2">
+<img class="object-cover w-full h-full" data-alt="A professional headshot of a smiling man in a clean teal work shirt, standing against a bright, modern, minimalist white background with soft, natural lighting. The mood is friendly and trustworthy, fitting a modern service app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnOpUSr_R14szKFmhkEu0Go3-2wDI3yoM0ySPUBYTd8KYPoi22AuLVwLNrkudD_qwU3JNGcIt4fXuKySoC_eVozFxL6DnqJ6Q70NcUu7Y5_mT1c7sNvKhopOMh00PH1JGt9Dnh7PQ_TQjsXtexZYH-QG2Kaxy3skm21gk2hudi5d9nzD-SDQFWHIxovwm9hyX1LMZyw-mXwomgSfpk1lxkxVS3FnYEgcQn37I_0NrFGaQk5ySkVwP_"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background">Marcus Rivera</h2>
+<div class="flex items-center gap-2 bg-surface-container-highest text-primary-container px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md">Master Electrician</span>
+</div>
+</section>
+<div class="flex flex-col gap-lg">
+<!-- Account Settings Group -->
+<section class="flex flex-col gap-base">
+<h3 class="font-label-md text-label-md text-on-surface-variant px-4 uppercase tracking-wider">Account</h3>
+<div class="bg-surface-lowest rounded-xl shadow-level-1 overflow-hidden flex flex-col">
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Personal Information</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="payment">payment</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Payment Methods</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="lock_outline">lock_outline</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Notifications Settings Group -->
+<section class="flex flex-col gap-base">
+<h3 class="font-label-md text-label-md text-on-surface-variant px-4 uppercase tracking-wider">Notifications</h3>
+<div class="bg-surface-lowest rounded-xl shadow-level-1 overflow-hidden flex flex-col">
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Push Notifications</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="mail_outline">mail_outline</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Email Alerts</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Business Settings Group -->
+<section class="flex flex-col gap-base">
+<h3 class="font-label-md text-label-md text-on-surface-variant px-4 uppercase tracking-wider">Business</h3>
+<div class="bg-surface-lowest rounded-xl shadow-level-1 overflow-hidden flex flex-col">
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Service Area</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Working Hours</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="request_quote">request_quote</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Tax Information</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Support & Legal Settings Group -->
+<section class="flex flex-col gap-base">
+<h3 class="font-label-md text-label-md text-on-surface-variant px-4 uppercase tracking-wider">Support &amp; Legal</h3>
+<div class="bg-surface-lowest rounded-xl shadow-level-1 overflow-hidden flex flex-col">
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Help Center</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Privacy Policy</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-bright transition-colors active:bg-surface-variant border-b border-surface-container-low last:border-0 group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+</div>
+<span class="font-body-md text-body-md text-on-background">Terms of Service</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</div>
+<button class="mt-md w-full bg-surface-container-high text-error font-label-md text-label-md h-12 rounded-xl flex items-center justify-center gap-2 hover:bg-error-container hover:text-on-error-container transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+            Log Out
+        </button>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-[0_-4px_12px_0_rgba(0,0,0,0.05)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed-dim dark:text-on-primary-fixed-variant rounded-2xl px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

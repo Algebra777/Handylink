@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Job Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-container": "#684000",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fea619",
+                        "surface-container": "#e6eeff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-fixed-dim": "#9ad1cb",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#b5ede7",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#9ad1cb",
+                        "primary": "#003633",
+                        "on-primary-fixed": "#00201e",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d5e3fc",
+                        "on-surface-variant": "#404847",
+                        "on-tertiary-container": "#b1b4b6",
+                        "on-surface": "#0d1c2e",
+                        "primary-container": "#134e4a",
+                        "on-background": "#0d1c2e",
+                        "on-primary-fixed-variant": "#144f4b",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary": "#855300",
+                        "on-secondary-fixed": "#2a1700",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "tertiary-container": "#434648",
+                        "tertiary": "#2c3032",
+                        "on-primary-container": "#87beb8",
+                        "inverse-surface": "#233144",
+                        "outline-variant": "#bfc8c6",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#ccdbf3",
+                        "surface-tint": "#316763",
+                        "surface-container-highest": "#d5e3fc",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "outline": "#707977",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#ffb95f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xl": "64px",
+                        "margin-desktop": "auto",
+                        "max-width": "1200px",
+                        "lg": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "headline-lg-mobile": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0 pt-[72px] md:pt-[88px]">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full top-0 border-b border-outline-variant dark:border-outline-variant fixed z-50">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-max-width mx-margin-desktop">
+<button aria-label="Back" class="text-on-surface-variant cursor-pointer active:opacity-80 p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                Job Details
+            </div>
+<button aria-label="More options" class="text-primary dark:text-primary-fixed cursor-pointer active:opacity-80 p-2 -mr-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<main class="max-w-max-width mx-margin-desktop px-margin-mobile md:px-md py-md space-y-md">
+<!-- Job Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">Electrical Repair</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Ref: #HL-8492</p>
+</div>
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Confirmed
+                </span>
+</div>
+<div class="h-px bg-outline-variant/20 w-full my-xs"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Estimated Earnings</p>
+<p class="font-headline-md text-headline-md text-secondary">$85.00</p>
+</div>
+</div>
+</div>
+<!-- Client Info -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/30">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-sm">Client Information</h2>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-low bg-surface-container-high">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A close up portrait of a middle-aged woman with a warm smile, Jane Cooper. The lighting is soft and natural, emphasizing a friendly and approachable demeanor. The background is slightly blurred, hinting at a cozy home interior with light, neutral colors, consistent with a clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu0wLQsCInUOxi_hBthlwZNc5p288BdyVUtFgCwF2I3OTFhXXck2BquYBtBzWkxWJuttyYE-s03glvZRSY-tQKwW11n3t2tz7bLEvk6fYZNcpigOn6PrQv9eKqwZ5rkcFifa45Zm_NoHDSmSMtlOhKg_r4IQf6DnZDvQeMulxKCXBBAcOWeDeWcOXP6aZUJ9SrfvXQ-bjkh_C0Z_Pt9iGXptP0xr5na6kwLNqOYrOR_MGjoH1yjZ6c"/>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Jane Cooper</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Client since 2023</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Message" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button aria-label="Call" class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center hover:bg-primary transition-colors hover:text-white active:scale-95">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Schedule & Location -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Schedule -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/30 flex flex-col justify-center">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-sm">Date &amp; Time</h2>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">calendar_today</span>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Today</p>
+<p class="font-body-md text-body-md text-on-surface-variant">2:00 PM - 4:00 PM</p>
+</div>
+</div>
+</div>
+<!-- Location -->
+<div class="bg-surface-container-lowest rounded-xl p-0 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/30 overflow-hidden flex flex-col">
+<div class="h-32 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="A clean, stylized top-down map view of a residential neighborhood in Seattle. The map uses a light, modern color palette with soft grey roads, pale green parks, and light beige building footprints. A prominent teal pin marker indicates a specific address in the center of the frame. The overall style is vector-like and highly legible." data-location="Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSpgWTU1ridR4cUh9xoZNfTWWpaZaFvIM2YUo_KdKnQfHFR2pEUQjxqDYX7JB_xxOUA13KEtI-5lY6nBdpcdqPREIkFGtDD29XuQPy7Y-iK92_dWH1kwLuuPr6_jjAcru5BguUElAOuB0nXo3_71F7hoFNfLYCHxIcQ9FO1zHjY_X5574J7WEmP1qBFydiNj2cAP3cMFcN7AXWaZKXWWkBtlO4nb0DzLG9KbwSYIf80QVUpwwJcmtL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent pointer-events-none"></div>
+</div>
+<div class="p-md flex justify-between items-end flex-grow">
+<div>
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-xs">Service Location</h2>
+<p class="font-body-md text-body-md text-on-surface">4517 Washington Ave.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Manchester, Kentucky 39495</p>
+</div>
+<button class="text-primary font-label-md text-label-md flex flex-col items-center gap-1 hover:text-primary-container transition-colors p-2 -mr-2 -mb-2 rounded-lg hover:bg-surface-container-low active:scale-95">
+<span class="material-symbols-outlined">directions</span>
+                        Navigate
+                    </button>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant/30">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-sm">Job Description &amp; Notes</h2>
+<div class="bg-surface rounded-lg p-sm border border-outline-variant/20">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                    "Fixing a flickering light fixture in the kitchen and checking the breaker box. The light occasionally dims randomly when the microwave is on. Also requested a quick look at an outlet in the hallway that feels loose."
+                </p>
+</div>
+</div>
+<!-- Spacer for fixed bottom actions -->
+<div class="h-24 md:h-0"></div>
+<!-- Action Buttons -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest p-md border-t border-outline-variant/30 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] md:relative md:border-none md:shadow-none md:bg-transparent md:p-0 md:mt-xl z-40 flex flex-col gap-sm">
+<button class="w-full bg-primary text-on-primary rounded-xl py-sm font-headline-md text-headline-md md:text-[18px] hover:bg-primary-container transition-colors active:scale-[0.98] shadow-md flex items-center justify-center gap-2 h-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Start Job
+            </button>
+<button class="w-full text-error rounded-xl py-sm font-label-md text-label-md hover:bg-error-container/20 transition-colors active:scale-[0.98]">
+                Cancel Booking
+            </button>
+</div>
+</main>
+</body></html>

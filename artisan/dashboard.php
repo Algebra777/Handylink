@@ -1,0 +1,382 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Artisan Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400}
+    body{font-family:Public Sans, sans-serif}
+    .icon-fill{font-variation-settings:'FILL' 1,'wght' 400}
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<header class="bg-surface-container-lowest w-full top-0 border-b border-outline-variant flex justify-between items-center px-6 py-3 sticky z-40">
+    <div class="flex items-center gap-3 cursor-pointer p-2 rounded-xl">
+        <span class="material-symbols-outlined text-primary text-2xl">handyman</span>
+        <span class="font-headline-md text-headline-md font-bold text-primary">HandyLink</span>
+    </div>
+    <div class="flex items-center p-2 rounded-xl">
+        <a href="/Handylink/auth/register.php?role=artisan" class="material-symbols-outlined">account_circle</a>
+    </div>
+</header>
+<main class="flex-1 w-full max-w-6xl mx-auto px-4 py-6 flex flex-col gap-8">
+    <section>
+        <h1 class="text-2xl font-semibold">Artisan Dashboard</h1>
+        <p class="text-muted mt-1">Welcome back! Here's an overview of your business.</p>
+    </section>
+    <section class="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4">
+        <div class="min-w-[160px] bg-white rounded-xl p-4 shadow-sm border">
+            <div class="text-sm text-muted flex items-center gap-2"><span class="material-symbols-outlined">account_balance_wallet</span><span>Total Earnings</span></div>
+            <div class="text-xl font-bold mt-2">$1,240.00</div>
+            <div class="text-xs mt-1 text-yellow-600">+12% this week</div>
+        </div>
+        <div class="min-w-[160px] bg-white rounded-xl p-4 shadow-sm border">
+            <div class="text-sm text-muted flex items-center gap-2"><span class="material-symbols-outlined">event_available</span><span>Active Bookings</span></div>
+            <div class="text-xl font-bold mt-2">4</div>
+            <div class="text-xs mt-1 text-muted">2 today</div>
+        </div>
+        <div class="min-w-[160px] bg-white rounded-xl p-4 shadow-sm border">
+            <div class="text-sm text-muted flex items-center gap-2"><span class="material-symbols-outlined">star</span><span>Avg. Rating</span></div>
+            <div class="text-xl font-bold mt-2">4.9</div>
+            <div class="text-xs mt-1 text-muted">Based on 42 reviews</div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 flex flex-col gap-4">
+            <?php
+            session_start();
+            ?>
+            <!DOCTYPE html>
+
+            <html lang="en"><head>
+            <meta charset="utf-8"/>
+            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+            <title>HandyLink - Artisan Dashboard</title>
+            <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+            <script id="tailwind-config">
+                    tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                            extend: {
+                                "colors": {
+                                    "surface-container-lowest": "#ffffff",
+                                    "on-primary-container": "#87beb8",
+                                    "on-tertiary": "#ffffff",
+                                    "on-error": "#ffffff",
+                                    "secondary-fixed-dim": "#ffb95f",
+                                    "on-tertiary-fixed": "#191c1e",
+                                    "secondary-fixed": "#ffddb8",
+                                    "on-primary-fixed-variant": "#144f4b",
+                                    "inverse-surface": "#233144",
+                                    "error": "#ba1a1a",
+                                    "primary-fixed": "#b5ede7",
+                                    "tertiary-fixed": "#e0e3e5",
+                                    "primary-fixed-dim": "#9ad1cb",
+                                    "primary-container": "#134e4a",
+                                    "outline": "#707977",
+                                    "on-tertiary-container": "#b1b4b6",
+                                    "on-background": "#0d1c2e",
+                                    "surface-dim": "#ccdbf3",
+                                    "background": "#f8f9ff",
+                                    "surface-variant": "#d5e3fc",
+                                    "surface-container": "#e6eeff",
+                                    "on-surface-variant": "#404847",
+                                    "primary": "#003633",
+                                    "tertiary-fixed-dim": "#c4c7c9",
+                                    "error-container": "#ffdad6",
+                                    "tertiary-container": "#434648",
+                                    "on-secondary": "#ffffff",
+                                    "on-tertiary-fixed-variant": "#444749",
+                                    "on-secondary-fixed-variant": "#653e00",
+                                    "surface-container-low": "#eff4ff",
+                                    "tertiary": "#2c3032",
+                                    "on-secondary-fixed": "#2a1700",
+                                    "outline-variant": "#bfc8c6",
+                                    "on-surface": "#0d1c2e",
+                                    "on-secondary-container": "#684000",
+                                    "secondary-container": "#fea619",
+                                    "secondary": "#855300",
+                                    "on-primary": "#ffffff",
+                                    "on-primary-fixed": "#00201e",
+                                    "on-error-container": "#93000a",
+                                    "surface": "#f8f9ff",
+                                    "surface-container-highest": "#d5e3fc",
+                                    "surface-bright": "#f8f9ff",
+                                    "surface-container-high": "#dce9ff",
+                                    "surface-tint": "#316763",
+                                    "inverse-primary": "#9ad1cb",
+                                    "inverse-on-surface": "#eaf1ff"
+                                },
+                                "borderRadius": {
+                                    "DEFAULT": "0.25rem",
+                                    "lg": "0.5rem",
+                                    "xl": "0.75rem",
+                                    "full": "9999px"
+                                },
+                                "spacing": {
+                                    "lg": "40px",
+                                    "xs": "4px",
+                                    "margin-mobile": "20px",
+                                    "base": "8px",
+                                    "max-width": "1200px",
+                                    "sm": "12px",
+                                    "md": "24px",
+                                    "xl": "64px",
+                                    "margin-desktop": "auto",
+                                    "gutter": "16px"
+                                },
+                                "fontFamily": {
+                                    "body-md": ["Public Sans"],
+                                    "display-lg": ["Public Sans"],
+                                    "headline-lg": ["Public Sans"],
+                                    "headline-md": ["Public Sans"],
+                                    "label-md": ["Public Sans"],
+                                    "headline-lg-mobile": ["Public Sans"],
+                                    "label-sm": ["Public Sans"],
+                                    "body-lg": ["Public Sans"]
+                                },
+                                "fontSize": {
+                                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                                    "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                                    "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                                }
+                            }
+                        }
+                    }
+                </script>
+            <style>
+                    .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                    }
+                    .icon-fill {
+                        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                    }
+        
+                    /* Hide scrollbar for horizontal scroll areas */
+                    .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .no-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                </style>
+            <style>
+                body {
+                  min-height: max(884px, 100dvh);
+                }
+              </style>
+              </head>
+            <body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+            <!-- TopAppBar from JSON -->
+            <header class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full top-0 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-md py-sm max-w-max-width mx-margin-desktop z-40 sticky">
+            <div class="flex items-center gap-sm cursor-pointer active:opacity-80 transition-colors hover:bg-surface-container-low p-2 rounded-xl">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed text-2xl" data-icon="handyman">handyman</span>
+            <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">HandyLink</span>
+            </div>
+            <div class="flex items-center cursor-pointer active:opacity-80 transition-colors hover:bg-surface-container-low p-2 rounded-xl">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed text-2xl" data-icon="account_circle">account_circle</span>
+            </div>
+            </header>
+            <!-- Main Dashboard Content -->
+            <main class="flex-1 w-full max-w-max-width mx-margin-desktop px-margin-mobile md:px-md py-md flex flex-col gap-xl">
+            <!-- Welcome & Quick Stats -->
+            <section class="flex flex-col gap-md">
+            <div>
+            <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Artisan Dashboard</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1">Welcome back! Here's an overview of your business.</p>
+            </div>
+            <!-- Horizontal Scroll Stats Grid -->
+            <div class="flex gap-sm overflow-x-auto no-scrollbar pb-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+            <div class="min-w-[160px] flex-1 bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col gap-2 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+            <span class="font-label-md text-label-md">Total Earnings</span>
+            </div>
+            <span class="font-headline-md text-headline-md text-primary">$1,240.00</span>
+            <span class="font-label-sm text-label-sm text-secondary-container bg-surface-container-high w-fit px-2 py-1 rounded-full">+12% this week</span>
+            </div>
+            <div class="min-w-[160px] flex-1 bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col gap-2 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px]">event_available</span>
+            <span class="font-label-md text-label-md">Active Bookings</span>
+            </div>
+            <span class="font-headline-md text-headline-md text-primary">4</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container w-fit px-2 py-1 rounded-full">2 today</span>
+            </div>
+            <div class="min-w-[160px] flex-1 bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col gap-2 hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-2 text-on-surface-variant">
+            <span class="material-symbols-outlined text-[20px]">star</span>
+            <span class="font-label-md text-label-md">Avg. Rating</span>
+            </div>
+            <span class="font-headline-md text-headline-md text-primary flex items-center gap-1">
+                                    4.9
+                                </span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container w-fit px-2 py-1 rounded-full">Based on 42 reviews</span>
+            </div>
+            </div>
+            </section>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-xl">
+            <!-- Left Column: Upcoming Jobs -->
+            <div class="md:col-span-7 lg:col-span-8 flex flex-col gap-md">
+            <div class="flex justify-between items-end">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Upcoming Jobs</h2>
+            <button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors font-bold">View Calendar</button>
+            </div>
+            <div class="flex flex-col gap-sm">
+            <!-- Job Card 1 -->
+            <div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col sm:flex-row gap-md justify-between sm:items-center hover:shadow-md transition-all cursor-pointer group">
+            <div class="flex items-start gap-sm">
+            <div class="bg-surface-container w-12 h-12 rounded-full flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">electrical_services</span>
+            </div>
+            <div class="flex flex-col">
+            <span class="font-headline-md text-headline-md text-on-surface text-[18px]">Electrical Repair</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Jane Cooper • 2.4 miles away</span>
+            <div class="flex items-center gap-1 mt-2">
+            <span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+            <span class="font-label-md text-label-md text-on-surface">Today, 2:00 PM</span>
+            </div>
+            </div>
+            </div>
+            <div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center mt-4 sm:mt-0 gap-sm sm:gap-2">
+            <span class="font-label-sm text-label-sm bg-tertiary-container text-on-tertiary rounded-full px-3 py-1 flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                            Confirmed
+                                        </span>
+            <button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                            View Details
+                                        </button>
+            </div>
+            </div>
+            <!-- Job Card 2 -->
+            <div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col sm:flex-row gap-md justify-between sm:items-center hover:shadow-md transition-all cursor-pointer group">
+            <div class="flex items-start gap-sm">
+            <div class="bg-surface-container w-12 h-12 rounded-full flex items-center justify-center shrink-0 group-hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined text-primary group-hover:text-on-primary-container">plumbing</span>
+            </div>
+            <div class="flex flex-col">
+            <span class="font-headline-md text-headline-md text-on-surface text-[18px]">Pipe Inspection</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Robert Fox • 5.1 miles away</span>
+            <div class="flex items-center gap-1 mt-2">
+            <span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+            <span class="font-label-md text-label-md text-on-surface">Tomorrow, 9:00 AM</span>
+            </div>
+            </div>
+            </div>
+            <div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center mt-4 sm:mt-0 gap-sm sm:gap-2">
+            <span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface rounded-full px-3 py-1 flex items-center gap-1 border border-outline-variant">
+            <span class="material-symbols-outlined text-[14px]">pending_actions</span>
+                                            Pending
+                                        </span>
+            <button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+                                            View Details
+                                        </button>
+            </div>
+            </div>
+            </div>
+            </div>
+            <!-- Right Column: Quick Actions & Activity -->
+            <div class="md:col-span-5 lg:col-span-4 flex flex-col gap-xl">
+            <!-- Quick Actions Bento Grid -->
+            <section class="flex flex-col gap-md">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Quick Actions</h2>
+            <div class="grid grid-cols-2 gap-sm">
+            <button onclick="location.href='/Handylink/artisan/availability-service-area.php'" class="bg-surface-container-lowest border border-surface-variant hover:bg-surface-container-low rounded-xl p-md flex flex-col items-center justify-center gap-2 transition-colors text-center aspect-square shadow-sm">
+            <span class="material-symbols-outlined text-3xl text-primary">event_note</span>
+            <span class="font-label-md text-label-md text-on-surface">Update Availability</span>
+            </button>
+            <button onclick="location.href='/Handylink/messaging_inbox/code.html'" class="bg-surface-container-lowest border border-surface-variant hover:bg-surface-container-low rounded-xl p-md flex flex-col items-center justify-center gap-2 transition-colors text-center aspect-square shadow-sm relative">
+            <div class="absolute top-3 right-3 w-3 h-3 bg-error rounded-full border-2 border-surface-container-lowest"></div>
+            <span class="material-symbols-outlined text-3xl text-primary">forum</span>
+            <span class="font-label-md text-label-md text-on-surface">View Messages</span>
+            </button>
+            <button onclick="alert('Manage Services')" class="bg-surface-container-lowest border border-surface-variant hover:bg-surface-container-low rounded-xl p-md flex flex-col items-center justify-center gap-2 transition-colors text-center aspect-square shadow-sm">
+            <span class="material-symbols-outlined text-3xl text-primary">design_services</span>
+            <span class="font-label-md text-label-md text-on-surface">Manage Services</span>
+            </button>
+            <button onclick="alert('Payouts')" class="bg-surface-container-lowest border border-surface-variant hover:bg-surface-container-low rounded-xl p-md flex flex-col items-center justify-center gap-2 transition-colors text-center aspect-square shadow-sm">
+            <span class="material-symbols-outlined text-3xl text-primary">payments</span>
+            <span class="font-label-md text-label-md text-on-surface">Payouts</span>
+            </button>
+            </div>
+            </section>
+            <!-- Recent Activity -->
+            <section class="flex flex-col gap-md">
+            <h2 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h2>
+            <div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-variant flex flex-col gap-sm">
+            <!-- Activity Item -->
+            <div class="flex gap-sm items-start pb-sm border-b border-surface-container-high last:border-0 last:pb-0">
+            <div class="bg-surface-container rounded-full p-2 mt-1">
+            <span class="material-symbols-outlined text-[16px] text-primary">person_add</span>
+            </div>
+            <div class="flex flex-col">
+            <span class="font-body-md text-body-md text-on-surface">New booking request from <strong>Wade Warren</strong></span>
+            <span class="font-label-sm text-label-sm text-outline mt-1">10 mins ago</span>
+            </div>
+            </div>
+            <!-- Activity Item -->
+            <div class="flex gap-sm items-start pb-sm border-b border-surface-container-high last:border-0 last:pb-0">
+            <div class="bg-secondary-fixed rounded-full p-2 mt-1">
+            <span class="material-symbols-outlined text-[16px] text-on-secondary-fixed">attach_money</span>
+            </div>
+            <div class="flex flex-col">
+            <span class="font-body-md text-body-md text-on-surface">Payment of $150.00 received for <strong>Sink Repair</strong></span>
+            <span class="font-label-sm text-label-sm text-outline mt-1">2 hours ago</span>
+            </div>
+            </div>
+            <!-- Activity Item -->
+            <div class="flex gap-sm items-start pb-sm border-b border-surface-container-high last:border-0 last:pb-0">
+            <div class="bg-surface-container rounded-full p-2 mt-1">
+            <span class="material-symbols-outlined text-[16px] text-primary">star</span>
+            </div>
+            <div class="flex flex-col">
+            <span class="font-body-md text-body-md text-on-surface"><strong>Eleanor Pena</strong> left a 5-star review</span>
+            <span class="font-label-sm text-label-sm text-outline mt-1">Yesterday</span>
+            </div>
+            </div>
+            </div>
+            </section>
+            </div>
+            </div>
+            </main>
+            <!-- BottomNavBar from JSON -->
+            <nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-xl bg-surface-container-lowest border-t border-outline-variant shadow-md md:hidden">
+            <!-- Item 1: Find Service (Inactive) -->
+            <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 group" href="#">
+            <span class="material-symbols-outlined text-2xl group-hover:icon-fill transition-all" data-icon="search">search</span>
+            <span class="font-label-sm text-label-sm mt-1">Find Service</span>
+            </a>
+            <!-- Item 2: My Bookings (Active - representing Dashboard/Jobs) -->
+            <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 group" href="#">
+            <span class="material-symbols-outlined text-2xl icon-fill" data-icon="calendar_today">calendar_today</span>
+            <span class="font-label-sm text-label-sm mt-1">My Bookings</span>
+            </a>
+            <!-- Item 3: Messages (Inactive) -->
+            <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 group relative" href="#">
+            <div class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full"></div>
+            <span class="material-symbols-outlined text-2xl group-hover:icon-fill transition-all" data-icon="chat_bubble">chat_bubble</span>
+            <span class="font-label-sm text-label-sm mt-1">Messages</span>
+            </a>
+            <!-- Item 4: Profile (Inactive) -->
+            <a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 group" href="#">
+            <span class="material-symbols-outlined text-2xl group-hover:icon-fill transition-all" data-icon="person">person</span>
+            <span class="font-label-sm text-label-sm mt-1">Profile</span>
+            </a>
+            </nav>
+            </body></html>

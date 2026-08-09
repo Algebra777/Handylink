@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>HandyLink - Search Results</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "surface-variant": "#d5e3fc",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#134e4a",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-container": "#b1b4b6",
+                    "inverse-surface": "#233144",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-surface": "#0d1c2e",
+                    "inverse-primary": "#9ad1cb",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#144f4b",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-low": "#eff4ff",
+                    "surface-tint": "#316763",
+                    "primary": "#003633",
+                    "on-primary-fixed": "#00201e",
+                    "primary-fixed": "#b5ede7",
+                    "tertiary-container": "#434648",
+                    "on-primary-container": "#87beb8",
+                    "surface-dim": "#ccdbf3",
+                    "secondary-container": "#fea619",
+                    "surface-container-highest": "#d5e3fc",
+                    "secondary-fixed": "#ffddb8",
+                    "tertiary": "#2c3032",
+                    "secondary": "#855300",
+                    "on-secondary-container": "#684000",
+                    "primary-fixed-dim": "#9ad1cb",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "surface-container": "#e6eeff",
+                    "tertiary-fixed": "#e0e3e5",
+                    "inverse-on-surface": "#eaf1ff",
+                    "outline-variant": "#bfc8c6",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "on-background": "#0d1c2e",
+                    "outline": "#707977",
+                    "on-secondary-fixed": "#2a1700",
+                    "on-surface-variant": "#404847",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "margin-desktop": "auto",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "16px",
+                    "lg": "40px",
+                    "max-width": "1200px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "label-sm": ["Public Sans"],
+                    "label-md": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "display-lg": ["Public Sans"],
+                    "headline-lg": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Ambient Shadow Level 1 */
+        .shadow-ambient-1 {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        /* Ambient Shadow Level 2 */
+        .shadow-ambient-2 {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Hide scrollbar for horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Material Icons Baseline Alignment */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pb-24">
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface-lowest dark:bg-surface-container-lowest flex items-center justify-between px-margin-mobile h-16 w-full max-w-max-width mx-desktop border-b border-outline-variant dark:border-outline">
+<button aria-label="Go back" class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 p-2 -ml-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<!-- Search Input -->
+<div class="flex-1 ml-4 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface rounded-xl border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface font-body-md transition-colors" placeholder="Search for services..." type="text" value="Plumbing"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Filter Bar -->
+<div class="w-full px-margin-mobile py-sm bg-surface-lowest sticky top-16 z-30 shadow-sm">
+<div class="flex space-x-sm overflow-x-auto no-scrollbar pb-xs">
+<!-- Filter Chips -->
+<button class="flex-shrink-0 flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-variant/50 transition-colors font-label-md text-on-surface-variant">
+<span>Price</span>
+<span class="material-symbols-outlined text-[18px] ml-1">keyboard_arrow_down</span>
+</button>
+<button class="flex-shrink-0 flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-variant/50 transition-colors font-label-md text-on-surface-variant">
+<span>Rating</span>
+<span class="material-symbols-outlined text-[18px] ml-1">keyboard_arrow_down</span>
+</button>
+<button class="flex-shrink-0 flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-variant/50 transition-colors font-label-md text-on-surface-variant">
+<span>Distance</span>
+<span class="material-symbols-outlined text-[18px] ml-1">keyboard_arrow_down</span>
+</button>
+<button class="flex-shrink-0 flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-variant/50 transition-colors font-label-md text-on-surface-variant">
+<span>Availability</span>
+<span class="material-symbols-outlined text-[18px] ml-1">keyboard_arrow_down</span>
+</button>
+<button class="flex-shrink-0 flex items-center px-4 py-2 rounded-full border border-outline-variant bg-surface hover:bg-surface-variant/50 transition-colors font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] mr-1">tune</span>
+<span>All Filters</span>
+</button>
+</div>
+<p class="font-label-sm text-outline mt-2 text-right">Showing 24 results</p>
+</div>
+<!-- Main Content Area -->
+<main class="w-full max-w-max-width mx-desktop px-margin-mobile py-md">
+<!-- Results List (Bento-style Cards) -->
+<div class="flex flex-col gap-sm">
+<!-- Artisan Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 relative group cursor-pointer border border-transparent hover:border-surface-variant">
+<!-- Verified Badge Absolute -->
+<div class="absolute top-gutter right-gutter w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-sm z-10" title="Verified Artisan">
+<span class="material-symbols-outlined text-[14px] text-on-primary">check</span>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Photo & Quick Info -->
+<div class="flex md:flex-col items-center gap-sm md:w-32 flex-shrink-0">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm flex-shrink-0 bg-surface-variant">
+<img alt="Profile photo of Marcus Johnson" class="w-full h-full object-cover" data-alt="A professional headshot of a friendly, middle-aged male plumber wearing a clean, branded navy blue uniform. The lighting is soft and natural, emphasizing a trustworthy and neighborly expression. Set against a bright, modern, minimalist background with subtle teal architectural elements. High quality, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCStNAyfi-ep0iWuOTKqgW7OolnGalwywXM3qjWREOQIobnw4B93JVsB-cJbqu7Sn8Ao5J6zoMdi0TVX-O109Xf6jf4abJxML9RHjZjNFBSbUpToKX75Cg-nDY_1wUvBW3kIxtDxzZnH5nZPmUUzQfli3LPYxuNNpLQTt0UqphESzejNxdxz3GKWhDkfN2yeBmHychu63n2HJO8pEhgtJ3WVdrBtbVzO9rfu8ArK0N4up8iApmx3-lN"/>
+</div>
+<div class="flex flex-col md:items-center w-full">
+<div class="flex items-center text-secondary-container mt-1">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="font-label-md text-on-surface ml-1 font-semibold">4.9</span>
+<span class="font-label-sm text-outline ml-1">(128)</span>
+</div>
+<div class="flex items-center text-outline mt-1 md:mt-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm ml-1">1.5 mi</span>
+</div>
+</div>
+</div>
+<!-- Details Area -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-on-surface">Marcus Johnson</h3>
+<p class="font-label-md text-primary mt-1">Master Plumber</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Emergency Calls</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Pipe Repair</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-3 line-clamp-2">
+                                15+ years of experience resolving complex plumbing issues. Reliable, fast, and always leaves the workspace cleaner than I found it.
+                            </p>
+</div>
+<div class="mt-4 flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">Starting at</span>
+<span class="font-headline-md text-on-surface">$85<span class="font-body-md text-outline">/hr</span></span>
+</div>
+<button class="bg-primary text-on-primary font-label-md py-2 px-6 rounded-full hover:bg-surface-tint active:scale-95 transition-all shadow-sm">
+                                View Profile
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Artisan Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 relative group cursor-pointer border border-transparent hover:border-surface-variant">
+<!-- Verified Badge Absolute -->
+<div class="absolute top-gutter right-gutter w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-sm z-10" title="Verified Artisan">
+<span class="material-symbols-outlined text-[14px] text-on-primary">check</span>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Photo & Quick Info -->
+<div class="flex md:flex-col items-center gap-sm md:w-32 flex-shrink-0">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm flex-shrink-0 bg-surface-variant">
+<img alt="Profile photo of Sarah Jenkins" class="w-full h-full object-cover" data-alt="A warm, engaging headshot of a young female plumbing specialist in a clean, practical work shirt. She is smiling confidently. The lighting is high-key and modern, set against a pristine white background with subtle hints of organic teal shapes. The image conveys professionalism and approachability in a light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7aFGLKS4lSr4csk7f4XVfxHh_3drwDHAqo8yEImWnn-Z79ZhKv8_CaYg2StdB_QS5XvmRLG5l99u6eu8bCY4K6LhFazm9TkSDxOjXph4DQlSm0kjIgXh3j9JXPFfzPtwSQXJd-FlE1t_xEsdu6FJGDiEJkfxqxkIb32cM5reZtWQRxWCY_3npdxiuz7e7fQ_qE3Rle8aiVwjMfzQ4LTGG_AxqHfjnPvcVWSvfFst_pi2Tajr1vymO"/>
+</div>
+<div class="flex flex-col md:items-center w-full">
+<div class="flex items-center text-secondary-container mt-1">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="font-label-md text-on-surface ml-1 font-semibold">4.8</span>
+<span class="font-label-sm text-outline ml-1">(94)</span>
+</div>
+<div class="flex items-center text-outline mt-1 md:mt-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm ml-1">2.2 mi</span>
+</div>
+</div>
+</div>
+<!-- Details Area -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-on-surface">Sarah Jenkins</h3>
+<p class="font-label-md text-primary mt-1">Licensed Plumber &amp; Fitter</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Installations</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Water Heaters</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-3 line-clamp-2">
+                                Specializing in modern fixture installations and eco-friendly water heater upgrades. Quality craftsmanship guaranteed.
+                            </p>
+</div>
+<div class="mt-4 flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">Starting at</span>
+<span class="font-headline-md text-on-surface">$75<span class="font-body-md text-outline">/hr</span></span>
+</div>
+<button class="bg-primary text-on-primary font-label-md py-2 px-6 rounded-full hover:bg-surface-tint active:scale-95 transition-all shadow-sm">
+                                View Profile
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Artisan Card 3 (Featured) -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 relative group cursor-pointer border border-primary/20">
+<div class="absolute -top-3 left-4 bg-secondary-container text-on-secondary-container font-label-sm px-3 py-1 rounded-full shadow-sm z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                    High Demand
+                </div>
+<!-- Verified Badge Absolute -->
+<div class="absolute top-gutter right-gutter w-6 h-6 bg-primary rounded-full flex items-center justify-center shadow-sm z-10" title="Verified Artisan">
+<span class="material-symbols-outlined text-[14px] text-on-primary">check</span>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter mt-2">
+<!-- Photo & Quick Info -->
+<div class="flex md:flex-col items-center gap-sm md:w-32 flex-shrink-0">
+<div class="w-16 h-16 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm flex-shrink-0 bg-surface-variant">
+<img alt="Profile photo of David Chen" class="w-full h-full object-cover" data-alt="A portrait of an experienced, older male plumber with a rugged but friendly face, wearing a neat grey uniform polo. The image is brightly lit, focusing on his reliable and seasoned demeanor. Background is a clean, out-of-focus modern kitchen setting with white and teal tones, fitting a premium service app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDeDHhyjIMaINM6bK7cK7LkTIlvBXInPL85HUklQr5u9-xun-pUOg3W5ljRWfKTa0hm82rK00nPWda0fC5_zO1dS-_RR8QOfj6I_kpa_ZHP5eN0FDcAQOmy2nqWmjagHgEpQ3z2CmJBc7rMmc4zwBYCCuUVkxsTUmLW5Q4vP6ZsmCCebd99pgdDlu7Qqn1KmrjrzOv9wc5NTsm-BHhdFVJYX2nvF9zlpto46XO0DDxjUwL8WvD-G4J"/>
+</div>
+<div class="flex flex-col md:items-center w-full">
+<div class="flex items-center text-secondary-container mt-1">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="font-label-md text-on-surface ml-1 font-semibold">5.0</span>
+<span class="font-label-sm text-outline ml-1">(312)</span>
+</div>
+<div class="flex items-center text-outline mt-1 md:mt-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-label-sm ml-1">3.0 mi</span>
+</div>
+</div>
+</div>
+<!-- Details Area -->
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-on-surface">David Chen</h3>
+<p class="font-label-md text-primary mt-1">Elite Plumbing Services</p>
+<div class="mt-3 flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Full Remodels</span>
+<span class="px-2 py-1 bg-surface-container-high text-on-surface-variant font-label-sm rounded-md">Diagnostics</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-3 line-clamp-2">
+                                Expert diagnostics and full bathroom/kitchen remodels. Precision work with a focus on long-term durability.
+                            </p>
+</div>
+<div class="mt-4 flex items-center justify-between pt-4 border-t border-surface-container">
+<div class="flex flex-col">
+<span class="font-label-sm text-outline uppercase tracking-wider">Starting at</span>
+<span class="font-headline-md text-on-surface">$110<span class="font-body-md text-outline">/hr</span></span>
+</div>
+<button class="bg-primary text-on-primary font-label-md py-2 px-6 rounded-full hover:bg-surface-tint active:scale-95 transition-all shadow-sm">
+                                View Profile
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only via Tailwind classes) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-dim shadow-[0_-4px_12px_0_rgba(0,0,0,0.05)] rounded-t-xl">
+<!-- Explore (Active) -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed-dim dark:text-on-primary-fixed-variant rounded-2xl px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 cursor-pointer">
+<span class="material-symbols-outlined filled">search</span>
+<span class="font-label-sm text-label-sm mt-1">Explore</span>
+</div>
+<!-- Bookings (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 px-4 py-1 cursor-pointer rounded-2xl">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</div>
+<!-- Messages (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 px-4 py-1 cursor-pointer rounded-2xl">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Messages</span>
+</div>
+<!-- Profile (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200 px-4 py-1 cursor-pointer rounded-2xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</div>
+</nav>
+<!-- Side Navigation for Web (Hidden on mobile) - Conceptual implementation to follow shell rules if it were full web -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-64 bg-surface-lowest border-r border-outline-variant flex-col py-6 shadow-ambient-1 z-30 pt-20">
+<div class="px-6 mb-8">
+<h2 class="font-headline-md font-bold tracking-tight text-primary">HandyLink</h2>
+</div>
+<nav class="flex-1 flex flex-col gap-2 px-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-full bg-primary-container text-on-primary-container font-label-md transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined filled">search</span>
+                 Explore
+             </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-variant/50 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                 Bookings
+             </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-variant/50 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+                 Messages
+             </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-variant/50 font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+                 Profile
+             </a>
+</nav>
+</aside>
+<!-- Add margin for desktop aside -->
+<style>
+        @media (min-width: 768px) {
+            main {
+                margin-left: 256px; /* Width of aside */
+                max-width: calc(100% - 256px);
+            }
+            .top-16 {
+                top: 64px;
+            }
+        }
+    </style>
+</body></html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - System Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-surface-variant": "#424656",
+                    "outline": "#737687",
+                    "on-primary-container": "#f3f3ff",
+                    "on-tertiary-container": "#fff1ed",
+                    "surface-variant": "#e1e1ee",
+                    "tertiary-container": "#c84000",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary-fixed": "#390c00",
+                    "inverse-surface": "#2e303a",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-fixed-variant": "#003da9",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#191b24",
+                    "surface-dim": "#d8d9e6",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eff0fd",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0f62fe",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface": "#faf8ff",
+                    "surface-container": "#ecedfa",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-primary": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "on-background": "#191b24",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#e1e1ee",
+                    "surface-container-high": "#e7e7f4",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "outline-variant": "#c3c6d8",
+                    "surface-container-low": "#f2f3ff",
+                    "on-secondary-container": "#00714d",
+                    "secondary": "#006c49",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#0052dd",
+                    "on-primary-fixed": "#00174c",
+                    "primary": "#004ccd",
+                    "tertiary": "#9e3100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "table-row-height": "48px",
+                    "topbar-height": "64px",
+                    "sidebar-width": "240px",
+                    "container-padding": "32px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Poppins"
+                    ],
+                    "mono-data": [
+                            "Inter"
+                    ],
+                    "table-text": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Poppins"
+                    ],
+                    "title-sm": [
+                            "Poppins"
+                    ],
+                    "body-base": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "mono-data": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "table-text": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "title-sm": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-base": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base antialiased min-h-screen">
+<!-- JSON Sidebar Component -->
+<aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant z-20 flex flex-col hidden md:flex">
+<!-- Brand Header -->
+<div class="px-container-padding py-stack-md border-b border-outline-variant">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">HandyLink</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Admin Console</p>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex flex-col gap-1 py-4 flex-1 overflow-y-auto">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Users
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+                Artisans
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                Verification Queue
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                Disputes
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Payments &amp; Payouts
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Revenue
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Categories
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                Promo Codes
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+                CMS
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                Announcements
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Support Tickets
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                Fraud Detection
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Reports
+            </a>
+<a class="flex items-center gap-3 bg-primary-container/10 text-primary border-l-4 border-primary px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+</aside>
+<!-- JSON Topbar Component -->
+<header class="h-[64px] fixed top-0 right-0 left-0 md:left-[240px] z-10 bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center px-container-padding transition-colors duration-200">
+<!-- Search Bar Container (On Left) -->
+<div class="flex-1 max-w-md">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none" data-icon="search">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-lg text-body-base text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search..." type="text"/>
+<div class="absolute right-3 px-1.5 py-0.5 rounded border border-outline-variant bg-surface-container text-mono-data text-on-surface-variant text-[10px]">⌘K</div>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of an administrator in a corporate setting. High-quality lighting, modern light-mode aesthetic, crisp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5u0aOpcaETNvppxdaGkYeO7DvZ6aIqRqEdMGqyIiJprrAuHzu47Z9xOJQNlMKGQ0FJZOPpK5DafAQDWjD-PRpY5iENV_4ENBUm7GyfOc-zjRNSsINk1qHvCTR9uUmo-dJqKDo7rkEJfvwxJktDiYqNQWYKpI9k65bF36pSTIZzvTtaqtJLO5ibCefOaBktHD13hW9apsVyKJ_zxn8tdYYDFKu30CMuiDQWZgeC8wBGv_VGp86svr-"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[64px] md:ml-[240px] min-h-screen">
+<!-- Page Header -->
+<div class="px-container-padding py-stack-md bg-surface-container-lowest border-b border-outline-variant">
+<!-- Breadcrumbs -->
+<nav class="flex text-label-caps font-label-caps text-on-surface-variant mb-2">
+<ol class="flex items-center space-x-2">
+<li><a class="hover:text-primary transition-colors" href="#">Admin</a></li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_right</span></li>
+<li class="text-on-surface">Settings</li>
+</ol>
+</nav>
+<h2 class="font-headline-md text-headline-md text-on-surface">System Settings</h2>
+</div>
+<!-- Settings Layout: Sub-nav + Content Grid -->
+<div class="p-container-padding">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Settings Sub-Navigation (Left Column) -->
+<div class="col-span-12 lg:col-span-3">
+<nav class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-soft">
+<ul class="flex flex-col">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-base text-body-base hover:bg-surface-container-low transition-colors border-b border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+                                    General
+                                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container/5 text-primary font-body-base text-body-base border-l-4 border-primary hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+                                    Roles &amp; Permissions
+                                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-base text-body-base hover:bg-surface-container-low transition-colors border-t border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+                                    Payment Providers
+                                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-body-base text-body-base hover:bg-surface-container-low transition-colors border-t border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                                    Audit Log
+                                </a>
+</li>
+</ul>
+</nav>
+</div>
+<!-- Roles & Permissions Content (Right Column) -->
+<div class="col-span-12 lg:col-span-9 space-y-stack-md">
+<!-- Action Bar -->
+<div class="flex justify-between items-center bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-soft">
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Team Access Management</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Configure roles and invite new administrators to the console.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-title-sm text-body-base hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-soft">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                            Invite
+                        </button>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-soft overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low/50">
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase">User</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Role</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Status</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Last Active</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-table-text text-table-text text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low/50 transition-colors h-[48px]">
+<td class="px-6 py-2">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-variant">
+<img alt="Sarah Connor" class="w-full h-full object-cover" data-alt="Profile photo of a female executive with glasses. Corporate office background, soft high-key lighting, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1ZrP2HZ9Own-q1nbH3A6HMOQYUK02LmxGaI1aQM6iQ5YiG_qDlD1IwNaTKuqLMxqGz5z38m73X3-rMMfPwzjXYQJWOfacWmpCyBmIySXV9ZAUtlt07KTMSZAE2XaAZcZBOj_wCAH9eq9zQiJZCaIZ38BZu1qqKlDM6C45z9BU8_utXZUBsA8G4FTWmfPFIjfvGFIqevMSwHkFGdqHFQu-LxWvOR-jbTKqUl7a3PaQ4rWF-oDDvYeL"/>
+</div>
+<div>
+<div class="font-medium text-on-surface">Sarah Connor</div>
+<div class="text-on-surface-variant text-xs">sarah@handylink.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-2">Super Admin</td>
+<td class="px-6 py-2">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-container/20 text-secondary border border-secondary/20">
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-2 text-on-surface-variant">2 mins ago</td>
+<td class="px-6 py-2 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded-md hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low/50 transition-colors h-[48px]">
+<td class="px-6 py-2">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-variant">
+<img alt="John Smith" class="w-full h-full object-cover" data-alt="Profile photo of a male customer support manager smiling. Bright office setting, soft light-mode colors, professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANq07GFop5efKx6KRXyakPUGE8GQ5--gmI47sJKD0ipfYbqihJls-tB2noz2TpTEV-ooAdhcMvhJ3nsH2VyhEdm-GcIBY7F_RJfV7IMuFq5jp_RiOdURsdCPFLlfwS8msJ1ghDLWyn4YggY0jOIHUdNqhqP_-Xu0ya4IU87IEU-1FJ8M4-VGwYfMz8kNJSTVTpJlZga2GY47i9nUbvJk832ApRsUITGzljEToDmlOD_VsLPHZvAT5p"/>
+</div>
+<div>
+<div class="font-medium text-on-surface">John Smith</div>
+<div class="text-on-surface-variant text-xs">john.s@handylink.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-2">Support Lead</td>
+<td class="px-6 py-2">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-container/20 text-secondary border border-secondary/20">
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-2 text-on-surface-variant">1 hour ago</td>
+<td class="px-6 py-2 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded-md hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-outline-variant hover:bg-surface-container-low/50 transition-colors h-[48px]">
+<td class="px-6 py-2">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center text-on-surface-variant font-medium">
+                                                    EJ
+                                                </div>
+<div>
+<div class="font-medium text-on-surface">Elena James</div>
+<div class="text-on-surface-variant text-xs">elena.j@handylink.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-2">Financial Analyst</td>
+<td class="px-6 py-2">
+<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-outline-variant/30 text-on-surface-variant border border-outline-variant">
+                                                Invited
+                                            </span>
+</td>
+<td class="px-6 py-2 text-on-surface-variant">Never</td>
+<td class="px-6 py-2 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded-md hover:bg-surface-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination/Footer -->
+<div class="px-6 py-4 border-t border-outline-variant bg-surface-container-lowest flex justify-between items-center">
+<span class="font-body-base text-body-base text-on-surface-variant">Showing 1 to 3 of 12 users</span>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-1 rounded-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

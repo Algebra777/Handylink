@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fraud Detection - HandyLink Admin Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#f3f3ff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-high": "#e7e7f4",
+                    "on-secondary-fixed-variant": "#005236",
+                    "outline-variant": "#c3c6d8",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#4edea3",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "surface-tint": "#0052dd",
+                    "on-tertiary-container": "#fff1ed",
+                    "on-surface": "#191b24",
+                    "tertiary": "#9e3100",
+                    "surface": "#faf8ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-low": "#f2f3ff",
+                    "surface-container-highest": "#e1e1ee",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#003da9",
+                    "tertiary-container": "#c84000",
+                    "secondary-container": "#6cf8bb",
+                    "surface-container": "#ecedfa",
+                    "on-secondary-fixed": "#002113",
+                    "surface-dim": "#d8d9e6",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "on-surface-variant": "#424656",
+                    "surface-variant": "#e1e1ee",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#191b24",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "inverse-on-surface": "#eff0fd",
+                    "secondary": "#006c49",
+                    "outline": "#737687",
+                    "surface-bright": "#faf8ff",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "primary": "#004ccd",
+                    "inverse-surface": "#2e303a",
+                    "on-tertiary-fixed": "#390c00",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#0f62fe",
+                    "on-secondary-container": "#00714d",
+                    "background": "#faf8ff",
+                    "on-primary-fixed": "#00174c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "240px",
+                    "table-row-height": "48px",
+                    "stack-sm": "8px",
+                    "container-padding": "32px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "topbar-height": "64px"
+            },
+            "fontFamily": {
+                    "title-sm": [
+                            "Poppins"
+                    ],
+                    "display-lg": [
+                            "Poppins"
+                    ],
+                    "mono-data": [
+                            "Inter"
+                    ],
+                    "body-base": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Poppins"
+                    ],
+                    "table-text": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "title-sm": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "mono-data": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-base": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "table-text": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        
+        /* Table hover state */
+        .table-row-hover:hover {
+            background-color: #f2f3ff; /* surface-container-low */
+            border-radius: 0.5rem;
+        }
+        
+        /* Ambient Shadow for Level 2 */
+        .shadow-level-2 {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:block w-sidebar-width h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant z-20">
+<div class="flex flex-col gap-1 py-4 h-full overflow-y-auto">
+<!-- Brand Logo -->
+<div class="px-6 pb-6">
+<div class="font-display-lg text-display-lg text-primary tracking-tight">
+                    HandyLink
+                </div>
+<div class="font-body-base text-body-base text-on-surface-variant mt-1">
+                    Admin Console
+                </div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-1 px-2">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Users
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+                    Artisans
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+                    Verification Queue
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                    Bookings
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                    Disputes
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                    Payments &amp; Payouts
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                    Revenue
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                    Categories
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                    Promo Codes
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+                    CMS
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                    Announcements
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                    Support Tickets
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Analytics
+                </a>
+<!-- Active Navigation Item -->
+<a class="flex items-center gap-3 bg-primary-container/10 text-primary border-l-4 border-primary px-4 py-2 rounded-r-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined filled" data-icon="security" data-weight="fill">security</span>
+                    Fraud Detection
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                    Reports
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg cursor-pointer transition-all active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="h-topbar-height fixed top-0 right-0 left-0 md:left-sidebar-width bg-surface-container-lowest border-b border-outline-variant z-10 flex justify-between items-center px-container-padding transition-all duration-200">
+<!-- Search Bar (Left aligned per JSON) -->
+<div class="flex-1 max-w-md">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-lg text-body-base font-body-base text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search flags, users, or IDs... (⌘K)" type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img alt="Admin Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBky5KA7lFL5ypmXRQbSF2C9IycCutH87UT4T_Dv3D3XP7bxvdBelHT9acV_U8mM68MQecX2PdoNZbn9AlGlLQk-lyYGCeTgzCvH7xh4x0N4CgbImyJHaf7U6dtg09RTEtJhqYYi-vSAQOnTorcH8RP2HoXHN0VoHn1-4-jIbbR_IiRFvU8hz8jsYQMlSYB67310XjDXXhb3wechKSI24GakOgrx7zckaUMUiI7x01f8N8uZzFoIUCy"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-topbar-height md:pl-sidebar-width min-h-screen">
+<div class="p-container-padding max-w-[1600px] mx-auto">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-label-caps font-label-caps text-outline mb-2">
+<span>ANALYTICS &amp; FRAUD</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">FRAUD DETECTION</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-background">Fraud Detection</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Monitor and investigate suspicious activities across the platform.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-lg font-title-sm text-title-sm text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-[16px] font-title-sm text-title-sm hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export List
+                    </button>
+</div>
+</div>
+<!-- Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-level-2">
+<div class="flex items-center gap-3 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-error">warning</span>
+<span class="font-title-sm text-title-sm">Active Flags</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">142</div>
+<div class="text-error font-mono-data text-mono-data mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                        +12% vs last week
+                    </div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-level-2">
+<div class="flex items-center gap-3 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-container">payments</span>
+<span class="font-title-sm text-title-sm">Suspicious Payments</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">48</div>
+<div class="text-outline font-mono-data text-mono-data mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_flat</span>
+                        No change
+                    </div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-level-2">
+<div class="flex items-center gap-3 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary">group_add</span>
+<span class="font-title-sm text-title-sm">Duplicate Accounts</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">67</div>
+<div class="text-secondary font-mono-data text-mono-data mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+                        -5% vs last week
+                    </div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-level-2">
+<div class="flex items-center gap-3 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">policy</span>
+<span class="font-title-sm text-title-sm">Auto-Blocked</span>
+</div>
+<div class="font-display-lg text-display-lg text-on-surface">892</div>
+<div class="text-outline font-mono-data text-mono-data mt-2 flex items-center gap-1">
+                        Past 30 days
+                    </div>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-level-2 overflow-hidden">
+<!-- Table Header Actions -->
+<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+<h2 class="font-title-sm text-title-sm text-on-surface">Flagged Activity Log</h2>
+<div class="flex gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-64 h-9 pl-9 pr-3 bg-surface-container-low border border-outline-variant rounded-lg text-table-text font-table-text focus:outline-none focus:border-primary" placeholder="Search table..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-lowest text-label-caps font-label-caps text-on-surface-variant">
+<th class="py-3 px-6 font-semibold w-12"></th>
+<th class="py-3 px-6 font-semibold">Flag Type &amp; ID</th>
+<th class="py-3 px-6 font-semibold">User / Artisan</th>
+<th class="py-3 px-6 font-semibold min-w-[150px]">Risk Score</th>
+<th class="py-3 px-6 font-semibold">Date Flagged</th>
+<th class="py-3 px-6 font-semibold">Status</th>
+<th class="py-3 px-6 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-table-text text-table-text text-on-surface">
+<!-- Row 1: High Risk -->
+<tr class="border-b border-outline-variant table-row-hover group transition-colors">
+<td class="py-3 px-6">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+</td>
+<td class="py-3 px-6">
+<div class="font-medium">Suspicious Payment</div>
+<div class="text-outline font-mono-data text-[11px] mt-0.5">TRX-9982A</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover bg-surface-dim" data-alt="A small circular avatar portrait of a man with short dark hair, wearing a neutral gray shirt against a solid light blue background. High-key lighting, professional headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMei41tyoCYHWXc52GFypBK-Ywen0qgDMJzPtpyGDTLea10m8ku9PvwULC0aaQgS6Q2ZOUCeZkKC36N-cna2DaosbqgE__G3MqQQux0VgggGwNwoSM9s8vl44ctRRn0R-5tWGQ6u4bqLiSzJo92iKAFC9O78flTHW7e2fMBEKQ-4ULavIeeHaey2TU2mulVkY1qmQHzSasyS4nk1ZkzRKYulhUkeKwjcsK2vRQUVb6LPjW1QoneSpr"/>
+<div>
+<div class="font-medium">Marcus Johnson</div>
+<div class="text-on-surface-variant text-[12px]">User • New Account</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-2">
+<div class="font-mono-data text-error font-semibold">92/100</div>
+<div class="w-full h-1.5 bg-surface-dim rounded-full overflow-hidden flex-1 max-w-[80px]">
+<div class="h-full bg-error w-[92%]"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6 text-on-surface-variant">Oct 24, 2023<br/><span class="text-[11px]">14:32 PST</span></td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-error-container text-error text-[12px] font-medium border border-error/20">
+                                        Action Required
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-medium text-[13px]">
+                                        Investigate
+                                    </button>
+</td>
+</tr>
+<!-- Row 2: Medium Risk -->
+<tr class="border-b border-outline-variant table-row-hover group transition-colors">
+<td class="py-3 px-6">
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div>
+</td>
+<td class="py-3 px-6">
+<div class="font-medium">Duplicate Account Info</div>
+<div class="text-outline font-mono-data text-[11px] mt-0.5">USR-4421B</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover bg-surface-dim" data-alt="A small circular avatar portrait of a woman with long wavy brown hair, wearing a white blouse against a soft pink background. Studio lighting, friendly expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBf8O50EIruzOtR3y0RgSf30HG1-ud8PEVT7SGAYPyarH9ySEdf0v8u33VFrzVQ0HfjLPlcPFxmkWw7tMeDwd9YzcCKizjD7Im_m_yrvVtLYYFfqW79tYgdCVH0odWRPbo3vcjwPfrY9P5bGEmvc98IhQtZOQ_j9ytwS0YgZPGwE1HF4cOnl8RjQ3K8r_qkGykGXMtBxk3PHfZ79mN09Jhjie6Soe8u8i9GGI-EepsRdA8gLfJ0zAd"/>
+<div>
+<div class="font-medium">Sarah Jenkins</div>
+<div class="text-on-surface-variant text-[12px]">Artisan • Plumber</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-2">
+<div class="font-mono-data text-tertiary-container font-semibold">68/100</div>
+<div class="w-full h-1.5 bg-surface-dim rounded-full overflow-hidden flex-1 max-w-[80px]">
+<div class="h-full bg-tertiary-container w-[68%]"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6 text-on-surface-variant">Oct 24, 2023<br/><span class="text-[11px]">09:15 PST</span></td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary-container text-[12px] font-medium border border-tertiary-container/20">
+                                        Under Review
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-medium text-[13px]">
+                                        Investigate
+                                    </button>
+</td>
+</tr>
+<!-- Row 3: Low Risk -->
+<tr class="border-b border-outline-variant table-row-hover group transition-colors">
+<td class="py-3 px-6">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+</td>
+<td class="py-3 px-6">
+<div class="font-medium">Unusual Login Location</div>
+<div class="text-outline font-mono-data text-[11px] mt-0.5">SEC-1192C</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-[12px]">
+                                            RW
+                                        </div>
+<div>
+<div class="font-medium">Robert Wade</div>
+<div class="text-on-surface-variant text-[12px]">User • Premium</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-2">
+<div class="font-mono-data text-secondary font-semibold">24/100</div>
+<div class="w-full h-1.5 bg-surface-dim rounded-full overflow-hidden flex-1 max-w-[80px]">
+<div class="h-full bg-secondary w-[24%]"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6 text-on-surface-variant">Oct 23, 2023<br/><span class="text-[11px]">18:45 PST</span></td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-secondary-fixed text-secondary text-[12px] font-medium border border-secondary/20">
+                                        Monitoring
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-on-surface hover:bg-surface-container-high transition-colors font-medium text-[13px]">
+                                        Investigate
+                                    </button>
+</td>
+</tr>
+<!-- Row 4: Resolved -->
+<tr class="table-row-hover group transition-colors opacity-75">
+<td class="py-3 px-6">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+</td>
+<td class="py-3 px-6">
+<div class="font-medium text-outline">Velocity Check Failed</div>
+<div class="text-outline font-mono-data text-[11px] mt-0.5">VEL-0045D</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-dim text-on-surface-variant flex items-center justify-center font-bold text-[12px]">
+                                            AK
+                                        </div>
+<div>
+<div class="font-medium text-outline">Amanda King</div>
+<div class="text-outline/70 text-[12px]">User • Standard</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-2">
+<div class="font-mono-data text-outline font-semibold">--/100</div>
+<div class="w-full h-1.5 bg-surface-dim rounded-full overflow-hidden flex-1 max-w-[80px]">
+<div class="h-full bg-outline w-0"></div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6 text-outline">Oct 22, 2023<br/><span class="text-[11px]">11:20 PST</span></td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-surface-dim text-on-surface-variant text-[12px] font-medium border border-outline/20">
+                                        Resolved (False Positive)
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="px-3 py-1.5 border border-outline-variant rounded-lg text-outline hover:bg-surface-container-high transition-colors font-medium text-[13px]">
+                                        View Details
+                                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="p-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest text-body-base font-body-base text-on-surface-variant">
+<div>
+                        Showing 1 to 4 of 142 entries
+                    </div>
+<div class="flex gap-1">
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-primary bg-primary-container/10 text-primary rounded-lg font-medium">1</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg hover:bg-surface-container-low">2</button>
+<button class="w-10 h-10 border border-outline-variant rounded-lg hover:bg-surface-container-low">3</button>
+<button class="p-2 border border-outline-variant rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

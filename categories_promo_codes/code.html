@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Service Categories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-surface-variant": "#424656",
+                      "outline": "#737687",
+                      "on-primary-container": "#f3f3ff",
+                      "on-tertiary-container": "#fff1ed",
+                      "surface-variant": "#e1e1ee",
+                      "tertiary-container": "#c84000",
+                      "tertiary-fixed-dim": "#ffb59d",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-tertiary-fixed": "#390c00",
+                      "inverse-surface": "#2e303a",
+                      "on-secondary-fixed": "#002113",
+                      "on-primary-fixed-variant": "#003da9",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#191b24",
+                      "surface-dim": "#d8d9e6",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed": "#ffdbd0",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-on-surface": "#eff0fd",
+                      "on-error": "#ffffff",
+                      "primary-container": "#0f62fe",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-secondary": "#ffffff",
+                      "background": "#faf8ff",
+                      "surface": "#faf8ff",
+                      "surface-container": "#ecedfa",
+                      "secondary-container": "#6cf8bb",
+                      "inverse-primary": "#b4c5ff",
+                      "error": "#ba1a1a",
+                      "on-background": "#191b24",
+                      "primary-fixed": "#dbe1ff",
+                      "surface-container-highest": "#e1e1ee",
+                      "surface-container-high": "#e7e7f4",
+                      "on-tertiary-fixed-variant": "#832700",
+                      "outline-variant": "#c3c6d8",
+                      "surface-container-low": "#f2f3ff",
+                      "on-secondary-container": "#00714d",
+                      "secondary": "#006c49",
+                      "surface-bright": "#faf8ff",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#0052dd",
+                      "on-primary-fixed": "#00174c",
+                      "primary": "#004ccd",
+                      "tertiary": "#9e3100"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "table-row-height": "48px",
+                      "topbar-height": "64px",
+                      "sidebar-width": "240px",
+                      "container-padding": "32px",
+                      "stack-sm": "8px",
+                      "gutter": "24px",
+                      "stack-md": "16px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Poppins"
+                      ],
+                      "mono-data": [
+                              "Inter"
+                      ],
+                      "table-text": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Poppins"
+                      ],
+                      "title-sm": [
+                              "Poppins"
+                      ],
+                      "body-base": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "table-text": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest text-primary font-body-base text-body-base h-[64px] fixed top-0 right-0 left-0 md:left-[240px] z-10 border-b border-outline-variant flex justify-between items-center px-container-padding">
+<div class="flex items-center gap-4 w-full max-w-md">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-base placeholder:text-outline font-body-base outline-none" placeholder="Search categories, promo codes..." type="text"/>
+<div class="hidden md:flex items-center gap-1 border border-outline-variant rounded px-2 py-0.5 text-outline text-xs">
+<span class="material-symbols-outlined text-[14px]">keyboard_command_key</span>
+<span>K</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface-container-lowest"></span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling professional young corporate administrator in a bright office environment, wearing modern casual business attire. Soft natural lighting, shallow depth of field. High quality, clear, approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMaFCDDkXuq2urGDb3LM4uNIsJNOs2Tgo0eEP33oEFMblXO_3_iOTsW1kQmZt-DM8VCppHMkPJnuKExY8P3-HqAgN5fR7839Ltvpa6uZvlK41_dmVyfYQXd6bG9IUWUsOrkqU5D8T8pqTf__B7gZA5P2BpADzuZsu-iZIwBH8r75JCg1NNnimptOFJ6voYLyUnKZSzMi4RUOohPBQu3lWfeUj076DivVBsLE_ORxbzTAlFqcmogu6g"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-lowest text-primary font-body-base text-body-base w-[240px] h-screen fixed left-0 top-0 border-r border-outline-variant flex-col gap-1 py-4 z-20 overflow-y-auto">
+<div class="px-container-padding mb-6 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined font-bold text-[20px]">handyman</span>
+</div>
+<h1 class="font-display-lg text-[24px] leading-[32px] text-primary tracking-tight font-semibold">HandyLink</h1>
+</div>
+<span class="text-label-caps font-label-caps text-outline ml-10 uppercase">Admin Console</span>
+</div>
+<ul class="flex flex-col gap-1 w-full mt-2">
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="group">group</span> Users</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="engineering">engineering</span> Artisans</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="verified_user">verified_user</span> Verification Queue</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="event_available">event_available</span> Bookings</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="gavel">gavel</span> Disputes</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="payments">payments</span> Payments &amp; Payouts</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="payments">payments</span> Revenue</a></li>
+<li><a class="flex items-center gap-3 bg-primary-container/10 text-primary border-l-4 border-primary px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 font-medium" href="#"><span class="material-symbols-outlined" data-icon="category" data-weight="fill" style="font-variation-settings: 'FILL' 1;">category</span> Categories</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span> Promo Codes</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="article">article</span> CMS</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="campaign">campaign</span> Announcements</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="support_agent">support_agent</span> Support Tickets</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="analytics">analytics</span> Analytics</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="security">security</span> Fraud Detection</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="description">description</span> Reports</a></li>
+<li><a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95" href="#"><span class="material-symbols-outlined" data-icon="settings">settings</span> Settings</a></li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-[240px] pt-[64px] min-h-screen pb-12">
+<div class="px-container-padding py-8 max-w-7xl mx-auto">
+<!-- Header Area -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 text-[12px] font-mono-data text-outline mb-2">
+<span>Admin</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Categories</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Service Categories</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-lowest text-on-surface border border-outline-variant px-4 py-2 rounded-xl font-title-sm text-[14px] font-semibold hover:bg-surface-container-low transition-colors shadow-sm">
+                        Export CSV
+                    </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-xl font-title-sm text-[14px] font-semibold hover:bg-primary-fixed-variant transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Category
+                    </button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="border-b border-outline-variant mb-8 flex gap-8">
+<button class="pb-3 border-b-2 border-primary text-primary font-title-sm text-[15px] font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">category</span>
+                    Service Categories
+                </button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant font-title-sm text-[15px] font-medium hover:text-on-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">confirmation_number</span>
+                    Promo Codes
+                </button>
+</div>
+<!-- Content Canvas (Categories Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Category Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">electric_bolt</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface mb-1">Electrician</h3>
+<p class="font-body-base text-[13px] text-outline mb-4">Residential &amp; Commercial wiring, repairs, and installations.</p>
+<div class="flex justify-between items-center pt-4 border-t border-surface-variant">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-semibold">1,245</span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Artisans</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 12%
+                            </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Growth</span>
+</div>
+</div>
+<button class="absolute top-4 right-12 text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-surface-container rounded">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<!-- Category Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="w-12 h-12 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">plumbing</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-9 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface mb-1">Plumbing</h3>
+<p class="font-body-base text-[13px] text-outline mb-4">Pipe repairs, fixture installation, and emergency leaks.</p>
+<div class="flex justify-between items-center pt-4 border-t border-surface-variant">
+<div class="flex flex-col">
+<span class="font-mono-data text-mono-data text-on-surface font-semibold">982</span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Artisans</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-mono-data text-mono-data text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 8%
+                            </span>
+<span class="font-label-caps text-[10px] text-outline uppercase tracking-wider">Growth</span>
+</div>
+</div>
+</div>
+<!-- Empty State / Add New (Conceptual representation of bento layout) -->
+<div class="bg-surface-container border-2 border-dashed border-outline-variant rounded-xl p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container-high hover:border-primary transition-all group min-h-[200px]">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center mb-3 group-hover:scale-110 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-primary">add</span>
+</div>
+<span class="font-title-sm text-[15px] font-semibold text-on-surface group-hover:text-primary transition-colors">Create New Category</span>
+<span class="font-body-base text-[13px] text-outline mt-1 max-w-[200px]">Add a new service vertical to the platform.</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

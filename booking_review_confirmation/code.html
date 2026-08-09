@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Your Booking - HandyLink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#d5e3fc",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "primary": "#003633",
+                      "on-error": "#ffffff",
+                      "on-surface": "#0d1c2e",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-primary-fixed-variant": "#144f4b",
+                      "on-secondary-container": "#684000",
+                      "secondary": "#855300",
+                      "background": "#f8f9ff",
+                      "surface-tint": "#316763",
+                      "tertiary": "#2c3032",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#ffddb8",
+                      "on-primary-container": "#87beb8",
+                      "outline": "#707977",
+                      "primary-fixed-dim": "#9ad1cb",
+                      "surface-container": "#e6eeff",
+                      "on-tertiary-fixed": "#191c1e",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#ccdbf3",
+                      "surface": "#f8f9ff",
+                      "surface-container-highest": "#d5e3fc",
+                      "tertiary-container": "#434648",
+                      "on-tertiary-container": "#b1b4b6",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#0d1c2e",
+                      "secondary-container": "#fea619",
+                      "surface-bright": "#f8f9ff",
+                      "inverse-surface": "#233144",
+                      "primary-fixed": "#b5ede7",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#9ad1cb",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#bfc8c6",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary-fixed": "#00201e",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#404847",
+                      "on-secondary-fixed": "#2a1700",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#134e4a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "max-width": "1200px",
+                      "margin-mobile": "20px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "xl": "64px",
+                      "gutter": "16px",
+                      "md": "24px",
+                      "lg": "40px",
+                      "sm": "12px",
+                      "margin-desktop": "auto"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Public Sans"
+                      ],
+                      "headline-md": [
+                              "Public Sans"
+                      ],
+                      "label-sm": [
+                              "Public Sans"
+                      ],
+                      "body-lg": [
+                              "Public Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Public Sans"
+                      ],
+                      "headline-lg": [
+                              "Public Sans"
+                      ],
+                      "label-md": [
+                              "Public Sans"
+                      ],
+                      "body-md": [
+                              "Public Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "34px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopAppBar (Transactional - Hidden Nav Shell) -->
+<header class="w-full top-0 sticky bg-surface-lowest dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline flat no shadows z-50">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-max-width mx-desktop">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 p-2 -ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed text-center flex-1 pr-8">HandyLink</h1>
+</div>
+</header>
+<main class="flex-1 w-full max-w-max-width mx-desktop px-margin-mobile py-lg pb-32">
+<!-- Step Indicator -->
+<div class="mb-md">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-base">Step 4 of 4</p>
+<div class="flex gap-2">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-lg">Review Your Booking</h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<div class="lg:col-span-2 space-y-md">
+<!-- Artisan Card -->
+<div class="bg-surface-lowest rounded-xl p-gutter shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] flex items-start gap-gutter">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm shrink-0" data-alt="Professional headshot of a friendly female electrician in her 30s, wearing a clean dark teal polo shirt with a subtle toolkit logo. She has warm, approachable expression. High key lighting, modern white background, shallow depth of field. High quality, crisp details, conveying trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4lGTKtMWiV9pNoUlIFruz9rdsS405Nr1kyXeD7-gTucTAiiNPtOHLqyBFnKCtw5BiwGm-EontQPYSu_j8DpjJVsdIf1w4ikcdaPoI6FVrloIMW_WMbevI2LUGgpa_3GRyz58J7U_vZaxhnkHM6BO0OQUdGXHXzi5ezoLRHG20tBpMxhZKNKzFJsx7tX3l6HDAJ1ASgSSuC7K1FCYU4CcGrB-3LMOtqcM9e08ulJXfKrzf5KjM8DdI"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary">Sarah Jenkins</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Master Electrician</p>
+</div>
+<div class="bg-primary/10 text-primary rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="mt-sm pt-sm border-t border-surface-variant">
+<p class="font-body-md text-body-md text-on-surface flex justify-between">
+<span>Lighting Installation</span>
+<span class="font-semibold">$95</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Booking Details -->
+<div class="bg-surface-lowest rounded-xl p-gutter shadow-[0_4px_12px_0_rgba(0,0,0,0.05)] space-y-gutter">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="calendar_today">calendar_today</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Date &amp; Time</p>
+<p class="font-body-md text-body-md text-on-surface">Monday, Oct 28</p>
+<p class="font-body-md text-body-md text-on-surface">2:00 PM - 4:00 PM</p>
+</div>
+</div>
+<hr class="border-surface-variant"/>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="location_on">location_on</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Location</p>
+<p class="font-body-md text-body-md text-on-surface">4517 Washington Ave.</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Manchester, Kentucky 39495</p>
+</div>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="bg-surface-lowest rounded-xl p-gutter shadow-[0_4px_12px_0_rgba(0,0,0,0.05)]">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-gutter">Payment Method</h3>
+<div class="flex items-center justify-between p-sm border border-outline-variant rounded-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Visa ending in 4242</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Exp 12/25</p>
+</div>
+</div>
+<button class="font-label-md text-label-md text-primary font-semibold hover:underline">Edit</button>
+</div>
+</div>
+</div>
+<!-- Estimate Summary -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container-low rounded-xl p-gutter sticky top-24 shadow-[0_4px_12px_0_rgba(0,0,0,0.05)]">
+<h3 class="font-headline-md text-headline-md text-primary mb-md border-b border-surface-variant pb-sm">Total Estimate</h3>
+<div class="space-y-sm mb-md">
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Service Fee (2 hrs)</span>
+<span>$190.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Platform Fee</span>
+<span>$15.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Taxes</span>
+<span>$16.40</span>
+</div>
+</div>
+<hr class="border-surface-variant mb-md"/>
+<div class="flex justify-between font-headline-md text-headline-md text-primary mb-md">
+<span>Total</span>
+<span>$221.40</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-md text-center">
+                        You won't be charged until the artisan confirms the booking.
+                    </p>
+<button class="w-full bg-secondary text-on-secondary font-label-md text-label-md py-sm px-md rounded-[16px] min-h-[48px] hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm hover:shadow-md flex items-center justify-center gap-2">
+                        Confirm &amp; Request Booking
+                        <span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Suppressed BottomNavBar due to transactional intent (Review/Checkout) -->
+</body></html>

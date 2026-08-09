@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Artisan Profile Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#ccdbf3",
+                    "on-primary-fixed-variant": "#144f4b",
+                    "tertiary-container": "#434648",
+                    "on-surface": "#0d1c2e",
+                    "primary-container": "#134e4a",
+                    "tertiary": "#2c3032",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "on-secondary-fixed": "#2a1700",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "secondary-fixed": "#ffddb8",
+                    "inverse-surface": "#233144",
+                    "secondary": "#855300",
+                    "on-primary-fixed": "#00201e",
+                    "secondary-container": "#fea619",
+                    "on-surface-variant": "#404847",
+                    "outline": "#707977",
+                    "on-primary": "#ffffff",
+                    "on-background": "#0d1c2e",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-primary": "#9ad1cb",
+                    "primary": "#003633",
+                    "on-secondary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "outline-variant": "#bfc8c6",
+                    "surface-variant": "#d5e3fc",
+                    "surface-tint": "#316763",
+                    "primary-fixed-dim": "#9ad1cb",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#684000",
+                    "surface-container-highest": "#d5e3fc",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#b1b4b6",
+                    "primary-fixed": "#b5ede7",
+                    "on-primary-container": "#87beb8",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-fixed": "#e0e3e5",
+                    "surface": "#f8f9ff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-low": "#eff4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "max-width": "1200px",
+                    "sm": "12px",
+                    "margin-mobile": "20px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "margin-desktop": "auto",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Public Sans"
+                    ],
+                    "display-lg": [
+                            "Public Sans"
+                    ],
+                    "label-md": [
+                            "Public Sans"
+                    ],
+                    "body-lg": [
+                            "Public Sans"
+                    ],
+                    "label-sm": [
+                            "Public Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Public Sans"
+                    ],
+                    "headline-lg": [
+                            "Public Sans"
+                    ],
+                    "headline-md": [
+                            "Public Sans"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "34px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation (Transactional, no shell nav) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full top-0 sticky z-50">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-max-width mx-margin-desktop">
+<div class="flex items-center gap-sm">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-80 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<img alt="HandyLink Logo" class="h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLu9TTpTz7KIDHX3nqDmVVYIcuwYXZBEnZPolYMZid9orxP6x1h8KG17UAQKorDo33_RtTCV-HJctvs6dwiGgADkCM-Pd8XYkJ8356bRbegYXIZJ7kd4INIL1TqX84EmYnNWgKqQgqj7Fdh7cI8w3NzFwoadB9sR6z7l33t6YM6nq6TLDQzgdEafzCn4clWrz_Lzelm2AycFQ4aeAWZ_MbSk4xMOGVUWS_fd4p1s3fduVQeiZFnFi3MJaCY"/>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Step 1 of 3</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-variant h-1">
+<div class="bg-primary h-1" style="width: 33.33%;"></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-2xl mx-auto px-margin-mobile md:px-0 py-xl flex flex-col gap-xl">
+<!-- Header Section -->
+<div class="flex flex-col gap-sm">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Set up your Artisan Profile</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Tell us about your craft so customers can find you and book your services.</p>
+</div>
+<!-- Form Area -->
+<form class="flex flex-col gap-lg bg-surface-container-lowest p-md md:p-lg rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-surface-variant">
+<!-- Profile Photo Upload -->
+<div class="flex flex-col items-center gap-md">
+<div class="relative w-32 h-32 rounded-full bg-surface-container-high border-2 border-dashed border-outline-variant flex flex-col items-center justify-center cursor-pointer hover:bg-surface-container transition-colors group">
+<span class="material-symbols-outlined text-outline text-4xl mb-2 group-hover:text-primary transition-colors" data-icon="add_a_photo">add_a_photo</span>
+<span class="font-label-sm text-label-sm text-outline group-hover:text-primary">Upload Photo</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant text-center max-w-xs">A clear, professional photo helps build trust with potential customers.</p>
+</div>
+<hr class="border-outline-variant opacity-50"/>
+<!-- Basic Info Fields -->
+<div class="flex flex-col gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="businessName">Business or Artisan Name *</label>
+<input class="w-full rounded-[16px] border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="businessName" placeholder="e.g. Sarah's Electric Services" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="serviceCategory">Primary Service Category *</label>
+<div class="relative">
+<select class="w-full rounded-[16px] border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="serviceCategory">
+<option disabled="" selected="" value="">Select a category</option>
+<option value="plumbing">Plumbing</option>
+<option value="electrical">Electrical</option>
+<option value="carpentry">Carpentry</option>
+<option value="landscaping">Landscaping</option>
+<option value="cleaning">Cleaning</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="experience">Years of Experience *</label>
+<input class="w-full rounded-[16px] border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="experience" min="0" placeholder="e.g. 5" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="bio">Short Bio *</label>
+<textarea class="w-full rounded-[16px] border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-y" id="bio" placeholder="Tell customers about your craft, your approach to work, and what makes your service special..." rows="4"></textarea>
+</div>
+</div>
+<hr class="border-outline-variant opacity-50"/>
+<!-- Skills Tags -->
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Specific Skills</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optional but recommended</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Add specific skills to help customers find you for specialized tasks.</p>
+<div class="flex gap-2">
+<input class="flex-grow rounded-[16px] border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" id="skillInput" placeholder="e.g. Rewiring, Lighting installation" type="text"/>
+<button class="bg-surface-container-high text-on-surface hover:bg-surface-variant px-4 rounded-[16px] font-label-md text-label-md transition-colors flex items-center justify-center" type="button">
+                        Add
+                    </button>
+</div>
+<!-- Example Pre-filled Tags container -->
+<div class="flex flex-wrap gap-2 mt-2">
+<div class="inline-flex items-center gap-1 bg-surface-container-low border border-outline-variant text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm">
+                        Rewiring
+                        <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-error" data-icon="close">close</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-low border border-outline-variant text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm">
+                        Lighting
+                        <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-error" data-icon="close">close</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-low border border-outline-variant text-on-surface px-3 py-1.5 rounded-full font-label-sm text-label-sm">
+                        Safety Inspections
+                        <span class="material-symbols-outlined text-[16px] cursor-pointer hover:text-error" data-icon="close">close</span>
+</div>
+</div>
+</div>
+</form>
+<!-- Footer Actions -->
+<div class="flex justify-end pt-sm pb-xl">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-[16px] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:bg-on-primary-fixed-variant transition-all active:scale-[0.98] min-h-[48px] flex items-center gap-2" type="button">
+                Continue to Step 2
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+</body></html>

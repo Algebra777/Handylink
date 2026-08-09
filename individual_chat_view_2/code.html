@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Chat with Jane Cooper</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#2c3032",
+                        "outline-variant": "#bfc8c6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#316763",
+                        "error": "#ba1a1a",
+                        "on-background": "#0d1c2e",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d5e3fc",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#684000",
+                        "secondary-fixed": "#ffddb8",
+                        "on-tertiary-container": "#b1b4b6",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#ccdbf3",
+                        "on-surface-variant": "#404847",
+                        "primary-fixed": "#b5ede7",
+                        "secondary-container": "#fea619",
+                        "on-primary-fixed": "#00201e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e6eeff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#2a1700",
+                        "tertiary-container": "#434648",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#9ad1cb",
+                        "surface-variant": "#d5e3fc",
+                        "on-surface": "#0d1c2e",
+                        "inverse-primary": "#9ad1cb",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-container-high": "#dce9ff",
+                        "primary": "#003633",
+                        "on-tertiary-fixed": "#191c1e",
+                        "primary-container": "#134e4a",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-surface": "#233144",
+                        "outline": "#707977",
+                        "secondary": "#855300",
+                        "on-primary-container": "#87beb8",
+                        "on-primary-fixed-variant": "#144f4b",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#444749"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "margin-desktop": "auto",
+                        "lg": "40px",
+                        "max-width": "1200px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md h-full flex flex-col antialiased">
+<!-- TopAppBar (Transactional Context - No Shell Navigation) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full top-0 flex justify-between items-center px-md py-sm max-w-max-width mx-margin-desktop shadow-sm shrink-0 z-10 sticky">
+<div class="flex items-center gap-sm">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-sm">
+<div class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm">
+<img alt="Jane Cooper's Profile Picture" class="w-full h-full object-cover" data-alt="A professional headshot of a friendly woman named Jane Cooper, smiling warmly in a bright, modern indoor setting. She represents a typical homeowner client in the HandyLink app. Soft, natural lighting highlights her face, aligning with the clean, modern aesthetic of the app's corporate yet humanist design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5atYslfqtl63-GNmIYvbtFOczIOVK_tpLW9NVKL9-CdbG44whtBSwk-Qs4vjMylL7l5X6x7G9bfd6L7F_xytv8g7XWjeDwGtgt7SViHjlDBEaWG8L0L2rsvJ8Pa2U1BVvgveYiINfm-VyWUYI_hBr_nDnN6y4snYOjv78QSpqtE_ckpRCuVWf2uIrL_sNxRCaOegb2XgE8A1DxrrBl4t1tb38b-KQHsko5EpTYuU8l7TeWHQ_zgIr"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Jane Cooper</h1>
+<span class="font-label-md text-label-md text-on-surface-variant">Electrical Repair - Kitchen</span>
+</div>
+</div>
+</div>
+<div>
+<button aria-label="More options" class="text-on-surface-variant hover:bg-surface-container-low transition-colors rounded-full p-2 cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile md:px-md py-md max-w-max-width mx-margin-desktop w-full flex flex-col gap-md pb-[100px]">
+<!-- Date Divider -->
+<div class="flex justify-center w-full my-sm">
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.05)]">Today</span>
+</div>
+<!-- Client Message (Left) -->
+<div class="flex items-end gap-sm self-start max-w-[85%] md:max-w-[70%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 shadow-sm hidden md:block">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A small thumbnail profile picture of Jane Cooper, a smiling woman in a bright modern setting, consistent with the HandyLink clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-RPJQofwMA_Q5n7ijP80DhCW5P15VxODL9hZao_yaVEHJMg2dliqHYSmfwZUOIUtf9Kc5h6Ni3tbVhJK1Sjsa0MbWnUt6fBcqm40rQC6gUqapXDOuscPqDpLCvTa8dlMVMdeEfP7xFIY9RWO0-ZGSE74aiMRhquDistKFS5T-tlQarLQptE1pOO7huh6-5CM8FIVa5dD1jZLeLNiIMpgBtJ5ps4CqyYiYZniudeaMsOlIeVUTCoKB"/>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="bg-surface-container-low text-on-surface rounded-2xl rounded-bl-sm px-4 py-3 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="font-body-md text-body-md">Hi! Are you still on track to arrive by 2:00 PM for the kitchen lights?</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">1:15 PM</span>
+</div>
+</div>
+<!-- Artisan Message (Right) -->
+<div class="flex items-end gap-sm self-end max-w-[85%] md:max-w-[70%] flex-row-reverse">
+<div class="flex flex-col gap-xs items-end">
+<div class="bg-primary text-on-primary rounded-2xl rounded-br-sm px-4 py-3 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="font-body-md text-body-md">Hello Jane! Yes, I just finished up my previous job. I'm on my way, see you at 2:00 PM.</p>
+</div>
+<div class="flex items-center gap-1 mr-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1:20 PM</span>
+<span class="material-symbols-outlined text-[14px] text-surface-tint" data-icon="done_all" data-weight="fill" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+</div>
+<!-- Client Message (Left) - Image Attachment Example -->
+<div class="flex items-end gap-sm self-start max-w-[85%] md:max-w-[70%] mt-sm">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 shadow-sm hidden md:block">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A small thumbnail profile picture of Jane Cooper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-7WD8IdFs0FaIjg7BytknL3CkjoaxrExax668c66as-QKaX8XD1TZ4zMvK7o-UwZ9wlLnDrrR4OvvxgY9ju0cewpywr4_6sKbJE012yRrRKWKDR16EHnDQsI2KEIA-q6GduuTBBi9776K9TSFygAzNghJ25Pe773NLqIkRiO7KHPI_vCT0xJDUmoo9FeVfMlkjtKhdqIg8Oqeht_HNmEdaeRba6iqOId3j4LLELoMF5G4tsj8-mLP"/>
+</div>
+<div class="flex flex-col gap-xs">
+<div class="bg-surface-container-low text-on-surface rounded-2xl rounded-bl-sm p-2 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex flex-col gap-2">
+<div class="w-full h-40 rounded-xl overflow-hidden relative">
+<img alt="Kitchen Lights" class="w-full h-full object-cover" data-alt="A photo taken from a smartphone showing a modern kitchen ceiling with two unlit pendant lights. The lighting in the photo is slightly dim, indicating a need for electrical repair. The style fits the context of a homeowner sending a quick reference photo for a HandyLink service request." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbenvoardNBXBECri6qsWL9EAL1qJeZWSwtQS-42S-gi6kEs8gbpXQpfzNtIpPt4Z0nVo_euId62LZBCRlCF9r_IdaOETWONiXfrXIn_znp9uAKzXWWIej9Eks7fZClqn3T5Rxxpd0G3zsZA2j9D2tu_SG0xzDH01n9yV79DkRhRCh-P6STh_TQqdmbVPjVyk11MCdnRxnEOoik-oYCnNaDb58buznpWFhF5rE9pAv4XjNsVwAFMwv"/>
+</div>
+<p class="font-body-md text-body-md px-2 pb-1">Just sending a quick pic of the fixtures we talked about.</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-2">1:25 PM</span>
+</div>
+</div>
+</main>
+<!-- Fixed Input Area Bottom -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-outline-variant px-margin-mobile md:px-md py-sm z-50 flex items-center justify-center shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
+<div class="max-w-max-width w-full flex items-center gap-sm">
+<button aria-label="Attach file" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-low active:opacity-80 shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+<button aria-label="Take photo" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-low active:opacity-80 shrink-0 flex items-center justify-center hidden sm:flex">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</button>
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container-low border border-outline-variant text-on-surface font-body-md text-body-md rounded-xl py-3 px-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant transition-all h-12 shadow-inner" placeholder="Type a message..." type="text"/>
+</div>
+<button aria-label="Send message" class="bg-secondary text-on-secondary rounded-xl h-12 w-12 flex items-center justify-center hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-all active:scale-95 shrink-0">
+<span class="material-symbols-outlined" data-icon="send" data-weight="fill" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</body></html>

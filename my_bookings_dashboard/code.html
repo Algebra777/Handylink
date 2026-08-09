@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - My Bookings</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#2a1700",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#9ad1cb",
+                    "on-surface-variant": "#404847",
+                    "on-tertiary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-primary-container": "#87beb8",
+                    "primary-fixed-dim": "#9ad1cb",
+                    "on-surface": "#0d1c2e",
+                    "primary-fixed": "#b5ede7",
+                    "primary": "#003633",
+                    "surface": "#f8f9ff",
+                    "tertiary-container": "#434648",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "surface-container-highest": "#d5e3fc",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-secondary-container": "#684000",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffddb8",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container": "#e6eeff",
+                    "error-container": "#ffdad6",
+                    "secondary": "#855300",
+                    "on-primary-fixed": "#00201e",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#144f4b",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "surface-dim": "#ccdbf3",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "outline": "#707977",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#fea619",
+                    "on-background": "#0d1c2e",
+                    "outline-variant": "#bfc8c6",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "inverse-surface": "#233144",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#2c3032",
+                    "surface-tint": "#316763",
+                    "surface-variant": "#d5e3fc",
+                    "tertiary-fixed": "#e0e3e5",
+                    "primary-container": "#134e4a",
+                    "on-tertiary-container": "#b1b4b6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "max-width": "1200px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "xl": "64px",
+                    "margin-desktop": "auto",
+                    "sm": "12px",
+                    "md": "24px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Public Sans"
+                    ],
+                    "headline-lg": [
+                            "Public Sans"
+                    ],
+                    "body-md": [
+                            "Public Sans"
+                    ],
+                    "headline-md": [
+                            "Public Sans"
+                    ],
+                    "display-lg": [
+                            "Public Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Public Sans"
+                    ],
+                    "body-lg": [
+                            "Public Sans"
+                    ],
+                    "label-md": [
+                            "Public Sans"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "34px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+        }
+        [data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Ambient Shadows */
+        .shadow-level-1 {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .shadow-level-2 {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Hide scrollbar for tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-24 font-body-md text-body-md md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface-lowest dark:bg-surface-container-lowest w-full top-0 sticky border-b border-outline-variant dark:border-outline z-40 hidden md:block">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-max-width mx-desktop">
+<div class="flex items-center gap-sm">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 p-2 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">My Bookings</h1>
+</div>
+<!-- Web Nav Cluster (Hidden on Mobile, Required by "Platform & Layout" logic) -->
+<nav class="hidden md:flex gap-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 px-4 py-2" href="#">
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 px-4 py-2 bg-primary-container text-on-primary-container rounded-2xl" href="#">
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 px-4 py-2" href="#">
+<span class="font-label-sm text-label-sm">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 duration-150 px-4 py-2" href="#">
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</div>
+</header>
+<!-- Mobile Header (simplified for mobile view) -->
+<header class="bg-surface-lowest w-full top-0 sticky z-40 md:hidden pb-2 pt-4 px-margin-mobile border-b border-outline-variant">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">My Bookings</h1>
+</header>
+<main class="w-full max-w-max-width mx-desktop px-margin-mobile pt-sm md:pt-md pb-xl">
+<!-- Segmented Control / Tabs -->
+<div class="w-full overflow-x-auto no-scrollbar mb-lg">
+<div class="flex bg-surface-container-low rounded-xl p-xs w-max min-w-full md:min-w-0 md:w-auto border border-outline-variant/30">
+<button class="flex-1 px-md py-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all text-center whitespace-nowrap min-w-[120px]">
+                    Upcoming
+                </button>
+<button class="flex-1 px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-all text-center whitespace-nowrap min-w-[120px]">
+                    Pending
+                </button>
+<button class="flex-1 px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-all text-center whitespace-nowrap min-w-[120px]">
+                    Past
+                </button>
+</div>
+</div>
+<!-- Bookings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Booking Card: Upcoming 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col gap-sm border border-outline-variant/20 relative">
+<!-- Status Badge -->
+<div class="absolute top-gutter right-gutter">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                        Confirmed
+                    </span>
+</div>
+<!-- Artisan Info -->
+<div class="flex items-center gap-sm mt-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="Artisan" class="w-full h-full object-cover" data-alt="A professional headshot of a friendly, middle-aged male electrician wearing a clean navy blue uniform. The lighting is soft and flattering, highlighting a trustworthy smile. The background is a gently blurred workshop interior with warm lighting, fitting a modern corporate humanist aesthetic with teal undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnl-l5t52jLxJRq3ygPQbKGp3HGMwEYWRJGpI85c_6UYTyDviq0FhhtrXgM9mayYQfotnto5nqgI90YhyuV-5A9tSMkeXxsnPuZwlcwj2byZtqtuSzg-7hwisiKfWkrZTSzKVZwDBBVivdrYmEyyRyS-eTUYMAlcAaAdMt0BF79qdSbCvDqmOH57SHBZUH4xZM4Qnc3UpvADyzKGIYZdQHUJQo0vP0YCmBsU5tRs_6k2NFyTxz74zo"/>
+</div>
+<div>
+<h3 class="font-headline-md text-[18px] leading-tight font-semibold text-primary">Marcus Vance</h3>
+<p class="font-label-md text-label-md text-outline">Master Electrician</p>
+</div>
+</div>
+<!-- Service Details -->
+<div class="mt-xs">
+<h4 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Lighting Installation</h4>
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-sm">Oct 24, 2023</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="schedule">schedule</span>
+<span class="font-body-md text-sm">10:00 AM - 12:00 PM</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto pt-sm flex gap-sm border-t border-surface-container-highest">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md h-12 rounded-xl flex items-center justify-center gap-xs hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+                        Message
+                    </button>
+<button class="px-sm text-primary font-label-md text-label-md hover:bg-surface-container-low rounded-xl transition-colors">
+                        Details
+                    </button>
+</div>
+</div>
+<!-- Booking Card: Upcoming 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-gutter shadow-level-1 hover:shadow-level-2 transition-shadow flex flex-col gap-sm border border-outline-variant/20 relative">
+<!-- Status Badge -->
+<div class="absolute top-gutter right-gutter">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                        Confirmed
+                    </span>
+</div>
+<!-- Artisan Info -->
+<div class="flex items-center gap-sm mt-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="Artisan" class="w-full h-full object-cover" data-alt="A friendly profile photo of a young female plumber with a confident expression, wearing a neat grey work shirt. She is standing outdoors with soft natural daylight. The background is a blurred residential setting. The overall mood is reliable, warm, and professional, aligning with a clean modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg8aufGHvfZ3scu6lsSgHcM05Ez5KDcIgOk31R07miyxRj14lGWhxr3vKMedDIvB_kKkXobos_mDSnXl4b0x0OBo5cT6rH8tYac78RWAodn8I63b6lEAqxOpfQs4Rw9s-mkC9Z91qaXRbL8qJdNMCD3QRXHyJRxI-TULJLoH28nWQUM30u_wnJtZtQNfwkmi1KY_5GFnEmgvBKGR2rOu2chC12hZn_XDKQfQXRkjYn-TqCugQGC7y-"/>
+</div>
+<div>
+<h3 class="font-headline-md text-[18px] leading-tight font-semibold text-primary">Elena Rodriguez</h3>
+<p class="font-label-md text-label-md text-outline">Licensed Plumber</p>
+</div>
+</div>
+<!-- Service Details -->
+<div class="mt-xs">
+<h4 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Pipe Leak Repair</h4>
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-sm">Oct 26, 2023</span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="schedule">schedule</span>
+<span class="font-body-md text-sm">2:00 PM - 4:00 PM</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto pt-sm flex gap-sm border-t border-surface-container-highest">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md h-12 rounded-xl flex items-center justify-center gap-xs hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+                        Message
+                    </button>
+<button class="px-sm text-primary font-label-md text-label-md hover:bg-surface-container-low rounded-xl transition-colors">
+                        Details
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface-dim fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-surface-dim shadow-[0_-4px_12px_0_rgba(0,0,0,0.05)] shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container dark:bg-primary-fixed-dim dark:text-on-primary-fixed-variant rounded-2xl px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today" data-weight="fill">calendar_today</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>

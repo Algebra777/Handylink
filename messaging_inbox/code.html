@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>HandyLink - Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#134e4a",
+                        "outline": "#707977",
+                        "on-primary-container": "#87beb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#2c3032",
+                        "on-primary-fixed": "#00201e",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-background": "#0d1c2e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#233144",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#ffddb8",
+                        "surface-tint": "#316763",
+                        "surface-container": "#e6eeff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#144f4b",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#404847",
+                        "surface-container-highest": "#d5e3fc",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary": "#855300",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#9ad1cb",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-dim": "#ccdbf3",
+                        "secondary-container": "#fea619",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#9ad1cb",
+                        "on-surface": "#0d1c2e",
+                        "tertiary-container": "#434648",
+                        "primary": "#003633",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#b5ede7",
+                        "surface-variant": "#d5e3fc",
+                        "outline-variant": "#bfc8c6",
+                        "on-tertiary-container": "#b1b4b6",
+                        "on-secondary-container": "#684000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "auto",
+                        "margin-mobile": "20px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "max-width": "1200px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "sm": "12px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "body-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Ambient Shadows */
+        .shadow-ambient-1 { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        .shadow-ambient-2 { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-[80px]">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed font-headline-md text-headline-md w-full top-0 border-b border-outline-variant dark:border-outline-variant flat no shadows sticky z-40">
+<div class="flex justify-between items-center px-md py-sm w-full max-w-max-width mx-margin-desktop">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 transition-colors" data-icon="handyman">handyman</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Messages</span>
+</div>
+<span class="material-symbols-outlined cursor-pointer active:opacity-80 transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-max-width mx-margin-desktop px-margin-mobile md:px-md py-sm">
+<!-- Search Bar -->
+<div class="mb-md sticky top-[65px] z-30 bg-background pt-sm pb-xs">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-sm pl-[40px] pr-sm font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-outline shadow-ambient-1 transition-all" placeholder="Search clients or jobs..." type="text"/>
+</div>
+</div>
+<!-- Conversation List -->
+<div class="flex flex-col gap-sm">
+<!-- Thread 1 (Unread) -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-ambient-1 hover:shadow-ambient-2 transition-shadow cursor-pointer flex items-start gap-sm relative border border-transparent hover:border-primary-container group">
+<!-- Unread Indicator -->
+<div class="absolute top-sm right-sm w-2 h-2 rounded-full bg-primary-container"></div>
+<img class="w-[48px] h-[48px] rounded-full object-cover shrink-0 bg-surface-variant" data-alt="A bright, high-quality portrait photo of a professional woman with a warm, welcoming smile. She has dark hair tied back, wearing a neat casual outfit. The background is slightly blurred but suggests a modern home interior. The lighting is soft, natural, and flattering, fitting a trusted client profile picture in a modern service app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj1ELVrWk1r_MgN7Wd6DHTiu9k1jKBibRInS_QKXjoD92x9zUMX7LqU_Wz4lBE_VlBfG7RmwIuhmqz8rqgTwgEvBlvkogEPM53u_lZuLl6PgpHsalcZCXIRiTlMkMh7zVxkUCraFQiJbTpFLEVONYV2GUeSHqmz8mkRF28u0lSvGN7JA9ZhZ0DVtAR2V3eMA52ZhyEy8oMMJ5UcV6FvLRAY_nUYPRQvCzAHxVIY2QCEt7jDydnadU9"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-[2px]">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Jane Cooper</h3>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold whitespace-nowrap ml-sm">10m ago</span>
+</div>
+<div class="flex items-center gap-xs mb-[2px]">
+<span class="material-symbols-outlined text-[14px] text-secondary">bolt</span>
+<span class="font-label-sm text-label-sm text-secondary truncate">Electrical Repair - Kitchen</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">Can you come 15 minutes earlier?</p>
+</div>
+</div>
+<!-- Thread 2 (Unread) -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-ambient-1 hover:shadow-ambient-2 transition-shadow cursor-pointer flex items-start gap-sm relative border border-transparent hover:border-primary-container group">
+<div class="absolute top-sm right-sm w-2 h-2 rounded-full bg-primary-container"></div>
+<img class="w-[48px] h-[48px] rounded-full object-cover shrink-0 bg-surface-variant" data-alt="A clear, professional headshot of a middle-aged man with short graying hair and glasses. He has a concerned but friendly expression, wearing a collared shirt. The background is a bright, minimal outdoor setting. The image is crisp, well-lit with soft daylight, and looks like a verified user profile photo for a local service marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3pCTSGLXyn4buhe1f0VXJRIDHYg-SGcC0Ru7A8oTvTL6AGpZ0ruIz5YmIS6X3N9soPc8Hspk6Tdm5LW_qWnQi2v7hqlf47ZwFCUUCzDzgxR9_2OXHb70XboWBqpIMAFg8j4iwf5SFXSNLSLh4P5axUiuCcyK8lxjhsD-a4TLmTvTJKXdk_wJX5G6oUkAwcgd6UDnWZxl2xxgN8265CisOtqx8ZKpUOyRZ1kStElFbqNc1Ta_3HF_n"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-[2px]">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface truncate">Robert Fox</h3>
+<span class="font-label-sm text-label-sm text-primary-container font-semibold whitespace-nowrap ml-sm">2h ago</span>
+</div>
+<div class="flex items-center gap-xs mb-[2px]">
+<span class="material-symbols-outlined text-[14px] text-outline">plumbing</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Pipe Inspection</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium truncate">The leak is getting worse under the sink.</p>
+</div>
+</div>
+<!-- Thread 3 (Read) -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-ambient-1 hover:shadow-ambient-2 transition-shadow cursor-pointer flex items-start gap-sm relative border border-transparent hover:border-outline-variant group">
+<img class="w-[48px] h-[48px] rounded-full object-cover shrink-0 bg-surface-variant" data-alt="A vibrant, modern profile photo of a young woman with curly hair laughing outdoors. She is wearing a bright yellow sweater. The background features lush green foliage softly out of focus. The lighting is sunny and optimistic. The overall aesthetic is friendly, modern, and high-quality, perfectly suited for a trustworthy client avatar in a service booking application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5FGi-kuhZpbb7dNxLiq42UNZUxhKrUtQEGc9cGQ7cs19nWjVrZEtt8--BIsCwHb8PZsLKpbWlA3p64zrmIWBE5jlvz07umdyEIl3sVfcFHmDRfhyNsm2eHl2eM2lwXD-DY91I0neVe3VTplc7P_UhTQuVsG4dCBmsXM-pDZQRnWgMgH-CIvm3ZzOw3Lydot9gX_aH98iEFCtvXiLU3j8NA9uaY1OxOqQX3FNzZFAPUKCvqc259M8D"/>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-[2px]">
+<h3 class="font-body-md text-body-md text-on-surface truncate">Eleanor Pena</h3>
+<span class="font-label-sm text-label-sm text-outline-variant whitespace-nowrap ml-sm">Yesterday</span>
+</div>
+<div class="flex items-center gap-xs mb-[2px]">
+<span class="material-symbols-outlined text-[14px] text-outline">format_paint</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Living Room Painting</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Thanks for the great work today! It looks amazing.</p>
+</div>
+</div>
+<!-- Thread 4 (Read) -->
+<div class="bg-surface-container-lowest rounded-xl p-sm shadow-ambient-1 hover:shadow-ambient-2 transition-shadow cursor-pointer flex items-start gap-sm relative border border-transparent hover:border-outline-variant group">
+<div class="w-[48px] h-[48px] rounded-full shrink-0 bg-surface-container-highest flex items-center justify-center">
+<span class="font-headline-md text-headline-md text-primary font-bold">W</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-[2px]">
+<h3 class="font-body-md text-body-md text-on-surface truncate">Wade Warren</h3>
+<span class="font-label-sm text-label-sm text-outline-variant whitespace-nowrap ml-sm">Mon</span>
+</div>
+<div class="flex items-center gap-xs mb-[2px]">
+<span class="material-symbols-outlined text-[14px] text-outline">carpenter</span>
+<span class="font-label-sm text-label-sm text-outline truncate">Custom Bookshelves</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Are the materials ready for tomorrow?</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only based on Responsive Pivot rules, but showing always for demonstration context per JSON) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-container-lowest text-primary dark:text-primary-fixed font-label-sm text-label-sm font-headline-md text-headline-md text-primary fixed bottom-0 w-full z-50 border-t border-outline-variant dark:border-outline-variant shadow-md fixed bottom-0 w-full z-50 flex justify-around items-center h-xl bg-surface-container-lowest pb-[env(safe-area-inset-bottom)]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-[2px]" data-icon="search">search</span>
+<span>Find Service</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-[2px]" data-icon="calendar_today">calendar_today</span>
+<span>My Bookings</span>
+</div>
+<!-- Active Tab: Messages -->
+<div class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined fill mb-[2px]" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+<span class="font-bold">Messages</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-[2px]" data-icon="person">person</span>
+<span>Profile</span>
+</div>
+</nav>
+<!-- Desktop Sidebar/Nav (Hidden on Mobile) - For full responsive adherence -->
+<nav class="hidden md:flex fixed inset-y-0 left-0 z-50 w-64 bg-surface-container-lowest border-r border-outline-variant flex-col py-md px-sm shadow-ambient-1">
+<div class="flex items-center gap-sm px-sm mb-xl">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="handyman">handyman</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">HandyLink</span>
+</div>
+<div class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-sm px-sm py-[10px] rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-body-md text-body-md font-medium">Find Service</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-[10px] rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-body-md text-body-md font-medium">My Bookings</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-[10px] rounded-lg bg-primary-container text-on-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined fill" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+<span class="font-body-md text-body-md font-bold">Messages</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-[10px] rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md text-body-md font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

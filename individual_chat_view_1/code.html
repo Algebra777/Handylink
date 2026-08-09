@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Chat with Jane Cooper</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#003633",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#87beb8",
+                        "inverse-surface": "#233144",
+                        "tertiary": "#2c3032",
+                        "error": "#ba1a1a",
+                        "on-background": "#0d1c2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#684000",
+                        "surface-tint": "#316763",
+                        "surface-container-highest": "#d5e3fc",
+                        "primary-fixed-dim": "#9ad1cb",
+                        "surface-container": "#e6eeff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-variant": "#d5e3fc",
+                        "on-secondary-fixed": "#2a1700",
+                        "outline-variant": "#bfc8c6",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#ffddb8",
+                        "on-primary-fixed": "#00201e",
+                        "on-surface": "#0d1c2e",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-container": "#fea619",
+                        "outline": "#707977",
+                        "surface-dim": "#ccdbf3",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#b5ede7",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-surface-variant": "#404847",
+                        "on-primary-fixed-variant": "#144f4b",
+                        "tertiary-container": "#434648",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "inverse-primary": "#9ad1cb",
+                        "tertiary-fixed": "#e0e3e5",
+                        "primary-container": "#134e4a",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#855300",
+                        "on-tertiary-container": "#b1b4b6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "max-width": "1200px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "auto",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "label-sm": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom scrollbar for chat area */
+        .chat-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: #bfc8c6;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-screen flex flex-col font-body-md overflow-hidden antialiased">
+<!-- TopAppBar equivalent (Customized for Chat Header) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant w-full top-0 flex justify-between items-center px-md py-sm w-full max-w-max-width mx-margin-desktop z-10 shrink-0">
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full cursor-pointer active:opacity-80 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling woman named Jane Cooper, serving as a client avatar in a modern mobile application. The lighting is soft and natural, casting gentle highlights on her face against a neutral, light-mode background. The image style is clean, modern, and trustworthy, perfectly aligning with a premium service app aesthetic. Soft focus in the background keeps attention on the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7WCQRLVAZJjr0IB2N7MPPlHg4DyqF4s_-Y4fzL1n5BLMWUywfctVwLy5bF5i5LZ0nK0yhskgjI5Py15Zte1QW7AbTh8-gaiIedOoJxWUw0Wyoak-w9u_h-Wk0NP3S6M7J67TjMbWAoDkCEbvVYKIP6ILGYbz56JFwjR13axlUNOMJUa7FpE7GMxorBzG5Wku8s2_mML82BMBkbK2vQDnUdZyRQTT3PoLvsABQFGOTy2D18k5nvdk5"/>
+</div>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-primary" style="font-size: 18px; line-height: 24px;">Jane Cooper</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Electrical Repair - Kitchen</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full cursor-pointer active:opacity-80 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full cursor-pointer active:opacity-80 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Contextual Bar -->
+<div class="bg-surface-container-lowest px-md py-sm border-b border-outline-variant shrink-0 z-10 shadow-sm relative">
+<div class="max-w-max-width mx-margin-desktop bg-surface-container-low rounded-lg p-sm flex items-center justify-between border border-outline-variant">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-xs">
+                        Confirmed 
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Today, 2:00 PM</span>
+</div>
+</div>
+<button aria-label="Dismiss banner" class="p-1 hover:bg-surface-variant transition-colors rounded-full text-on-surface-variant cursor-pointer">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Chat Interface -->
+<main class="flex-1 overflow-y-auto chat-scroll px-md py-lg flex flex-col gap-md max-w-max-width mx-margin-desktop w-full relative">
+<!-- Timestamp Divider -->
+<div class="flex items-center justify-center my-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest px-3 py-1 rounded-full border border-outline-variant">Today</span>
+</div>
+<!-- System Message -->
+<div class="flex justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center max-w-[80%]">Job confirmed for Kitchen Electrical Repair. Jane Cooper has shared address details securely.</span>
+</div>
+<!-- Receiver (Client) Message -->
+<div class="flex gap-sm self-start max-w-[85%] sm:max-w-[70%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 border border-outline-variant mt-1">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling woman named Jane Cooper, serving as a client avatar in a modern mobile application. The lighting is soft and natural, casting gentle highlights on her face against a neutral, light-mode background. The image style is clean, modern, and trustworthy, perfectly aligning with a premium service app aesthetic. Soft focus in the background keeps attention on the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATXoEoUXo4DPzQ_CePLHBGVuUrmSFx7boerSPoKR4DXaZbr4jRKrGpL_CwP8S_nO-ymjnc6i46ws5pF7TU4tun_une9F9u4boErjg5_8ZSQrNnBfj8vd9DXNYD5NqAqdUP8S_E0qjxkxvxCuDMwFVdrVXYttOgbCQO87mJ-5jsVAvVjllSJXLrQnqSrTc8XaNano5uvBn7LjuUT4CWo3L2c-byuQjwCM9gbh7nuebSYrm3u0eNHjDH"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-variant text-on-surface px-4 py-3 rounded-2xl rounded-tl-sm shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant">
+<p class="font-body-md text-body-md m-0">Hi there! Looking forward to having this fixed.</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant self-start ml-1">1:30 PM</span>
+</div>
+</div>
+<!-- Receiver (Client) Message -->
+<div class="flex gap-sm self-start max-w-[85%] sm:max-w-[70%] mt-[-8px]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 opacity-0 pointer-events-none">
+<!-- Empty space for alignment -->
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-variant text-on-surface px-4 py-3 rounded-2xl rounded-bl-sm shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant">
+<p class="font-body-md text-body-md m-0">Can you come 15 minutes earlier?</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant self-start ml-1">1:31 PM</span>
+</div>
+</div>
+<!-- Sender (Artisan) Message -->
+<div class="flex flex-col gap-1 self-end max-w-[85%] sm:max-w-[70%]">
+<div class="bg-primary text-on-primary px-4 py-3 rounded-2xl rounded-br-sm shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<p class="font-body-md text-body-md m-0">Sure, I can make that work. See you at 1:45 PM!</p>
+</div>
+<div class="flex items-center gap-1 self-end mr-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1:35 PM</span>
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="done_all">done_all</span>
+</div>
+</div>
+<!-- Receiver (Client) Message -->
+<div class="flex gap-sm self-start max-w-[85%] sm:max-w-[70%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 border border-outline-variant mt-1">
+<img alt="Jane Cooper" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling woman named Jane Cooper, serving as a client avatar in a modern mobile application. The lighting is soft and natural, casting gentle highlights on her face against a neutral, light-mode background. The image style is clean, modern, and trustworthy, perfectly aligning with a premium service app aesthetic. Soft focus in the background keeps attention on the subject." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7zFTv-nP_F3_H7JdMAbjM9akaXPy_pNhsVCZW81YVZ_17-DvGAAsXthf7M1IYoSMgZStPPOSDgMG-NUgBjDMfjd8AIRzQf-i80fNMticwyCTjsHQGrB2JpLfcGu4D8P8Pz4hjjLiztXQc7QAGR2rEZLf_OBATWB2Ah8tQuxCd40PPivxZ2G1IVlDvNj30KDC-cl4l53URmgNgl4SlVUVZ-Y0RDhKUXWm82LYL_NKz6JOLlsSCwDTe"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="bg-surface-variant text-on-surface px-4 py-3 rounded-2xl rounded-tl-sm shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-outline-variant">
+<p class="font-body-md text-body-md m-0">Perfect, thank you!</p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant self-start ml-1">1:36 PM</span>
+</div>
+</div>
+<!-- Bottom padding for scrolling past input -->
+<div class="h-4 w-full"></div>
+</main>
+<!-- Input Area -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant px-md py-sm w-full z-10 shrink-0">
+<div class="max-w-max-width mx-margin-desktop flex flex-col gap-sm">
+<!-- Quick Replies -->
+<div class="flex gap-sm overflow-x-auto pb-1 chat-scroll snap-x">
+<button class="snap-start shrink-0 bg-surface-container-low hover:bg-surface-variant text-on-surface border border-outline-variant px-4 py-2 rounded-full font-label-md text-label-md transition-colors whitespace-nowrap cursor-pointer">
+                    On my way
+                </button>
+<button class="snap-start shrink-0 bg-surface-container-low hover:bg-surface-variant text-on-surface border border-outline-variant px-4 py-2 rounded-full font-label-md text-label-md transition-colors whitespace-nowrap cursor-pointer">
+                    I've arrived
+                </button>
+<button class="snap-start shrink-0 bg-surface-container-low hover:bg-surface-variant text-on-surface border border-outline-variant px-4 py-2 rounded-full font-label-md text-label-md transition-colors whitespace-nowrap cursor-pointer">
+                    Sent the invoice
+                </button>
+</div>
+<!-- Input Field -->
+<div class="flex items-end gap-sm">
+<button class="p-3 bg-surface-container hover:bg-surface-variant text-on-surface transition-colors rounded-full shrink-0 flex items-center justify-center cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<div class="flex-1 relative">
+<textarea class="w-full bg-surface-bright border border-outline-variant text-on-surface font-body-md text-body-md rounded-[20px] px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary resize-none overflow-hidden max-h-[120px] shadow-[0_4px_12px_rgba(0,0,0,0.05)] placeholder-on-surface-variant" oninput="this.style.height = ''; this.style.height = Math.min(this.scrollHeight, 120) + 'px'" placeholder="Type a message..." rows="1" style="min-height: 48px; padding-right: 48px;"></textarea>
+<button class="absolute right-2 bottom-2 p-2 text-primary hover:bg-surface-container-low transition-colors rounded-full cursor-pointer flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

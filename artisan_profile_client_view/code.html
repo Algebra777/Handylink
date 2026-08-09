@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Artisan Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#233144",
+                        "on-tertiary-fixed": "#191c1e",
+                        "surface-dim": "#ccdbf3",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed": "#2a1700",
+                        "outline": "#707977",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-surface": "#0d1c2e",
+                        "surface-variant": "#d5e3fc",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary-container": "#684000",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#404847",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#bfc8c6",
+                        "surface-bright": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "tertiary-container": "#434648",
+                        "primary-fixed-dim": "#9ad1cb",
+                        "secondary": "#855300",
+                        "on-primary-container": "#87beb8",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#134e4a",
+                        "on-error-container": "#93000a",
+                        "on-background": "#0d1c2e",
+                        "primary": "#003633",
+                        "on-tertiary-container": "#b1b4b6",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fea619",
+                        "inverse-primary": "#9ad1cb",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary": "#2c3032",
+                        "surface-tint": "#316763",
+                        "on-primary-fixed": "#00201e",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary-fixed": "#b5ede7",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-container-highest": "#d5e3fc",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffddb8",
+                        "on-primary-fixed-variant": "#144f4b",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#e6eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "margin-desktop": "auto",
+                        "xl": "64px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "lg": "40px",
+                        "max-width": "1200px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .ambient-shadow-1 { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        .ambient-shadow-2 { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-xl md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 bg-surface-container-lowest dark:bg-surface-container-lowest flex justify-between items-center px-md py-sm w-full max-w-max-width mx-margin-desktop hidden md:flex border-b border-outline-variant dark:border-outline-variant sticky z-50">
+<div class="flex items-center gap-sm cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="handyman">handyman</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">HandyLink</span>
+</div>
+<nav class="flex gap-md">
+<a class="text-primary font-bold hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">Find Service</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">My Bookings</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">Messages</a>
+<a class="text-on-surface-variant hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">Profile</a>
+</nav>
+<div class="cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-max-width mx-margin-desktop px-margin-mobile md:px-md pt-lg pb-xl">
+<!-- Profile Header Section -->
+<section class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-md md:p-xl mb-xl flex flex-col md:flex-row gap-lg relative mt-12 md:mt-0">
+<!-- Avatar -->
+<div class="absolute -top-12 md:relative md:top-0 left-margin-mobile md:left-0 md:flex-shrink-0">
+<img alt="Artisan Profile Photo" class="w-24 h-24 md:w-40 md:h-40 rounded-full object-cover border-4 border-surface-container-lowest ambient-shadow-1" src="https://lh3.googleusercontent.com/aida/AP1WRLtcqAj_GNGzhDXMKa6ty4FhV4Xxt_I0Cif45d5bOOqCvH4NrE4cAQz_so4UW3ShdevGpOdUjJFxumbM_YemHlB5aHXmvXvV1KiJjim8Pyo9MDGGf29DLGV8qdonbbENx5VjkiasJUseZQTsR89hRqriCHpeidrkg-nbx9zZLVuGCTGUfM9Ql36ZvDQCdGXzb91bF1t34UNT-H062nqik1B8c2sJ3n_1kv9tarLYMFbGhsMsjLtu6GjPoQ"/>
+<div class="absolute bottom-0 right-0 md:bottom-2 md:right-2 bg-primary rounded-full p-1 flex items-center justify-center border-2 border-surface-container-lowest" title="Verified Artisan">
+<span class="material-symbols-outlined text-on-primary filled-icon text-[16px] md:text-[20px]" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- Profile Info -->
+<div class="mt-14 md:mt-0 flex-grow flex flex-col justify-center">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-md">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Sarah Jenkins</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-sm">Master Electrician • Seattle, WA</p>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[20px]" data-icon="star">star</span>
+<span class="font-label-md text-label-md font-bold">4.9</span>
+<span class="font-label-md text-label-md text-on-surface-variant underline cursor-pointer hover:text-primary transition-colors">(124 Reviews)</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-sm min-w-[200px]">
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md py-sm px-md rounded-[16px] w-full min-h-[48px] hover:ambient-shadow-2 transition-shadow active:scale-95 font-bold flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+                            Book Now
+                        </button>
+<button class="border border-outline bg-surface-container-lowest text-primary font-label-md text-label-md py-sm px-md rounded-[16px] w-full min-h-[48px] hover:bg-surface-container-low transition-colors active:scale-95 flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+                            Message
+                        </button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="flex flex-wrap gap-md mt-md pt-md border-t border-outline-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-container" data-icon="work_history">work_history</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Experience</span>
+<span class="font-body-md text-body-md font-bold">12 Years</span>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">HandyLink Jobs</span>
+<span class="font-body-md text-body-md font-bold">87 Completed</span>
+</div>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-container" data-icon="workspace_premium">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">License</span>
+<span class="font-body-md text-body-md font-bold">WA-ELEC-492</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Left Column: About & Reviews -->
+<div class="lg:col-span-2 flex flex-col gap-xl">
+<!-- About Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">About Sarah</h2>
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-md">
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">
+                            I'm a licensed Master Electrician with over a decade of experience residential and commercial electrical systems. My focus is on safety, efficiency, and leaving your home cleaner than I found it. Whether it's a simple fixture swap or a complete panel upgrade, I bring the same level of precision and care to every job.
+                        </p>
+<div class="flex flex-wrap gap-sm mt-md">
+<span class="bg-surface-container px-sm py-xs rounded-full font-label-sm text-label-sm text-on-surface">Panel Upgrades</span>
+<span class="bg-surface-container px-sm py-xs rounded-full font-label-sm text-label-sm text-on-surface">Smart Home Setup</span>
+<span class="bg-surface-container px-sm py-xs rounded-full font-label-sm text-label-sm text-on-surface">EV Chargers</span>
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="emergency">emergency</span> Emergency Services
+                            </span>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section>
+<div class="flex justify-between items-center mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Client Reviews</h2>
+<button class="text-primary font-label-md text-label-md hover:underline">View All 124</button>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Review Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-md">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-bold text-primary">MC</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Michael C.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">October 12, 2024</p>
+</div>
+</div>
+<div class="flex">
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">"Sarah was fantastic. She arrived on time, quickly diagnosed the issue with our circuit breaker, and had it fixed within the hour. Very professional and explained everything clearly."</p>
+<p class="font-label-sm text-label-sm text-outline mt-sm">Service: Breaker Repair</p>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-md">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-bold text-primary">AL</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Amanda L.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">September 28, 2024</p>
+</div>
+</div>
+<div class="flex">
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-secondary-container filled-icon text-[18px]" data-icon="star">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">"Installed our new EV charger perfectly. Sarah's communication before the job was excellent, providing a clear quote. Clean work area afterwards. Highly recommend!"</p>
+<p class="font-label-sm text-label-sm text-outline mt-sm">Service: EV Charger Installation</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Services & Gallery -->
+<div class="flex flex-col gap-xl">
+<!-- Services Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Popular Services</h2>
+<div class="flex flex-col gap-sm">
+<!-- Service Item -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-sm flex justify-between items-center hover:ambient-shadow-2 transition-shadow cursor-pointer group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Lighting Installation</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fixtures, chandeliers, recessed</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-secondary">From $95</div>
+</div>
+<!-- Service Item -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-sm flex justify-between items-center hover:ambient-shadow-2 transition-shadow cursor-pointer group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">EV Charger Setup</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Level 2, hardwired or plug</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-secondary">From $350</div>
+</div>
+<!-- Service Item -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-sm flex justify-between items-center hover:ambient-shadow-2 transition-shadow cursor-pointer group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Panel Upgrade</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">200 Amp service, new breakers</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-secondary">Estimate Req.</div>
+</div>
+<!-- Service Item -->
+<div class="bg-surface-container-lowest rounded-xl ambient-shadow-1 p-sm flex justify-between items-center hover:ambient-shadow-2 transition-shadow cursor-pointer group">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Troubleshooting</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Flickering lights, dead outlets</span>
+</div>
+<div class="font-label-md text-label-md font-bold text-secondary">$120 / hr</div>
+</div>
+<button class="mt-xs text-primary font-label-md text-label-md hover:underline text-center w-full">View All Services</button>
+</div>
+</section>
+<!-- Gallery Section -->
+<section>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Past Work</h2>
+<div class="grid grid-cols-2 gap-xs rounded-xl overflow-hidden ambient-shadow-1">
+<div class="bg-cover bg-center w-full aspect-square cursor-pointer hover:opacity-90 transition-opacity" data-alt="A clean, professionally installed home electrical panel with neatly routed wires in a modern light-mode setting. Bright white ambient light, teal accents on the tools nearby, high-quality, tidy craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlNwvCEwNBsQ7iOsVx5FaUT9UX7NNTgDOpFXLM-TKQwS0ueGEoK4viLtG-dVjKie-f2I9frG1kok1jDfCiz7cvpFqlFA3Cj1k2SNKvpbXiBVtS96MFlx5lynZFHjo7LC8aA-CDYxsCT8O1p735DmYRHY3TQrWHJSXMgk5DUYVbEDqIw_ULAn3NpHpwV9u-431At0wQkA9zKFj1zfWY-1S60IFqQ7gqnj_8DkItyzuS_j5hyeF6N0i3')"></div>
+<div class="bg-cover bg-center w-full aspect-square cursor-pointer hover:opacity-90 transition-opacity" data-alt="A sleek modern EV charger mounted on a clean garage wall. Soft, even lighting highlights the teal LED indicator on the charger. The aesthetic is clean, technological, and reliable." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLzulSMZ-8SfSNpJ99tpKx1hYEuCMkspKq3HIwi6x-NcXLuVmD-r0m5sczKzSxDtxtYwoqQQu98PfYKLuGRFaa4X7jBwpt0VnLuIKiBDGgHxckS8a9qJOCmx1qFNR3ypqd0Sdi_6HWQZDZkj3L_zCVrKsYGsFnsRcLqq3kw6-J4v2JBRmgMAYzmFzNNAshhr1eWBToUlIa05CqbgQcconzag5XN9BOzE6qAzA3AnAyA2dGHEisALFp')"></div>
+<div class="bg-cover bg-center w-full aspect-square cursor-pointer hover:opacity-90 transition-opacity" data-alt="Beautifully installed recessed lighting in a modern living room ceiling. Warm white light washes over soft grey walls, creating a cozy yet clean architectural feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPRm_1HPzdK89NyMrYYhGVflBuUVo9xMTcWVeb8QbvO0rbXCztB9w20AQeSACpGUIdaOClrRmcJD5lcQKp59Vdz6HJ5q7bGCCg2SHZg14SWFJmrLeKaCtNxRoq2hcINCaw9PSTzS04_NBri2Pu__MRnA_Vw4sEW42SZsm2rWEAbrg0mMJVDw2o8J6KOyva0SDel7Rr5ooYtK8A-Q7x7Hm2nMKEZIoSAet-ZKAarWUfVzfUOJSx06Nc')"></div>
+<div class="bg-cover bg-center w-full aspect-square cursor-pointer hover:opacity-90 transition-opacity relative" data-alt="A close-up of a modern smart-home light switch installed perfectly flush against a pristine white wall. Clean lines, minimalist aesthetic, with a subtle soft shadow indicating quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD6JKVnzAKTf5SaC84mZiPGGsBKIrUwa8a8FuP75juf4Wh47lmt7Svou1E1qh-jbDMnXTOgD8uLJDI0vj4a97BQhGy_09xHw5b8H465LDoEf0gjmUTYaSbDYIOF_K1L6BuinRmt7c3czyhUN5PEb-LRSWElENqUQnECCSRaJxItx6KizzubLr4KoD_2vGLQGNKWdRbPvlUgoqyLYetlc15vjhPKwpGJT5wonAaNGrrrLcUdCuJuFkc9')">
+<div class="absolute inset-0 bg-inverse-surface/60 flex items-center justify-center">
+<span class="text-on-primary font-label-md text-label-md font-bold">+8 More</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-xl bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant md:hidden">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Find Service</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm">My Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Footer (Desktop Only) -->
+<footer class="w-full py-xl px-md flex flex-col md:flex-row justify-between items-center gap-md bg-surface-container-low dark:bg-surface-container-low rounded-t-xl max-w-max-width mx-margin-desktop hidden md:flex mt-xl">
+<div class="font-label-md text-label-md text-on-surface-variant">
+            © 2024 HandyLink. Local craft, digital ease.
+        </div>
+<div class="flex gap-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">About Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Support</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="#">Log in</a>
+</div>
+</footer>
+</body></html>

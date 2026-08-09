@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Revenue Overview - HandyLink Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-surface-variant": "#424656",
+                    "outline": "#737687",
+                    "on-primary-container": "#f3f3ff",
+                    "on-tertiary-container": "#fff1ed",
+                    "surface-variant": "#e1e1ee",
+                    "tertiary-container": "#c84000",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-tertiary-fixed": "#390c00",
+                    "inverse-surface": "#2e303a",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-fixed-variant": "#003da9",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#191b24",
+                    "surface-dim": "#d8d9e6",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eff0fd",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0f62fe",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-secondary": "#ffffff",
+                    "background": "#faf8ff",
+                    "surface": "#faf8ff",
+                    "surface-container": "#ecedfa",
+                    "secondary-container": "#6cf8bb",
+                    "inverse-primary": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "on-background": "#191b24",
+                    "primary-fixed": "#dbe1ff",
+                    "surface-container-highest": "#e1e1ee",
+                    "surface-container-high": "#e7e7f4",
+                    "on-tertiary-fixed-variant": "#832700",
+                    "outline-variant": "#c3c6d8",
+                    "surface-container-low": "#f2f3ff",
+                    "on-secondary-container": "#00714d",
+                    "secondary": "#006c49",
+                    "surface-bright": "#faf8ff",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#0052dd",
+                    "on-primary-fixed": "#00174c",
+                    "primary": "#004ccd",
+                    "tertiary": "#9e3100"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "table-row-height": "48px",
+                    "topbar-height": "64px",
+                    "sidebar-width": "240px",
+                    "container-padding": "32px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-md": "16px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Poppins"
+                    ],
+                    "mono-data": [
+                            "Inter"
+                    ],
+                    "table-text": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Poppins"
+                    ],
+                    "title-sm": [
+                            "Poppins"
+                    ],
+                    "body-base": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "mono-data": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "table-text": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "title-sm": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-base": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base text-body-base min-h-screen">
+
+    {{DATA:COMPONENTS:COMPONENTS_4}}
+
+    <!-- Main Content Area -->
+<main class="ml-[240px] pt-[64px] min-h-screen">
+<div class="p-container-padding max-w-[1440px] mx-auto">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-gutter gap-4">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant mb-stack-sm text-xs">
+<span class="hover:text-primary cursor-pointer transition-colors">Admin</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-background font-medium">Revenue</span>
+</nav>
+<h1 class="font-headline-md text-headline-md">Revenue Overview</h1>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-[16px] font-title-sm text-sm font-semibold hover:bg-surface-tint transition-colors w-fit">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export Report
+                </button>
+</div>
+<!-- KPI Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-gutter">
+<!-- Total GMV -->
+<div class="bg-surface-container-lowest rounded-xl p-6 soft-shadow relative overflow-hidden group hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface-variant">Total GMV</h3>
+<div class="bg-primary-container/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-weight="fill">attach_money</span>
+</div>
+</div>
+<p class="font-display-lg text-display-lg mb-2">$1,245,670</p>
+<div class="flex items-center gap-1 text-secondary font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12.5%</span>
+<span class="text-on-surface-variant font-body-base text-xs ml-1">vs last month</span>
+</div>
+</div>
+<!-- Commission -->
+<div class="bg-surface-container-lowest rounded-xl p-6 soft-shadow relative overflow-hidden group hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface-variant">Platform Commission</h3>
+<div class="bg-secondary-container/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">account_balance_wallet</span>
+</div>
+</div>
+<p class="font-display-lg text-display-lg mb-2">$186,850</p>
+<div class="flex items-center gap-1 text-secondary font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+8.2%</span>
+<span class="text-on-surface-variant font-body-base text-xs ml-1">vs last month</span>
+</div>
+</div>
+<!-- Pending Payouts -->
+<div class="bg-surface-container-lowest rounded-xl p-6 soft-shadow relative overflow-hidden group hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface-variant">Pending Payouts</h3>
+<div class="bg-tertiary-container/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary" data-weight="fill">pending_actions</span>
+</div>
+</div>
+<p class="font-display-lg text-display-lg mb-2">$45,230</p>
+<div class="flex items-center gap-1 text-on-surface-variant font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>243 Artisans</span>
+</div>
+</div>
+<!-- Refunds -->
+<div class="bg-surface-container-lowest rounded-xl p-6 soft-shadow relative overflow-hidden group hover:shadow-lg transition-shadow">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface-variant">Refunds Processed</h3>
+<div class="bg-error-container/50 p-2 rounded-lg">
+<span class="material-symbols-outlined text-error" data-weight="fill">currency_exchange</span>
+</div>
+</div>
+<p class="font-display-lg text-display-lg mb-2">$3,420</p>
+<div class="flex items-center gap-1 text-error font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>-2.1%</span>
+<span class="text-on-surface-variant font-body-base text-xs ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Charts Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Revenue by Category (Bar Chart Placeholder via structure) -->
+<div class="bg-surface-container-lowest rounded-xl soft-shadow lg:col-span-2 p-6 flex flex-col h-[400px]">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-title-sm text-title-sm">Revenue by Category</h2>
+<select class="bg-surface-container-low border-outline-variant text-on-surface rounded-lg text-sm px-3 py-1.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>This Month</option>
+<option>Last Quarter</option>
+<option>Year to Date</option>
+</select>
+</div>
+<!-- Simplified Bar Chart Visualization -->
+<div class="flex-1 flex items-end gap-4 mt-auto border-b border-l border-outline-variant pb-2 pl-2 relative">
+<div class="absolute left-[-24px] top-0 bottom-0 flex flex-col justify-between text-xs text-on-surface-variant pb-2">
+<span>$40k</span>
+<span>$20k</span>
+<span>$0</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-colors rounded-t-sm h-[80%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">$32,000</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 truncate w-full text-center">Plumbing</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-colors rounded-t-sm h-[65%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">$26,000</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 truncate w-full text-center">Electrical</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-colors rounded-t-sm h-[90%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">$36,000</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 truncate w-full text-center">Cleaning</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-colors rounded-t-sm h-[40%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">$16,000</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 truncate w-full text-center">Carpentry</span>
+</div>
+<div class="flex-1 flex flex-col justify-end items-center group">
+<div class="w-full bg-primary/20 hover:bg-primary transition-colors rounded-t-sm h-[55%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">$22,000</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 truncate w-full text-center">Landscaping</span>
+</div>
+</div>
+</div>
+<!-- Payment Provider (Pie Chart Concept) -->
+<div class="bg-surface-container-lowest rounded-xl soft-shadow p-6 flex flex-col h-[400px]">
+<h2 class="font-title-sm text-title-sm mb-6">Payment Providers</h2>
+<div class="flex-1 flex items-center justify-center relative">
+<!-- CSS Donut Chart Representation -->
+<div class="w-48 h-48 rounded-full border-[16px] border-surface-container-highest relative overflow-hidden" style="background: conic-gradient(from 0deg, theme('colors.primary') 0% 65%, theme('colors.secondary') 65% 90%, theme('colors.tertiary') 90% 100%); border-color: transparent;">
+<div class="absolute inset-2 bg-surface-container-lowest rounded-full flex items-center justify-center flex-col">
+<span class="font-display-lg text-display-lg">3</span>
+<span class="text-xs text-on-surface-variant">Providers</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-col gap-3">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span>Stripe</span>
+</div>
+<span class="font-mono-data text-mono-data">65%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span>PayPal</span>
+</div>
+<span class="font-mono-data text-mono-data">25%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span>Bank Transfer</span>
+</div>
+<span class="font-mono-data text-mono-data">10%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

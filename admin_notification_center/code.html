@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HandyLink - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dbe1ff",
+                        "outline-variant": "#c3c6d8",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "surface-container": "#ecedfa",
+                        "inverse-surface": "#2e303a",
+                        "surface-bright": "#faf8ff",
+                        "surface-variant": "#e1e1ee",
+                        "outline": "#737687",
+                        "secondary": "#006c49",
+                        "surface-tint": "#0052dd",
+                        "on-secondary-container": "#00714d",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#9e3100",
+                        "primary-container": "#0f62fe",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff0fd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed-variant": "#003da9",
+                        "on-background": "#191b24",
+                        "on-primary-container": "#f3f3ff",
+                        "surface-container-high": "#e7e7f4",
+                        "surface": "#faf8ff",
+                        "tertiary-container": "#c84000",
+                        "on-primary-fixed": "#00174c",
+                        "primary": "#004ccd",
+                        "surface-container-highest": "#e1e1ee",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#fff1ed",
+                        "secondary-container": "#6cf8bb",
+                        "surface-container-low": "#f2f3ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-surface": "#191b24",
+                        "tertiary-fixed": "#ffdbd0",
+                        "tertiary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf8ff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-dim": "#d8d9e6",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-surface-variant": "#424656",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-secondary-fixed": "#002113"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "16px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "topbar-height": "64px",
+                        "sidebar-width": "240px",
+                        "container-padding": "32px",
+                        "stack-md": "16px",
+                        "table-row-height": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "table-text": ["Inter"],
+                        "title-sm": ["Poppins"],
+                        "label-caps": ["Inter"],
+                        "body-base": ["Inter"],
+                        "display-lg": ["Poppins"],
+                        "mono-data": ["Inter"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "table-text": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "title-sm": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "mono-data": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .soft-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .modal-shadow {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-base text-body-base text-on-surface antialiased">
+<!-- Dimmer Overlay -->
+<div class="fixed inset-0 bg-on-surface/20 z-40 transition-opacity"></div>
+<!-- SideNavBar -->
+<aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col gap-1 py-4 z-30">
+<div class="px-4 mb-6">
+<h1 class="font-display-lg text-display-lg text-primary">HandyLink</h1>
+<p class="text-on-surface-variant font-label-caps text-label-caps uppercase mt-1">Admin Console</p>
+</div>
+<nav class="flex flex-col gap-1 w-full flex-1 overflow-y-auto px-2">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Keep sidebar simple for modal focus -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-container-low transition-colors rounded-lg mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</aside>
+<!-- TopNavBar -->
+<header class="h-[64px] fixed top-0 right-0 left-[240px] z-30 bg-surface-container-lowest border-b border-outline-variant flex justify-between items-center px-container-padding">
+<div class="flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-lg border border-outline-variant bg-surface-container-low focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-base text-body-base" placeholder="Search..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline font-label-caps text-label-caps border border-outline-variant rounded px-1.5 py-0.5">⌘K</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-primary hover:bg-surface-container-low rounded-full transition-colors z-50">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-primary-container rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-title-sm text-title-sm">
+                A
+            </div>
+</div>
+</header>
+<!-- Main Content Area (Dimmed by overlay) -->
+<main class="pl-[240px] pt-[64px] min-h-screen z-0">
+<!-- Content would go here, leaving empty to focus on modal -->
+</main>
+<!-- Notification Modal/Popover -->
+<div class="fixed top-[72px] right-[32px] w-[400px] bg-surface-container-lowest rounded-2xl modal-shadow border border-outline-variant z-50 overflow-hidden flex flex-col">
+<!-- Header -->
+<div class="flex items-center justify-between p-4 border-b border-outline-variant bg-surface-container-lowest">
+<h2 class="font-title-sm text-title-sm text-on-surface">Notifications</h2>
+<button class="text-primary font-mono-data text-mono-data hover:underline">Mark all as read</button>
+</div>
+<!-- Notification List -->
+<div class="flex flex-col max-h-[400px] overflow-y-auto">
+<!-- Item 1 (Unread) -->
+<div class="flex gap-4 p-4 hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-primary bg-primary-fixed-dim/10">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex-1">
+<p class="font-body-base text-body-base text-on-surface">
+<span class="font-semibold">New Artisan Application:</span> Marcus Rivera applied for Electrician.
+                    </p>
+<p class="font-label-caps text-label-caps text-outline mt-1">2 mins ago</p>
+</div>
+<div class="w-2 h-2 rounded-full bg-primary-container mt-2"></div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 p-4 hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-transparent">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center flex-shrink-0 text-error">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div class="flex-1">
+<p class="font-body-base text-body-base text-on-surface">
+<span class="font-semibold">High Priority Dispute:</span> Booking #BK-9042 has been escalated.
+                    </p>
+<p class="font-label-caps text-label-caps text-outline mt-1">1 hour ago</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-4 p-4 hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-transparent">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center flex-shrink-0 text-on-surface-variant">
+<span class="material-symbols-outlined">info</span>
+</div>
+<div class="flex-1">
+<p class="font-body-base text-body-base text-on-surface">
+<span class="font-semibold">System Maintenance:</span> Scheduled for 2:00 AM UTC tonight.
+                    </p>
+<p class="font-label-caps text-label-caps text-outline mt-1">3 hours ago</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex gap-4 p-4 hover:bg-surface-container-low transition-colors cursor-pointer border-l-4 border-transparent">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-on-secondary-container">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="font-body-base text-body-base text-on-surface">
+<span class="font-semibold">Payout Successful:</span> $1,245.00 disbursed to 12 artisans.
+                    </p>
+<p class="font-label-caps text-label-caps text-outline mt-1">Yesterday</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-4 border-t border-outline-variant bg-surface-container-lowest text-center">
+<a class="text-primary font-mono-data text-mono-data hover:underline" href="#">View all notifications</a>
+</div>
+</div>
+</body></html>

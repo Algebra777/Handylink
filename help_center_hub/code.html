@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help Center - Artisan Connect</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Public Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#b1b4b6",
+                    "on-primary-fixed-variant": "#144f4b",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-variant": "#d5e3fc",
+                    "surface-bright": "#f8f9ff",
+                    "inverse-surface": "#233144",
+                    "secondary-fixed": "#ffddb8",
+                    "secondary": "#855300",
+                    "primary-container": "#134e4a",
+                    "primary-fixed-dim": "#9ad1cb",
+                    "primary": "#003633",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "on-primary-container": "#87beb8",
+                    "secondary-container": "#fea619",
+                    "on-tertiary-fixed": "#191c1e",
+                    "background": "#f8f9ff",
+                    "surface-container-highest": "#d5e3fc",
+                    "tertiary": "#2c3032",
+                    "on-secondary-container": "#684000",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#316763",
+                    "inverse-primary": "#9ad1cb",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-surface": "#0d1c2e",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#bfc8c6",
+                    "on-primary-fixed": "#00201e",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container": "#e6eeff",
+                    "outline": "#707977",
+                    "on-secondary-fixed-variant": "#653e00",
+                    "on-secondary-fixed": "#2a1700",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#434648",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "primary-fixed": "#b5ede7",
+                    "secondary-fixed-dim": "#ffb95f",
+                    "on-error": "#ffffff",
+                    "surface-dim": "#ccdbf3",
+                    "on-surface-variant": "#404847",
+                    "error-container": "#ffdad6",
+                    "on-background": "#0d1c2e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "max-width": "1200px",
+                    "xs": "4px",
+                    "gutter": "16px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "sm": "12px",
+                    "margin-desktop": "auto",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "label-md": ["Public Sans"],
+                    "display-lg": ["Public Sans"],
+                    "headline-lg-mobile": ["Public Sans"],
+                    "label-sm": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Ambient Shadow Level 1 */
+        .shadow-ambient-1 {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        /* Ambient Shadow Level 2 */
+        .shadow-ambient-2 {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-24 font-body-md text-body-md pt-16 md:pt-0">
+<!-- TopAppBar (Mobile Only based on intent, though JSON implies fixed top) -->
+<header class="bg-white dark:bg-surface fixed top-0 w-full z-50 border-b border-[#E2E8F0] dark:border-outline-variant flat no shadows md:hidden">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-max-width mx-auto">
+<button aria-label="Go back" class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim text-center flex-1 font-bold">Help Center</h1>
+<button aria-label="Search" class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95 transition-transform duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-max-width mx-auto px-margin-mobile md:px-gutter mt-md md:mt-xl space-y-xl">
+<!-- Search Hero Section -->
+<section class="text-center space-y-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-primary">How can we help?</h2>
+<div class="relative max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-xl border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-2 focus:ring-primary focus:outline-none transition-all shadow-ambient-1 font-body-md text-body-md" placeholder="Search for articles, topics, or FAQs..." type="text"/>
+</div>
+</section>
+<!-- Help Categories (Bento-ish Grid) -->
+<section>
+<h3 class="font-headline-md text-headline-md mb-md text-primary">Browse Topics</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">Getting Started</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Learn the basics of creating an account and navigating the platform.</p>
+</a>
+<!-- Card 2 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">Bookings &amp; Cancellations</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your appointments, reschedule, or cancel a booking.</p>
+</a>
+<!-- Card 3 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">Payments &amp; Payouts</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Information on billing, invoices, and payment processing.</p>
+</a>
+<!-- Card 4 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">Trust &amp; Safety</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Our policies for keeping the community safe and secure.</p>
+</a>
+<!-- Card 5 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="phone_iphone">phone_iphone</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">App Support</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Troubleshooting technical issues with the mobile application.</p>
+</a>
+<!-- Card 6 -->
+<a class="block bg-surface-container-lowest p-md rounded-xl shadow-ambient-1 hover:shadow-ambient-2 hover:-translate-y-1 transition-all duration-300 group border border-transparent hover:border-surface-variant" href="#">
+<div class="w-12 h-12 bg-surface-container-low rounded-lg flex items-center justify-center text-primary mb-sm group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+</div>
+<h4 class="font-headline-md text-headline-md !text-[18px] !leading-[24px] mb-xs text-primary">Artisan Resources</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Guides and best practices specifically for service providers.</p>
+</a>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto">
+<h3 class="font-headline-md text-headline-md mb-md text-primary text-center">Popular Questions</h3>
+<div class="space-y-sm">
+<!-- FAQ Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient-1 overflow-hidden border border-surface-variant">
+<button class="w-full px-md py-4 flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').classList.toggle('rotate-180')">
+<span class="font-label-md text-label-md !text-[16px] text-on-surface">How do I change my booking?</span>
+<span class="material-symbols-outlined icon transition-transform duration-200 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-4 pt-2 hidden text-on-surface-variant font-body-md text-body-md border-t border-surface-variant">
+                        To change a booking, navigate to the "Bookings" tab, select the upcoming appointment you wish to modify, and tap "Reschedule". Please note that changes must be made at least 24 hours in advance.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient-1 overflow-hidden border border-surface-variant">
+<button class="w-full px-md py-4 flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').classList.toggle('rotate-180')">
+<span class="font-label-md text-label-md !text-[16px] text-on-surface">When will I get paid?</span>
+<span class="material-symbols-outlined icon transition-transform duration-200 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-4 pt-2 hidden text-on-surface-variant font-body-md text-body-md border-t border-surface-variant">
+                        Payments are processed automatically 48 hours after a service is marked as completed by both parties. Funds usually appear in your linked account within 3-5 business days depending on your bank.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient-1 overflow-hidden border border-surface-variant">
+<button class="w-full px-md py-4 flex items-center justify-between text-left hover:bg-surface-container-low transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').classList.toggle('rotate-180')">
+<span class="font-label-md text-label-md !text-[16px] text-on-surface">How to verify my account?</span>
+<span class="material-symbols-outlined icon transition-transform duration-200 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-4 pt-2 hidden text-on-surface-variant font-body-md text-body-md border-t border-surface-variant">
+                        Account verification requires submitting a valid government-issued ID and completing a short facial scan. Go to your Profile Settings and tap "Verify Account" to begin the secure process.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Support Section (CTA) -->
+<section class="bg-surface-container-low rounded-xl p-lg text-center shadow-ambient-1">
+<div class="max-w-md mx-auto space-y-md">
+<span class="material-symbols-outlined text-display-lg text-primary">support_agent</span>
+<h3 class="font-headline-md text-headline-md text-primary">Still need help?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our support team is available 24/7 to assist you with any questions or concerns.</p>
+<div class="flex flex-col sm:flex-row gap-sm justify-center pt-sm">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-[16px] min-h-[48px] hover:bg-opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                        Chat with Us
+                    </button>
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-3 rounded-[16px] min-h-[48px] hover:bg-opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-ambient-1">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                        Submit a Ticket
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Shell) -->
+<nav class="bg-white dark:bg-surface fixed bottom-0 w-full z-50 rounded-t-xl shadow-[0_-4px_12px_0_rgba(0,0,0,0.05)] dark:bg-surface-container md:hidden block">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-safe px-4 bg-white dark:bg-surface">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<!-- Bookings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-label-sm mt-1">Bookings</span>
+</a>
+<!-- Inbox -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-1">Inbox</span>
+</a>
+<!-- Support (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-2xl px-3 py-1 hover:text-primary dark:hover:text-primary-fixed-dim active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="help" data-weight="fill" style="font-variation-settings: 'FILL' 1;">help</span>
+<span class="font-label-sm text-label-sm mt-1">Support</span>
+</a>
+</div>
+</nav>
+</body></html>

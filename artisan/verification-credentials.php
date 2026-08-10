@@ -40,6 +40,10 @@ if (!is_dir($userDir)) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Persist business/artisan name if provided from onboarding step1
+        if (!empty($_POST['businessName'])) {
+                $_SESSION['businessName'] = trim((string)$_POST['businessName']);
+        }
         // Government ID upload
         if (!empty($_FILES['gov_id']) && $_FILES['gov_id']['error'] === UPLOAD_ERR_OK) {
                 $tmp = $_FILES['gov_id']['tmp_name'];

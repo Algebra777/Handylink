@@ -10,7 +10,7 @@ include dirname(__DIR__) . '/includes/header.php';
 </div>
 <div class="flex-1 flex flex-col items-center px-margin-mobile md:px-md -mt-md relative z-10 max-w-2xl mx-auto w-full">
 <div class="mb-sm">
-<img alt="HandyLink Logo" class="w-24 h-24 object-contain mx-auto rounded-md shadow-sm bg-surface-container-lowest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATI0OX5rPUmuEvyHP4Er-IHUvO3ZeI7fAlfs41TbpFIznYQqUmpe5hqbhx7Ns2OCdyQuOqyqP96PU2BbQzYixH7DzjOkLN3iUE7yE1SVFJSzfLofsShpoLQM3dZn42F5NkUGNW_D1gQR65ltgaovHGnio4J6z5gSQWsLPu5KJtnAxDjlkrC4anec0BfDigomVXyLBuCOefOcpa3DQ2648AgvljoWwtiUy8LfA6rCj0KuewQc1sgEFL"/>
+<img alt="HandyLink Logo" class="w-24 h-24 object-contain mx-auto rounded-md shadow-sm bg-surface-container-lowest" src="/Handylink/logo.png"/>
 </div>
 <div class="text-center mb-lg w-full">
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-xs">What brings you here today?</h1>

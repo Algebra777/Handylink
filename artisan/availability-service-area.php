@@ -22,6 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['availability'] = $data;
 
+    // If this is an AJAX save (from the wizard), return JSON instead of redirecting
+    $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+    if ($isAjax) {
+        header('Content-Type: application/json');
+        echo json_encode(['ok' => true]);
+        exit;
+    }
+
     if ($action === 'save_exit') {
         header('Location: /Handylink/artisan/onboarding-step1.php');
         exit;
@@ -149,13 +157,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-variation-settings: 'FILL' 1;
         }
         
-        /* Custom Toggle Switch */
+        /* Custom Toggle Switch - updated to a harmonious teal palette */
+        .toggle-label {
+            background-color: #eef6f4; /* soft, pale teal when off */
+        }
+        .toggle-checkbox {
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(16,24,26,0.06);
+        }
         .toggle-checkbox:checked {
             right: 0;
-            border-color: #134e4a;
+            border-color: #0f766e; /* deep teal for knob border when on */
+            background: #ffffff;
         }
         .toggle-checkbox:checked + .toggle-label {
-            background-color: #134e4a;
+            background-color: #0f766e; /* deep teal when on */
         }
         
         /* Custom Range Slider */
@@ -191,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">HandyLink</h1>
 </div>
 <button id="saveExitBtn" class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-surface-container-low cursor-pointer active:opacity-80 flex items-center gap-2">
-<span>Save &amp; Exit</span>
+<span>STEP 3 OF 3</span>
 </button>
 </header>
 <main class="max-w-3xl mx-auto px-margin-mobile md:px-md py-lg md:py-xl">
@@ -199,7 +215,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="mb-lg">
 <div class="flex justify-between items-end mb-sm">
 <div>
-<span class="font-label-md text-label-md text-primary font-semibold uppercase tracking-wider block mb-1">Step 3 of 3</span>
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Availability &amp; Service Area</h2>
 </div>
 <span class="font-label-md text-label-md text-on-surface-variant">100%</span>
@@ -274,32 +289,14 @@ foreach ($week as $k=>$label) {
 <div class="relative flex-grow">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">location_on</span>
 <input class="w-full bg-surface border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed transition-all placeholder:text-on-surface-variant" id="location-input" placeholder="e.g. Brooklyn, 11201" type="text"/>
+<ul id="locationSuggestions" class="hidden absolute left-0 right-0 z-20 bg-surface-container-lowest border border-outline-variant rounded-md mt-2 w-full max-h-44 overflow-auto"></ul>
 </div>
 <button id="addLocationBtn" class="bg-surface-container-high text-primary hover:bg-primary-fixed transition-colors px-4 rounded-lg font-label-md text-label-md font-semibold active:scale-95 flex items-center gap-1" type="button">
 <span class="material-symbols-outlined text-sm">add</span> Add
                         </button>
 </div>
-<!-- Location Tags -->
-<div id="locationTags" class="flex flex-wrap gap-2">
-<div class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-full border border-outline-variant">
-<span>Brooklyn</span>
-<button class="text-on-surface-variant hover:text-error transition-colors rounded-full flex items-center justify-center p-0.5" type="button">
-<span class="material-symbols-outlined text-[16px]">close</span>
-</button>
-</div>
-<div class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-full border border-outline-variant">
-<span>Queens</span>
-<button class="text-on-surface-variant hover:text-error transition-colors rounded-full flex items-center justify-center p-0.5" type="button">
-<span class="material-symbols-outlined text-[16px]">close</span>
-</button>
-</div>
-<div class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-full border border-outline-variant">
-<span>Manhattan</span>
-<button class="text-on-surface-variant hover:text-error transition-colors rounded-full flex items-center justify-center p-0.5" type="button">
-<span class="material-symbols-outlined text-[16px]">close</span>
-</button>
-</div>
-</div>
+<!-- Location Tags (initially empty; tags are added when user searches/adds) -->
+<div id="locationTags" class="flex flex-wrap gap-2"></div>
 </div>
 </section>
 <!-- Decorative visual element to add warmth as per brand guidelines -->
@@ -311,9 +308,9 @@ foreach ($week as $k=>$label) {
 </div>
 <!-- Footer Action -->
 <div class="pt-lg flex flex-col sm:flex-row gap-sm justify-between items-center border-t border-outline-variant">
-<button id="backBtn" class="w-full sm:w-auto text-primary hover:bg-surface-container-low transition-colors px-6 py-3 rounded-xl font-label-md text-label-md font-semibold active:opacity-80" type="button">
+<a id="backBtn" href="/Handylink/artisan/verification-credentials.php" class="w-full sm:w-auto text-primary hover:bg-surface-container-low transition-colors px-6 py-3 rounded-xl font-label-md text-label-md font-semibold active:opacity-80 inline-flex items-center justify-center">
                     Back to Step 2
-                </button>
+                </a>
 <button id="completeBtn" class="w-full sm:w-auto bg-primary text-on-primary hover:bg-primary-container transition-colors px-8 py-4 rounded-xl font-headline-md text-[18px] font-bold active:scale-[0.98] shadow-md hover:shadow-lg flex items-center justify-center gap-2" type="button">
                     Complete Profile
                     <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">check_circle</span>
@@ -321,6 +318,17 @@ foreach ($week as $k=>$label) {
 </div>
 </form>
 </main>
+<!-- Confirm Submission Modal (hidden by default) -->
+<div id="confirmModal" class="hidden fixed inset-0 z-40 flex items-center justify-center bg-black/40 px-4">
+    <div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_40px_rgba(3,18,14,0.12)] max-w-sm w-full">
+        <h2 class="font-headline-md text-headline-md mb-2 text-center">Submit your profile for review?</h2>
+        <p class="text-on-surface-variant text-sm text-center mb-4">You can still edit your details after submitting.</p>
+        <div class="flex gap-4 justify-center">
+            <button id="modalNo" class="px-5 py-2 rounded-lg border border-outline-variant text-primary">No, review again</button>
+            <button id="modalYes" class="px-5 py-2 rounded-lg bg-primary text-on-primary">Yes, submit</button>
+        </div>
+    </div>
+</div>
 <script>
 // Reuse the interactive JS for functionality
 const radius = document.getElementById('radius-slider');
@@ -343,17 +351,65 @@ document.querySelectorAll('input[type=checkbox][id^="toggle-"]').forEach(cb=>{
 
 const addBtn = document.getElementById('addLocationBtn');
 const locInput = document.getElementById('location-input');
+const suggestions = document.getElementById('locationSuggestions');
 const tags = document.getElementById('locationTags');
+
+const NEIGHBORHOODS = [
+    'Brooklyn','Queens','Manhattan','Bronx','Staten Island','Williamsburg','Bushwick','DUMBO','Park Slope','Greenpoint','Harlem','Astoria','Long Island City','Chelsea','Upper East Side','Upper West Side','Soho','Tribeca','Battery Park','Union Square'
+];
+
+function renderSuggestions(list){
+    suggestions.innerHTML = '';
+    if (!list.length) { suggestions.classList.add('hidden'); return; }
+    list.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'px-3 py-2 hover:bg-surface-container-high cursor-pointer text-on-surface';
+        li.textContent = item;
+        li.addEventListener('click', ()=>{
+            locInput.value = item;
+            suggestions.classList.add('hidden');
+            locInput.focus();
+        });
+        suggestions.appendChild(li);
+    });
+    suggestions.classList.remove('hidden');
+}
+
+function filterAndShow(val){
+    const q = val.trim().toLowerCase();
+    if (!q) { suggestions.classList.add('hidden'); return; }
+    const filtered = NEIGHBORHOODS.filter(n=> n.toLowerCase().includes(q) ).slice(0,8);
+    renderSuggestions(filtered);
+}
+
 function addTag(text){
     if (!text) return;
+    // prevent duplicates
+    const existing = Array.from(tags.querySelectorAll('div > span:first-child')).some(s=> s.textContent === text);
+    if (existing) return;
     const wrap = document.createElement('div');
-    wrap.className = 'inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-sm px-3 py-1.5 rounded-full border';
+    wrap.className = 'inline-flex items-center gap-1 bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1.5 rounded-full border border-outline-variant';
     const span = document.createElement('span'); span.textContent = text;
-    const btn = document.createElement('button'); btn.type='button'; btn.className='text-on-surface-variant p-0.5'; btn.innerHTML='<span class="material-symbols-outlined" style="font-size:16px">close</span>';
+    const btn = document.createElement('button'); btn.type='button'; btn.className='text-on-surface-variant hover:text-error transition-colors rounded-full flex items-center justify-center p-0.5'; btn.innerHTML='<span class="material-symbols-outlined" style="font-size:16px">close</span>';
     btn.addEventListener('click', ()=> wrap.remove());
     wrap.appendChild(span); wrap.appendChild(btn); tags.appendChild(wrap);
 }
-if (addBtn) addBtn.addEventListener('click', ()=>{ if (locInput.value.trim()){ addTag(locInput.value.trim()); locInput.value=''; locInput.focus(); }});
+
+if (locInput){
+    locInput.addEventListener('input', (e)=> filterAndShow(e.target.value));
+    locInput.addEventListener('keydown', (e)=>{
+        if (e.key === 'Enter'){
+            e.preventDefault();
+            if (locInput.value.trim()) { addTag(locInput.value.trim()); locInput.value=''; suggestions.classList.add('hidden'); }
+        }
+        if (e.key === 'ArrowDown'){
+            const first = suggestions.querySelector('li'); if (first) first.focus();
+        }
+    });
+    document.addEventListener('click', (ev)=>{ if (!suggestions.contains(ev.target) && ev.target !== locInput) suggestions.classList.add('hidden'); });
+}
+
+if (addBtn) addBtn.addEventListener('click', ()=>{ if (locInput.value.trim()){ addTag(locInput.value.trim()); locInput.value=''; locInput.focus(); suggestions.classList.add('hidden'); }});
 
 document.getElementById('saveExitBtn').addEventListener('click', ()=>{
     const payload = collect();
@@ -361,12 +417,72 @@ document.getElementById('saveExitBtn').addEventListener('click', ()=>{
 });
 
 document.getElementById('backBtn').addEventListener('click', ()=>{
+    // save draft so edits persist when navigating back
+    try{
+        const draft = { schedule: {}, radius: document.getElementById('radius-slider')?.value || '15', locations: [] };
+        ['mon','tue','wed','thu','fri','sat','sun'].forEach(d=>{
+            draft.schedule[d] = {
+                enabled: !!document.getElementById('toggle-'+d)?.checked,
+                from: document.querySelector('input[name="day_'+d+'_from"]')?.value || '',
+                to: document.querySelector('input[name="day_'+d+'_to"]')?.value || ''
+            };
+        });
+        tags.querySelectorAll('div > span:first-child').forEach(s=> draft.locations.push(s.textContent));
+        sessionStorage.setItem('availabilityDraft', JSON.stringify(draft));
+    }catch(e){ /* ignore */ }
     window.location.href = '/Handylink/artisan/verification-credentials.php';
 });
 
-document.getElementById('completeBtn').addEventListener('click', ()=>{
+// restore draft if available
+function restoreAvailabilityDraft(){
+    try{
+        const raw = sessionStorage.getItem('availabilityDraft');
+        if (!raw) return;
+        const draft = JSON.parse(raw);
+        if (draft.radius && document.getElementById('radius-slider')){
+            document.getElementById('radius-slider').value = draft.radius;
+            document.getElementById('radius-display').innerText = draft.radius + ' miles';
+        }
+        ['mon','tue','wed','thu','fri','sat','sun'].forEach(d=>{
+            const cb = document.getElementById('toggle-'+d);
+            const from = document.querySelector('input[name="day_'+d+'_from"]');
+            const to = document.querySelector('input[name="day_'+d+'_to"]');
+            if (!draft.schedule || !draft.schedule[d]) return;
+            const info = draft.schedule[d];
+            if (cb) cb.checked = !!info.enabled;
+            if (from) from.value = info.from || from.value;
+            if (to) to.value = info.to || to.value;
+            if (cb) cb.dispatchEvent(new Event('change'));
+        });
+        // clear existing tags then add
+        tags.innerHTML = '';
+        if (Array.isArray(draft.locations)) draft.locations.forEach(loc=> addTag(loc));
+        // don't remove draft; keep it until user explicitly submits
+    }catch(e){ /* ignore */ }
+}
+
+document.addEventListener('DOMContentLoaded', ()=> restoreAvailabilityDraft());
+
+document.getElementById('completeBtn').addEventListener('click', async ()=>{
     const payload = collect();
-    postForm(payload, 'complete');
+    payload.append('action','save_temp');
+    try {
+        const res = await fetch(window.location.href, { method: 'POST', body: payload, credentials: 'same-origin', headers: {'X-Requested-With':'XMLHttpRequest'} });
+        const json = await res.json();
+            if (json && json.ok) {
+                // show modal to confirm submission
+                const modal = document.getElementById('confirmModal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    // focus primary action
+                    setTimeout(()=> document.getElementById('modalYes')?.focus(), 50);
+                } else {
+                    window.location.href = '/Handylink/artisan/confirm-submission.php';
+                }
+            } else {
+            alert('Could not save your availability. Please try again.');
+        }
+    } catch (e) { alert('Could not save your availability. Please check your connection and try again.'); }
 });
 
 function collect(){
@@ -388,6 +504,15 @@ function postForm(formData, action){
     .then(r=>{ if (r.redirected) window.location.href = r.url; else window.location.reload(); })
     .catch(()=> alert('Could not save.'));
 }
+
+// Modal button handlers
+document.addEventListener('DOMContentLoaded', ()=>{
+    const modal = document.getElementById('confirmModal');
+    const btnNo = document.getElementById('modalNo');
+    const btnYes = document.getElementById('modalYes');
+    if (btnNo) btnNo.addEventListener('click', ()=>{ if (modal) modal.classList.add('hidden'); });
+    if (btnYes) btnYes.addEventListener('click', ()=>{ window.location.href = '/Handylink/artisan/submitting.php'; });
+});
 </script>
 </body>
 </html>

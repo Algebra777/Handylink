@@ -251,3 +251,50 @@ if (!isset($bodyClass)) {
     </style>
 </head>
 <body class="<?= htmlspecialchars($bodyClass) ?>">
+    <style>
+        .nav-logo { height: 28px; width: auto; display: inline-block; vertical-align: middle; }
+        .nav-logo--large { height: 40px; }
+    </style>
+    <script>
+        // Robustly replace any textual occurrence of the word "HandyLink" with the logo image.
+        // Skips the get-started index page.
+        document.addEventListener('DOMContentLoaded', function(){
+            try {
+                var skipPath = '/Handylink/get_started_role_selection/index.php';
+                if (window.location.pathname && window.location.pathname.indexOf(skipPath) !== -1) return;
+
+                var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+                var textNodes = [];
+                var node;
+                while (node = walker.nextNode()) {
+                    if (node.nodeValue && /\bHandyLink\b/.test(node.nodeValue)) textNodes.push(node);
+                }
+
+                textNodes.forEach(function(textNode) {
+                    var parent = textNode.parentNode;
+                    if (!parent) return;
+                    var parts = textNode.nodeValue.split(/(HandyLink)/);
+                    var frag = document.createDocumentFragment();
+                    parts.forEach(function(part){
+                        if (part === 'HandyLink') {
+                            var img = document.createElement('img');
+                            img.src = '/Handylink/logo2.png';
+                            img.alt = 'HandyLink';
+                            img.className = 'nav-logo';
+                            frag.appendChild(img);
+                        } else if (part.length) {
+                            frag.appendChild(document.createTextNode(part));
+                        }
+                    });
+                    parent.replaceChild(frag, textNode);
+                });
+
+                // Ensure logos in header/nav areas are a comfortable size
+                var headerAreas = document.querySelectorAll('header, .nav, .navbar, .topbar');
+                headerAreas.forEach(function(h){
+                    var imgs = h.querySelectorAll('img.nav-logo');
+                    imgs.forEach(function(img){ img.classList.add('nav-logo'); });
+                });
+            } catch (e) { console.warn('Logo replace script error', e); }
+        });
+    </script>
